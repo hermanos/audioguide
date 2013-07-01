@@ -1,5 +1,9 @@
 AudioguideMuseum::Application.routes.draw do
-  resources :users
+  
+  get "pages/index", as:"index"
+  resources :users do 
+    match 'signin', :on => :collection, as: "signin"
+  end 
 
 
   # The priority is based upon order of creation:

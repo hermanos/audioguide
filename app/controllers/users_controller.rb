@@ -44,9 +44,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        session[:curent_user] = @user
+        format.html { redirect_to root_path, notice: 'User was successfully signed up.' }
         format.json { render json: @user, status: :created, location: @user }
       else
+        session[:curent_user] = nil
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -78,6 +80,22 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+    end
+  end
+
+  def signin
+    users = User.where('username=?',params[:username])
+    @user = (users.count > 0 ? users.first : nil)
+    if @user.nil? 
+      session[:curent_user] = nil
+      respond_to do |format|
+      format.html {redirect_to root_path, notice: 'The username or password is not correct'}
+      end
+    elsif @user[:password] == params[:password]
+      session[:curent_user] = @user
+      respond_to do |format|
+      format.html {redirect_to root_path, notice: 'Loged in!'}
+      end
     end
   end
 end
