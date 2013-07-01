@@ -21,10 +21,9 @@ Requirements
 4. Userii pot comenta pe muzeu si pe exponate
 5. Userii pot da like pe muzeu si pe exponate
 6. Se retin toate interactiunile userului cu exponatul
-7. Userul are mai multe coin-uri 
-8. Un coin poate fi atribuit mai multor useri in functie de exponatele vizitate
-9. Userul are achivements (exista o lista de achivements)
-10. Un achivement poate fi atribuit mai multor useri in functie de exponatele vizitate
-11. Userii: admin, clienti
+7. Userul are mai multe coin-uri in functie de numarul de exponate vizitate
+8. Userul are achivements (exista o lista de achivements)
+9. Un achivement poate fi atribuit mai multor useri in functie de exponatele vizitate
+10. Userii: admin, clienti
 
 
