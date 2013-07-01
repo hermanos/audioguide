@@ -20,4 +20,14 @@ ActiveRecord::Schema.define(:version => 20130701113704) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.string   "email"
+    t.integer  "role"
+    t.integer  "coins"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+  
 end

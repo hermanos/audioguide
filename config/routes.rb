@@ -1,5 +1,9 @@
 AudioguideMuseum::Application.routes.draw do
+<<<<<<< HEAD
   resources :achievements
+=======
+  resources :users
+>>>>>>> ea5009f3ac3c4bb081cc2ccc0a1438d57e0a9df2
 
 
   # The priority is based upon order of creation:
@@ -51,7 +55,11 @@ AudioguideMuseum::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+<<<<<<< HEAD
   root :to => 'achievements#index'
+=======
+  root :to => 'pages#index'
+>>>>>>> ea5009f3ac3c4bb081cc2ccc0a1438d57e0a9df2
 
   # See how all your routes lay out with "rake routes"
 
