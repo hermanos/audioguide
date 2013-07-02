@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  filter_before 'redirect_unloged!', only:[:new, :edit, :destroy]
   # GET /users
   # GET /users.json
   def index
