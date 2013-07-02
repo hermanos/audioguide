@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20130701113704) do
   create_table "achievements", :force => true do |t|
     t.string   "title"
     t.string   "description"
+    t.integer  "profile_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -28,5 +29,6 @@ ActiveRecord::Schema.define(:version => 20130701113704) do
     t.integer  "coins"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
 
 end
