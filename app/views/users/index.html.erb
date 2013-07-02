@@ -21,7 +21,7 @@
     <td><%= user.role %></td>
     <td><%= user.coins %></td>
     <td><%= link_to 'Show', user %></td>
-    <%  if loged? %>
+    <% if logged? %>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
@@ -29,6 +29,6 @@
 <% end %>
 </table>
 <br />
-<% if loged? %>
+<% if logged? %>
 <%= link_to 'New User', new_user_path %>
 <% end %>

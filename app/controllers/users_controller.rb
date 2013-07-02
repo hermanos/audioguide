@@ -92,7 +92,7 @@ class UsersController < ApplicationController
       format.html {redirect_to root_path, notice: 'The username does not exist'}
       end
     elsif @user[:password] == params[:password]
-      session[:curent_user] = @user
+      session[:curent_user] = @user.id
       respond_to do |format|
       format.html {redirect_to root_path, notice: 'Loged in!'}
       end

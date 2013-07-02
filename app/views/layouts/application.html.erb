@@ -7,11 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<% unless loged?%>
+	<% if logged? %>
 	<%= link_to "Signout", signout_users_path %>
 	<% end %>
 
 	<%= yield %>
-
+<footer>
+	<pre>
+		<%= session.inspect %>
+	</pre>
+</footer>
 </body>
 </html>
