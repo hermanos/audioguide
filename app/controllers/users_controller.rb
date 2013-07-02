@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter 'redirect_unloged!', only:[:edit, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
+   
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -25,7 +26,6 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -44,9 +44,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        session[:curent_user] = @user
+        format.html { redirect_to root_path, notice: 'User was successfully signed up.' }
         format.json { render json: @user, status: :created, location: @user }
       else
+        session[:curent_user] = nil
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -79,5 +81,31 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def signin
+    users = User.where('username=?',params[:username])
+    @user = (users.count > 0 ? users.first : nil)
+    if @user.nil? 
+      session[:curent_user] = nil
+      respond_to do |format|
+      format.html {redirect_to root_path, notice: 'The username does not exist'}
+      end
+    elsif @user[:password] == params[:password]
+      session[:curent_user] = @user.id
+      respond_to do |format|
+      format.html {redirect_to root_path, notice: 'Loged in!'}
+      end
+    else
+      session[:curent_user] = nil
+      respond_to do |format|
+      format.html {redirect_to root_path, notice: "The password is wrong"}
+      end
+    end
+  end
+
+  def signout
+    session[:curent_user] = nil
+    redirect_to root_path
   end
 end

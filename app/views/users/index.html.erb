@@ -1,3 +1,4 @@
+
 <h1>Listing users</h1>
 
 <table>
@@ -20,12 +21,14 @@
     <td><%= user.role %></td>
     <td><%= user.coins %></td>
     <td><%= link_to 'Show', user %></td>
+    <% if logged? %>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <% end %>
+  </tr>    
 <% end %>
 </table>
-
 <br />
-
+<% if logged? %>
 <%= link_to 'New User', new_user_path %>
+<% end %>

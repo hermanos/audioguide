@@ -28,6 +28,5 @@ ActiveRecord::Schema.define(:version => 20130701113704) do
     t.integer  "coins"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
 
 end

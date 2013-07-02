@@ -1,4 +1,22 @@
 <p>
-	Find me in app/views/pages/index.html.erb
-	<%= link_to "Sign up", new_user_path%>
+	
+
+<% unless logged? %>
+  <%= link_to "Sign up", new_user_path%>
+	<%= form_tag(signin_users_path, :method => "post") do |f| %>
+	<div class="field">
+    <%= label_tag :username %><br />
+    <%= text_field_tag :username %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Sign in" %>
+  </div>
+  <%end%>
+<% end %>
+  
 </p>
+
