@@ -20,17 +20,14 @@
     <%= f.password_field :password %>
   </div>
   <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_conf %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.number_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :coins %><br />
-    <%= f.number_field :coins %>
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
