@@ -1,10 +1,11 @@
+
 AudioguideMuseum::Application.routes.draw do
   resources :museums
 
   get "pages/index", as:"index"
   resources :users do 
     match 'signin', :on => :collection, as: "signin"
-    match 'signout', :on => :collection, as: "singout"
+    match 'signout', :on => :collection, as: "signout"
   end 
 
 
@@ -67,4 +68,5 @@ AudioguideMuseum::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
 end
