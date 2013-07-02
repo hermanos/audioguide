@@ -1,6 +1,5 @@
 
 AudioguideMuseum::Application.routes.draw do
-  
   resources :profiles
 
 
@@ -8,6 +7,8 @@ AudioguideMuseum::Application.routes.draw do
   resources :users do 
     match 'signin', :on => :collection, as: "signin"
     match 'signout', :on => :collection, as: "signout"
+    
+  
   end 
 
 
