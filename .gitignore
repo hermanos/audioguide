@@ -1,4 +1,4 @@
-config/database.yml
-log
-tmp
+/config/database.yml
+/log
+/tmp
 
