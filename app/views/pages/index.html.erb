@@ -1,22 +1,40 @@
 <p>
 	
 
-<% unless logged? %>
+<% if logged? %>
+  
+  <h1> 
+    Chose what you want to do : 
+  </h1>
+
+  <ul>
+    <li> 
+      Manage the Users <%= link_to "here", users_path %>
+    </li>
+    <li>
+      Manage the Achievements <%= link_to "here", achievements_path %>  
+    </li>
+  </ul>
+
+<% else %>
   <%= link_to "Sign up", new_user_path%>
-	<%= form_tag(signin_users_path, :method => "post") do |f| %>
-	<div class="field">
-    <%= label_tag :username %><br />
-    <%= text_field_tag :username %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Sign in" %>
-  </div>
+  <%= form_tag(signin_users_path, :method => "post") do |f| %>
+    <div class="field">
+      <%= label_tag :username %><br />
+      <%= text_field_tag :username %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %><br />
+      <%= password_field_tag :password %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Sign in" %>
+    </div>
   <%end%>
+
 <% end %>
+
+
   
 </p>
 
