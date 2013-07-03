@@ -1,10 +1,11 @@
 
 AudioguideMuseum::Application.routes.draw do
 
+
   resources :achievements
   devise_for :users
   resources :profiles
-
+  resources :museums
 
 
   get "pages/index", as:"index"
@@ -66,7 +67,6 @@ AudioguideMuseum::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-
   root :to => 'pages#index'
 
   # See how all your routes lay out with "rake routes"

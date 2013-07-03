@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  users = User.create([{ username: 'octa', password:'admin' }, { username: 'rares', password:'admin' }])
+  Museums.create([{name: 'Muzeul de Stiinte Naturale', lat: 45, lon: 40 }, { name: 'Muzeul Bruchental', lat: 45, lon: 40 }])

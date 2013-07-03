@@ -1,0 +1,29 @@
+<%= form_for(@museum) do |f| %>
+  <% if @museum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@museum.errors.count, "error") %> prohibited this museum from being saved:</h2>
+
+      <ul>
+      <% @museum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br />
+    <%= f.number_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :long %><br />
+    <%= f.number_field :long %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
