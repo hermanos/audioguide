@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+  
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -44,6 +45,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        @user.profile.name = params[:name]
         session[:curent_user] = @user
         format.html { redirect_to root_path, notice: 'User was successfully signed up.' }
         format.json { render json: @user, status: :created, location: @user }
@@ -89,17 +91,17 @@ class UsersController < ApplicationController
     if @user.nil? 
       session[:curent_user] = nil
       respond_to do |format|
-      format.html {redirect_to root_path, notice: 'The username does not exist'}
+        format.html {redirect_to root_path, notice: 'The username does not exist'}
       end
     elsif @user[:password] == params[:password]
       session[:curent_user] = @user.id
       respond_to do |format|
-      format.html {redirect_to root_path, notice: 'Loged in!'}
+        format.html {redirect_to root_path, notice: 'Loged in!'}
       end
     else
       session[:curent_user] = nil
       respond_to do |format|
-      format.html {redirect_to root_path, notice: "The password is wrong"}
+        format.html {redirect_to root_path, notice: "The password is wrong"}
       end
     end
   end
