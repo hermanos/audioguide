@@ -1,8 +1,8 @@
 
 AudioguideMuseum::Application.routes.draw do
 
-
   resources :achievements
+  devise_for :users
   resources :profiles
 
 
