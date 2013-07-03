@@ -8,6 +8,7 @@ AudioguideMuseum::Application.routes.draw do
   resources :museums
 
   get "pages/index", as:"index"
+  get "pages/dashboard", as:"dashboard"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
