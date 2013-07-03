@@ -3,7 +3,11 @@
 one:
   title: MyString
   description: MyString
+  image: MyString
+  profile_id: 1
 
 two:
   title: MyString
   description: MyString
+  image: MyString
+  profile_id: 1

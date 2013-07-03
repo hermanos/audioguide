@@ -1,5 +1,3 @@
 class Achievement < ActiveRecord::Base
-  attr_accessible :description, :title
-
-  belongs_to :profile
+  attr_accessible :description, :image, :profile_id, :title
 end
