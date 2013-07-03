@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20130703103131) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "museums", :force => true do |t|
+    t.string   "name"
+    t.integer  "lat"
+    t.integer  "long"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
     t.string   "avatar"
