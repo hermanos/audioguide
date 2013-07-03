@@ -1,3 +1,4 @@
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -11,15 +12,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703103131) do
+
+ActiveRecord::Schema.define(:version => 20130703080020) do
+
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "image"
-    t.integer  "profile_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "exhibits", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "audio"
+    t.string   "video"
+    t.integer  "floor"
+    t.integer  "lat"
+    t.integer  "long"
+    t.string   "qr_code"
+    t.integer  "museum_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "museums", :force => true do |t|
+    t.string   "name"
+    t.integer  "lat"
+    t.integer  "long"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+
   end
 
   create_table "profiles", :force => true do |t|
@@ -32,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20130703103131) do
   end
 
   create_table "users", :force => true do |t|
+
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
@@ -50,3 +75,4 @@ ActiveRecord::Schema.define(:version => 20130703103131) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
+
