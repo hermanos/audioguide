@@ -2,6 +2,9 @@
 AudioguideMuseum::Application.routes.draw do
 
 
+  resources :exhibits
+
+
   resources :achievements
   resources :profiles
 
