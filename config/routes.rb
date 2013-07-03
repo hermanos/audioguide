@@ -2,12 +2,11 @@
 AudioguideMuseum::Application.routes.draw do
 
 
+
   resources :exhibits
-
-
   resources :achievements
   resources :profiles
-
+  resources :museums
 
 
   get "pages/index", as:"index"
@@ -69,6 +68,10 @@ AudioguideMuseum::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+<<<<<<< HEAD
+=======
+  # root :to => 'welcome#index'
+>>>>>>> e5a389ed917542f6ddd8f1022439e52cbf32de21
 
   root :to => 'pages#index'
 
