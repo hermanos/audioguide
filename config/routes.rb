@@ -3,6 +3,9 @@ AudioguideMuseum::Application.routes.draw do
 
 
 
+  resources :ratings
+
+
   resources :exhibits
   resources :achievements
   resources :profiles
