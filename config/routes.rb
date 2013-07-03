@@ -1,6 +1,7 @@
 AudioguideMuseum::Application.routes.draw do
   
   get "pages/index", as:"index"
+  get "pages/signin", as:"signin"
   resources :users do 
     match 'signin', :on => :collection, as: "signin"
     match 'signout', :on => :collection, as: "signout"
