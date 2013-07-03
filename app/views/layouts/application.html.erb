@@ -8,6 +8,12 @@
 </head>
 <body>
 
+	<% if user_signed_in? %>
+		<%= render "pages/shared/nav_logged" %>
+	<% else %>
+	  <%= render "pages/shared/nav_unlogged" %>
+  <% end %>
+
 	<%= yield %>
 <footer>
 	<pre>
