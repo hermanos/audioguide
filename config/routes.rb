@@ -1,12 +1,16 @@
 
 AudioguideMuseum::Application.routes.draw do
+  devise_for :users
 
-  resources :achievements
+  resources :profiles
+
 
   get "pages/index", as:"index"
   resources :users do 
     match 'signin', :on => :collection, as: "signin"
     match 'signout', :on => :collection, as: "signout"
+    
+  
   end 
 
 
