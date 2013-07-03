@@ -9,3 +9,11 @@ html
 body{
 	background-color: transparent;
 }
+
+li{
+	border-radius: 10px;
+}
+
+nav{
+	float:right;
+}
