@@ -3,6 +3,9 @@ AudioguideMuseum::Application.routes.draw do
 
 
 
+  resources :comments
+
+
   resources :ratings
 
 
