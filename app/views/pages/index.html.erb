@@ -1,7 +1,7 @@
 <p>
 	
 
-<% unless logged? %>
+
   <%= link_to "Sign up", new_user_path%>
 	<%= form_tag(signin_users_path, :method => "post") do |f| %>
 	<div class="field">
@@ -15,11 +15,6 @@
   <div class="actions">
     <%= submit_tag "Sign in" %>
   </div>
-  <%end%>
-<% else %>
-    <%= link_to "Add Museum", new_museum_path%><br>
-    <%= link_to "View Museums", museums_path%>
-<% end %>
   
 </p>
 

@@ -7,9 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<% if logged? %>
+	
 	<%= link_to "Signout", signout_users_path %>
-	<% end %>
 
 	<%= yield %>
 <footer>
