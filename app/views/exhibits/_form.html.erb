@@ -44,8 +44,9 @@
     <%= f.text_field :qr_code %>
   </div>
   <div class="field">
-    <%= f.label :museum_id %><br />
-    <%= f.number_field :museum_id %>
+    <%= f.label :museums %><br />
+    <% museum_array = Museum.all.map {|museum| [museum.name,museum.id]}%>
+    <%= f.select :museum_id, options_for_select(museum_array) %>
   </div>
   <div class="actions">
     <%= f.submit %>
