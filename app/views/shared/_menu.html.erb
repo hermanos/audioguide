@@ -1,0 +1,23 @@
+<nav>
+  <ul class="nav nav-pills">
+    <li class='<%= get_menu_active('home') %>'>
+      <%= link_to 'Home'%>
+    </li>
+    <li>
+      <%= link_to 'News'%>
+    </li>
+    <li>
+      <%= link_to 'My Gold'%>
+    </li>
+    <li>
+      <%= link_to 'Contact'%>
+    </li> 
+    <li>
+    <% unless loged?%>
+      <%= link_to "Signout", signout_users_path %>
+    <% else %>
+      <%= link_to 'SignIn', signin_path %>
+    <% end %>
+    </li>
+  </ul>
+</nav>

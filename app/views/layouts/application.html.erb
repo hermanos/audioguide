@@ -7,13 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<% unless loged?%>
-	<%= link_to "Signout", signout_users_path %>
-	<% end %>
-
-
-	<%= yield %>
-
-
+	<div class="container">
+		<div class="row">
+			<%= render partial: "shared/menu"%>
+			<%= yield %>
+			<% end %>	
+		</div>
+	</div>
 </body>
 </html>
