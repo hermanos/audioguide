@@ -1,0 +1,11 @@
+html
+{
+	background-image:url("background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-style: Helvetica,Arial,sans-serif;
+}
+
+body{
+	background-color: transparent;
+}
