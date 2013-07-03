@@ -7,16 +7,7 @@ AudioguideMuseum::Application.routes.draw do
   resources :profiles
   resources :museums
 
-
   get "pages/index", as:"index"
-  resources :users do 
-    match 'signin', :on => :collection, as: "signin"
-    match 'signout', :on => :collection, as: "signout"
-    
-  
-  end 
-
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

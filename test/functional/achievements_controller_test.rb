@@ -18,7 +18,7 @@ class AchievementsControllerTest < ActionController::TestCase
 
   test "should create achievement" do
     assert_difference('Achievement.count') do
-      post :create, achievement: { description: @achievement.description, title: @achievement.title }
+      post :create, achievement: { description: @achievement.description, image: @achievement.image, profile_id: @achievement.profile_id, title: @achievement.title }
     end
 
     assert_redirected_to achievement_path(assigns(:achievement))
@@ -35,7 +35,7 @@ class AchievementsControllerTest < ActionController::TestCase
   end
 
   test "should update achievement" do
-    put :update, id: @achievement, achievement: { description: @achievement.description, title: @achievement.title }
+    put :update, id: @achievement, achievement: { description: @achievement.description, image: @achievement.image, profile_id: @achievement.profile_id, title: @achievement.title }
     assert_redirected_to achievement_path(assigns(:achievement))
   end
 
