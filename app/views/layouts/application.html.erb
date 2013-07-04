@@ -12,11 +12,11 @@
 		<%= render "pages/shared/nav_logged" %>
 	<% else %>
 		<% unless current_page?(new_user_session_path) or 
-			current_page?(new_user_registration_path) %>
+			current_page?(new_user_registration_path) or current_page? (new_user_password_path) %>
 			<%= render "pages/shared/nav_unlogged" %>
 		<% end %>
   <% end %>
-
+  
 	<%= yield %>
 <footer>
 	<pre>
