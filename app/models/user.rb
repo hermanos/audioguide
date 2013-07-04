@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
     def create_profile
       p = Profile.create!
+      p.role="user";
       update_attributes(profile: p)
     end
 end
