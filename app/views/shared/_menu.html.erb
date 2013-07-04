@@ -3,37 +3,37 @@
     <li class='<%= get_menu_active('home') %>'>
       <%= link_to 'Home'%>
     </li>
+
     <% unless loged?%>
           <li>
               <%= link_to "Log out", signout_users_path %>
           </li>
     <% else %>
-          <li>
-            <div class="btn-group">
-             
-              <button class="btn dropdown-toggle" data-toggle="dropdown">
-                  Log in
-              </button>
-              <ul class="dropdown-menu">
-                <%= form_tag(signin_users_path, :method => "post") do |f| %>
-                  <div class="field">
-                    <%= label_tag :username %><br />
-                    <%= text_field_tag :username %>
-                  </div>
-                  <div class="field">
-                    <%= label_tag :password %><br />
-                    <%= password_field_tag :password %>
-                  </div>
-                  <div class="actions">
-                    <%= submit_tag "Log in" %>
-                  </div>
-                <%end%>
-              </ul>
-            </div>
+          <li class="dropdown">    
+            <a href= "#" class="btn dropdown-toggle" data-toggle="dropdown">
+              Log in
+            </a>
+            <ul class="dropdown-menu">
+              <%= form_tag(signin_users_path, :method => "post") do |f| %>
+                <div class="field">
+                  <%= label_tag :username %>
+                  <%= text_field_tag :username %>
+                </div>
+                <div class="field">
+                  <%= label_tag :password %>
+                  <%= password_field_tag :password %>
+                </div>
+                <div class="actions">
+                  <%= submit_tag "Log in" %>
+                </div>
+              <%end%>
+            </ul>
           </li>
     <% end %>
+
     <li>
       <%= link_to 'Sign up'%>
     </li>
+
   </ul>
 </nav>

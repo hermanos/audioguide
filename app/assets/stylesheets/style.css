@@ -3,17 +3,34 @@ html
 	background-image:url("background.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	font-style: Helvetica,Arial,sans-serif;
+	font-style: "OpenSans",Arial,sans-serif;
 }
 
 body{
 	background-color: transparent;
 }
 
-li{
-	border-radius: 10px;
-}
-
 nav{
 	float:right;
 }
+
+ul.dropdown-menu{
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #a94c4c;
+}
+
+li{
+	border-radius: 10px;
+	background-color: #a94c4c;
+}
+ 
+li a{
+ 	color: #fff!important;
+ }
+
+
+div.field{
+	color:white;
+}
+
