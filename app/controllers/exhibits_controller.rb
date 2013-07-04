@@ -24,7 +24,8 @@ class ExhibitsController < ApplicationController
   # GET /exhibits/new
   # GET /exhibits/new.json
   def new
-    @exhibit = Exhibit.new
+    @museum = Museum.find(params[:museum_id])
+    @exhibit = @museum.exhibits.new
 
     respond_to do |format|
       format.html # new.html.erb

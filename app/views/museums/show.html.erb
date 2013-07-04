@@ -15,6 +15,11 @@
   <%= @museum.long %>
 </p>
 
+	<% @museum.exhibits.each do |exhibit| %>
+		<%= exhibit.name %>
+	<% end %>
+
+	<%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %>
 
 <%= link_to 'Edit', edit_museum_path(@museum) %> |
 <%= link_to 'Back', museums_path %>

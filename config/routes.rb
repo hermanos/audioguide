@@ -3,11 +3,14 @@ AudioguideMuseum::Application.routes.draw do
 
 
 
-  resources :exhibits
+  
+
   resources :achievements
   devise_for :users
   resources :profiles
-  resources :museums
+  resources :museums do
+    resources :exhibits
+  end
 
 
   get "pages/index", as:"index"
