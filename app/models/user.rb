@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :profile
+  attr_accessible :id, :email, :password, :password_confirmation, :remember_me, :profile
   # attr_accessible :title, :body
   
 	has_one :profile
@@ -16,8 +16,7 @@ class User < ActiveRecord::Base
 
 
     def create_profile
-      p = Profile.create!
-      p.role="user";
-      update_attributes(profile: p)
+      p = Profile.create!(role: 'user')
+      update_attribute(:profile, p)
     end
 end
