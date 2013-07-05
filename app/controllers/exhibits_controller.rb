@@ -42,7 +42,7 @@ class ExhibitsController < ApplicationController
   # POST /exhibits.json
   def create
     @exhibit = Exhibit.new(params[:exhibit])
-
+    
     respond_to do |format|
       if @exhibit.save
         format.html { redirect_to @exhibit, notice: 'Exhibit was successfully created.' }
