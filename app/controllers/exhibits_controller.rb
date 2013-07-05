@@ -14,7 +14,7 @@ class ExhibitsController < ApplicationController
   # GET /exhibits/1.json
   def show
     @exhibit = Exhibit.find(params[:id])
-
+    @museum = Museum.find(params[:museum_id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @exhibit }
@@ -36,16 +36,19 @@ class ExhibitsController < ApplicationController
   # GET /exhibits/1/edit
   def edit
     @exhibit = Exhibit.find(params[:id])
+    @museum = Museum.find(params[:museum_id])
   end
 
   # POST /exhibits
   # POST /exhibits.json
   def create
     @exhibit = Exhibit.new(params[:exhibit])
+    @museum = Museum.find(params[:museum_id])
+    @exhibit.museum = @museum
     
     respond_to do |format|
       if @exhibit.save
-        format.html { redirect_to @exhibit, notice: 'Exhibit was successfully created.' }
+        format.html { redirect_to @museum, notice: 'Exhibit was successfully created.' }
         format.json { render json: @exhibit, status: :created, location: @exhibit }
       else
         format.html { render action: "new" }

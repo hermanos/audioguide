@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+
+		<p><%= alert if alert %></p>
+		<p><%= notice if notice %></p>
+
+
+
 	<%= link_to "Signout", '#' %>
 	<%= link_to "Command Center", root_path %>
 	

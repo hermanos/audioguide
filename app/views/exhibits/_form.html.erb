@@ -1,4 +1,4 @@
-<%= form_for(new_museum_exhibit_path(@museum)) do |f| %>
+<%= form_for(@exhibit, url: museum_exhibits_path(@museum), method: :post) do |f| %>
   <% if @exhibit.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@exhibit.errors.count, "error") %> prohibited this exhibit from being saved:</h2>
@@ -42,10 +42,6 @@
   <div class="field">
     <%= f.label :qr_code %><br />
     <%= f.text_field :qr_code %>
-  </div>
-  <div class="field">
-    <%= f.label :museum_id %><br />
-    <%= f.text_field :museum_id %>
   </div>
   <div class="actions">
     <%= f.submit "Add Exhibit" %>

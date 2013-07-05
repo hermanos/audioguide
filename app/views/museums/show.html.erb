@@ -16,8 +16,13 @@
 </p>
 
 	<% @museum.exhibits.each do |exhibit| %>
-		<%= exhibit.name %>
+  <p>
+		<%= exhibit.title %>
+    <%= link_to "Show", museum_exhibit_path(@museum,exhibit) %>
+  
+  </p>
 	<% end %>
+
 
 	<%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %>
 
