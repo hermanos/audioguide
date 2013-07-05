@@ -1,5 +1,20 @@
 <p>
   <h1>Hello World !</h1>
-  <h2> This is the index page ... this is where the user lands first</h2>
-</p>
 
+
+  <h3> Go to : </h3>
+
+  <ul>
+    <li>
+      <%= link_to "New User", new_user_registration_path %>
+    </li>
+    <li>
+      <%= link_to "Allready a User", new_user_session_path  %>
+    </li>
+    <li>
+      Manage the Achievements <%= link_to "here", achievements_path %>  
+    </li>
+  </ul>
+  </ul>
+
+</p>

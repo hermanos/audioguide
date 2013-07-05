@@ -24,5 +24,4 @@ class PagesController < ApplicationController
   		redirect_unloged!
   	end	
   end
- 
 end
