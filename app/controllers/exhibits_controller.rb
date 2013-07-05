@@ -61,10 +61,11 @@ class ExhibitsController < ApplicationController
   # PUT /exhibits/1.json
   def update
     @exhibit = Exhibit.find(params[:id])
+    @museum = @exhibit.museum
 
     respond_to do |format|
       if @exhibit.update_attributes(params[:exhibit])
-        format.html { redirect_to @exhibit, notice: 'Exhibit was successfully updated.' }
+        format.html { redirect_to @museum, notice: 'Exhibit was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,10 +78,12 @@ class ExhibitsController < ApplicationController
   # DELETE /exhibits/1.json
   def destroy
     @exhibit = Exhibit.find(params[:id])
+    @museum = @exhibit.museum
     @exhibit.destroy
 
+
     respond_to do |format|
-      format.html { redirect_to exhibits_url }
+      format.html { redirect_to @museum, notice: "Exhibit successfully deleted" }
       format.json { head :no_content }
     end
   end
