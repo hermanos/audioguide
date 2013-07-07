@@ -1,39 +1,22 @@
 <nav>
   <ul class="nav nav-pills">
-    <li class='<%= get_menu_active('home') %>'>
+    <li>
       <%= link_to 'Home'%>
     </li>
-
     <% unless loged?%>
           <li>
-              <%= link_to "Log out", signout_users_path %>
+              <%= link_to "Sign out", signout_users_path %>
           </li>
     <% else %>
-          <li class="dropdown">    
-            <a href= "#" class="btn dropdown-toggle" data-toggle="dropdown">
-              Log in
-            </a>
-            <ul class="dropdown-menu">
-              <%= form_tag(signin_users_path, :method => "post") do |f| %>
-                <div class="field">
-                  <%= label_tag :username %>
-                  <%= text_field_tag :username %>
-                </div>
-                <div class="field">
-                  <%= label_tag :password %>
-                  <%= password_field_tag :password %>
-                </div>
-                <div class="actions">
-                  <%= submit_tag "Log in" %>
-                </div>
-              <%end%>
-            </ul>
+          <li>    
+            <%= link_to "Sign in" %>
           </li>
     <% end %>
 
     <li>
-      <%= link_to 'Sign up'%>
+      <%= link_to "Sign up" %>
     </li>
 
   </ul>
 </nav>
+
