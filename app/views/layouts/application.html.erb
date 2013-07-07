@@ -6,12 +6,41 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+						<%= render partial: "shared/menu"%>
+				</div>
+			</div>
+		</div>
+	</header>
+
 	<div class="container">
 		<div class="row">
-			<%= render partial: "shared/menu"%>
 			<%= yield %>	
-		</div>
+		</div> 
 	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="span5">
+					<h4>Get the Audioguide for the museum and start your journey in time!</h4>
+					<%= image_tag("appstore.png", alt: "Appstore Image", id:"appstore") %>
+					<%= image_tag("googleplay.png", alt: "Googleplay Image", id:"googleplay") %>
+				</div>
+				<div class="span7">
+					<%= image_tag("fb.png", alt: "Facebook Image", id:"facebook") %>
+					<%= image_tag("tw.png", alt: "Twitter Image", id:"twitter") %>
+				</div>
+			</div>
+		</div>
+	</footer>
+		
+
 </body>
 </html>

@@ -1,36 +1,82 @@
 html
 {
-	background-image:url("background.png");
-	background-repeat: no-repeat;
+
+}
+
+body {
+	background-image: url("background.png");
 	background-size: cover;
+	background-repeat: no-repeat;
 	font-style: "OpenSans",Arial,sans-serif;
+	height: 100%;
+	
 }
 
-body{
-	background-color: transparent;
+header {
+	background-color: rgba(255,255,255,0.5);
+	height: 120px;
+	width: 100%;
+	float: left;
 }
 
-nav{
-	float:right;
+footer {
+	background-color: rgba(255,255,255,0.5);
+	width: 100%;
+	float: left;
+	padding: 10px 5px 30px 10px;
 }
 
-ul.dropdown-menu{
+footer h4 {
+	color: #753535;
+}
+
+div.menu {
+	position: relative;
+	top: -100px;
+}
+
+img#phone {
+	margin-left: 0px;
+	height: 80%;
+	max-height: 500px;
+}
+
+img#appstore, img#googleplay{
+	height: 50px;
+	width: 150px;
+}
+
+img#facebook, img#twitter{
+	height: 50px;
+	width: 50px;
+	float: right;
+}
+
+nav {
+	float: right;
+}
+
+ul.dropdown-menu {
 	border-radius: 10px;
 	padding: 10px;
 	background-color: #a94c4c;
 }
 
-li{
+li {
 	border-radius: 10px;
 	background-color: #a94c4c;
+	margin: 10px;
 }
  
-li a{
+li a {
  	color: #fff!important;
  }
 
+ul.nav li a:hover {
+    background-color: #E06565;
+}
 
-div.field{
+div.field {
 	color:white;
 }
 
