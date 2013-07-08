@@ -7,17 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-		<p><%= alert if alert %></p>
-		<p><%= notice if notice %></p>
-
-
-
-	<%= link_to "Signout", '#' %>
-	<%= link_to "Command Center", root_path %>
-	
-
-	<%= yield %>
+	<% if user_signed_in? %>
+		<%= render "pages/shared/nav_logged" %>
+	<% else %>
+		<% unless current_page?(new_user_session_path) or 
+			current_page?(new_user_registration_path) or current_page? (new_user_password_path) %>
+			<%= render "pages/shared/nav_unlogged" %>
+		<% end %>
+  <% end %>
+  <%= yield %>
 <footer>
 	<pre>
 		<%= session.inspect %>

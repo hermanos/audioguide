@@ -1,3 +1,19 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul li {
+	display: inline-block;
+}
+
+ul li a:link {
+		background-color: #0350A3;
+		border-radius: 10px;
+		text-decoration: none;
+		color: #C7E200;
+		padding: 10px 20px;
+}
+
+ul li a:visited {
+	color: #C7E200;
+}

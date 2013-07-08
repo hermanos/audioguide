@@ -32,7 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Token authenticatable
       # t.string :authentication_token
-
+      t.integer :profile_id
 
       t.timestamps
     end

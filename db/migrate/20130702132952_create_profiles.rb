@@ -4,7 +4,9 @@ class CreateProfiles < ActiveRecord::Migration
       t.integer :user_id
       t.string :avatar
       t.string :name
+      t.string :role
       t.integer :coins
+      t.string :role
 
       t.timestamps
     end

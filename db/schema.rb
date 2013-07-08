@@ -43,13 +43,13 @@ ActiveRecord::Schema.define(:version => 20130703080020) do
     t.integer  "long"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-
   end
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
     t.string   "avatar"
     t.string   "name"
+    t.string   "role"
     t.integer  "coins"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20130703080020) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "profile_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
