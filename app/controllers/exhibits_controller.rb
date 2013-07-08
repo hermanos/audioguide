@@ -1,5 +1,7 @@
 class ExhibitsController < ApplicationController
+  layout 'simple'
   before_filter :authenticate_user!
+
   # GET /exhibits
   # GET /exhibits.json
   def index
@@ -19,7 +21,7 @@ class ExhibitsController < ApplicationController
     @museum = Museum.find(params[:museum_id])
     if user.profile.role == 'user'
       render 'show_user'
-      return 
+      return
     end
     respond_to do |format|
       format.html # show.html.erb
@@ -52,7 +54,7 @@ class ExhibitsController < ApplicationController
     @exhibit = Exhibit.new(params[:exhibit])
     @museum = Museum.find(params[:museum_id])
     @exhibit.museum = @museum
-    
+
     respond_to do |format|
       if @exhibit.save
         format.html { redirect_to @museum, notice: 'Exhibit was successfully created.' }

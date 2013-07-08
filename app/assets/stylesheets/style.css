@@ -1,0 +1,158 @@
+body {
+	background-image: url("background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: "OpenSans", Arial, sans-serif;
+	height: 100%;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+hr {
+  border-top: none;
+}
+
+html.simple body {
+  background-image: none;
+}
+
+html.simple a {
+  color: #a94c4c;
+}
+
+html.simple a:hover {
+  text-decoration: underline;
+}
+
+header {
+	height: 60px;
+  padding: 20px 0;
+}
+
+html.simple header {
+  height: 20px;
+}
+
+footer p {
+  text-align: center;
+  line-height: 20px;
+  font-size: 16px;
+  color: #d0d0d0;
+  text-shadow: 0px 0px 4px #000;
+}
+
+html.simple footer p {
+  margin-top: 20px;
+}
+
+html.simple footer p {
+  color: #a94c4c;
+  text-shadow: none;
+}
+
+html.simple footer hr {
+  display: none;
+}
+
+a.logo {
+  color: white;
+  font-size: 36px;
+  font-weight: 200;
+}
+
+html.simple a.logo {
+  color: #a94c4c;
+}
+
+a.logo:hover {
+  text-decoration: none;
+}
+
+nav.main-menu {
+  float: right;
+}
+
+nav.main-menu ul li {
+  display: inline-block;
+}
+
+nav.main-menu ul li a {
+  color: white;
+  text-shadow: 0px 0px 4px #000;
+  border-bottom: 1px solid white;
+  padding: 10px 20px;
+}
+
+nav.main-menu ul li a:hover, nav.main-menu ul li.active a {
+  text-decoration: none;
+  border-bottom: 1px solid #a94c4c;
+}
+
+html.simple nav.main-menu ul li a {
+  color: #a94c4c;
+  border-bottom: none;
+  text-shadow: none;
+  padding: 10px 10px;
+}
+
+html.simple nav.main-menu ul li a:hover, html.simple nav.main-menu ul li.active a {
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+div.content-box-outer {
+  border: 10px solid #f3e7e7;
+}
+
+div.content-box {
+  background-color: #ededed;
+  border: 1px solid #bbb;
+  margin: 0;
+  padding: 15px 0;
+}
+
+
+
+img#phone {
+	height: 80%;
+	max-height: 500px;
+}
+
+img#appstore, img#googleplay{
+	height: 50px;
+	width: 150px;
+}
+
+img#facebook, img#twitter{
+	height: 50px;
+	width: 50px;
+	float: right;
+}
+
+div.field {
+	color:white;
+}
+
+div.signbox {
+	padding:50px 10px;
+	margin: 50px 0px;
+	border-width: 5px;
+	border-style: double;
+	border-color: #a94c4c;
+	border-radius: 30px;
+	box-shadow: 0px 0px 10px black;
+	background-color: rgba(255,255,255,0.5);
+}
+
+div.signbox form {
+	margin: 0 auto;
+	display: block;
+	width: 200px;
+
+}
+
+div.signbox a {
+	color: #a94c4c;
+}

@@ -2,14 +2,11 @@
 AudioguideMuseum::Application.routes.draw do
 
 
-
-  
-
   resources :achievements
   devise_for :users
   resources :profiles
   resources :museums do
-    resources :exhibits
+  resources :exhibits
   end
 
 

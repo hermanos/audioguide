@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html class="simple">
 <head>
   <title>AudioguideMuseum</title>
-  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700', :media => 'all' %>
-  <%= stylesheet_link_tag 'application', :media => 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 
@@ -26,14 +25,16 @@
 	</header>
 
 	<div class="container">
-		<div class="row">
-      <div class="span12">
-  			<%= yield %>
+		<div class="row content-box-outer">
+  		<div class="row content-box">
+        <div class="span12">
+          <%= yield %>
+        </div>
       </div>
 		</div>
 	</div>
 
-	<footer.main>
+	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="span12">

@@ -1,4 +1,6 @@
 class AchievementsController < ApplicationController
+  layout 'simple'
+
   # GET /achievements
   # GET /achievements.json
   def index
