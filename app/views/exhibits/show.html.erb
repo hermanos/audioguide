@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @exhibit.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @exhibit.description %>
+</p>
+
+<p>
+  <b>Audio:</b>
+  <%= @exhibit.audio %>
+</p>
+
+<p>
+  <b>Video:</b>
+  <%= @exhibit.video %>
+</p>
+
+<p>
+  <b>Floor:</b>
+  <%= @exhibit.floor %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @exhibit.lat %>
+</p>
+
+<p>
+  <b>Long:</b>
+  <%= @exhibit.long %>
+</p>
+
+<p>
+  <b>Qr code:</b>
+  <%= @exhibit.qr_code %>
+</p>
+
+<p>
+  <b>Museum:</b>
+  <%= @exhibit.museum_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_museum_exhibit_path(@museum,@exhibit) %> |
+<%= link_to 'Delete',museum_exhibit_path(@museum,@exhibit), method: :delete %> |
+<%= link_to 'Back', museum_path(@museum) %>

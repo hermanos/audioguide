@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 
 	<header>
 		<div class="container">
@@ -42,5 +43,21 @@
 	</footer>
 		
 
+=======
+	<% if user_signed_in? %>
+		<%= render "pages/shared/nav_logged" %>
+	<% else %>
+		<% unless current_page?(new_user_session_path) or 
+			current_page?(new_user_registration_path) or current_page? (new_user_password_path) %>
+			<%= render "pages/shared/nav_unlogged" %>
+		<% end %>
+  <% end %>
+  <%= yield %>
+<footer>
+	<pre>
+		<%= session.inspect %>
+	</pre>
+</footer>
+>>>>>>> edfb76a7a81270ed180b27c31c7d4ea356223b38
 </body>
 </html>
