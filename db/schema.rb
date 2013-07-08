@@ -1,4 +1,3 @@
-
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -12,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20130708083643) do
 
   create_table "achievements", :force => true do |t|
@@ -21,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "achievements_profiles", :force => true do |t|
+    t.integer  "achievement_id"
+    t.integer  "profile_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "exhibits", :force => true do |t|
@@ -35,14 +40,6 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.integer  "museum_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-  
-
-  create_table "achievements_profiles", :force => true do |t|
-    t.integer  "achievement_id"
-    t.integer  "profile_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
   end
 
   create_table "museums", :force => true do |t|
@@ -71,7 +68,6 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
   end
 
   create_table "users", :force => true do |t|
-
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
