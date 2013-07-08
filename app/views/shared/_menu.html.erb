@@ -1,32 +1,25 @@
-<nav>
-  <ul class="nav nav-pills">
-    <li>
-      <%= link_to 'Home', dashboard_path %>
-    </li>
+<nav class="main-menu">
+  <ul>
     <% if user_signed_in? %>
-       <li>
-          <%= link_to "Manage the Achievements", achievements_path %>  
-        </li>
-        <li>
-          <%= link_to "Manage your Account", edit_user_registration_path %>  
-        </li>
-        <li>
-          <%= link_to "Manage the Museums", museums_path %>  
-        </li>
-        <li>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> 
-        </li>
+      <li>
+        <%= link_to "Account", edit_user_registration_path %>
+      </li><li>
+        <%= link_to "Achievements", achievements_path %>
+      </li><li>
+        <%= link_to "Museums", museums_path %>
+      </li><li>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      </li>
     <% else %>
-          <% unless current_page?(new_user_session_path) or 
-          current_page?(new_user_registration_path) or current_page? (new_user_password_path) %>
+      <% unless current_page?(new_user_session_path) or
+        current_page?(new_user_registration_path) or
+        current_page?(new_user_password_path) %>
           <li>
-          <%= link_to "Sign In", new_user_session_path %>  
+          <%= link_to "Sign In", new_user_session_path %>
+          </li><li>
+           <%= link_to "Sign Up", new_user_registration_path %>
           </li>
-          <li>
-           <%= link_to "Sign Up", new_user_registration_path %>  
-          </li>
+      <% end %>
     <% end %>
-    <% end %>
-         
   </ul>
 </nav>

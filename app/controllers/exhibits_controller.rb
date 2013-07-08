@@ -1,4 +1,6 @@
 class ExhibitsController < ApplicationController
+  layout 'simple'
+
   # GET /exhibits
   # GET /exhibits.json
   def index
@@ -45,7 +47,7 @@ class ExhibitsController < ApplicationController
     @exhibit = Exhibit.new(params[:exhibit])
     @museum = Museum.find(params[:museum_id])
     @exhibit.museum = @museum
-    
+
     respond_to do |format|
       if @exhibit.save
         format.html { redirect_to @museum, notice: 'Exhibit was successfully created.' }
