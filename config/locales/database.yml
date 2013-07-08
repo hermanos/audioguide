@@ -6,8 +6,8 @@
 development:
   adapter: mysql2
   database: database_here
-  username: username_here
-  password: password_here
+  username: root
+  password: corco1234
 
 
 # Warning: The database defined as "test" will be erased and
@@ -16,6 +16,5 @@ development:
 test:
   adapter: mysql2
   database: database_here
-  username: username_here
-  password: password_here
-
+  username: root
+  password: corco1234
