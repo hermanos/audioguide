@@ -1,4 +1,5 @@
 class ExhibitsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /exhibits
   # GET /exhibits.json
   def index
@@ -13,12 +14,18 @@ class ExhibitsController < ApplicationController
   # GET /exhibits/1
   # GET /exhibits/1.json
   def show
+    user = current_user
     @exhibit = Exhibit.find(params[:id])
     @museum = Museum.find(params[:museum_id])
+    if user.profile.role == 'user'
+      render 'show_user'
+      return 
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @exhibit }
     end
+
   end
 
   # GET /exhibits/new
