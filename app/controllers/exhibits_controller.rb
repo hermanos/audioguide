@@ -20,8 +20,9 @@ class ExhibitsController < ApplicationController
     @exhibit = Exhibit.find(params[:id])
     @museum = Museum.find(params[:museum_id])
     if user.profile.role == 'user'
-      render 'show_user'
-      return
+        Scan.scanned?(@exhibit.id, user.profile.id)
+          render 'show_user'
+      return 
     end
     respond_to do |format|
       format.html # show.html.erb
