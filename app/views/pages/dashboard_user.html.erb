@@ -2,16 +2,19 @@
 	Welcome User !
 </h1>
 
-<h4>
-	Your id is <%= @user.id %>
-</h4>
-
-<h4>
-	Your encrypted password is <%= @user.encrypted_password %>
-</h4>
-
 <h2>
-	Options 
+	Your achievements :  
 </h2>
 
+<% @user.profile.achievements.each do |achievement|  %>
+	
+	<article>
+		<p>
+			<strong> Titlu : </strong> <%= achievement.title %>
+		</p>
+		<p>
+			<strong> Descriere : </strong>  <%= achievement.description %>
+		</p>
+	</article>
 
+<% end %>
