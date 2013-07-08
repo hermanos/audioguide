@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20130703103131) do
 
   create_table "exhibits", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.string   "audio"
     t.string   "video"
     t.integer  "floor"
