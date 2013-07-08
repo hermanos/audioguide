@@ -1,0 +1,20 @@
+<h1>
+	Welcome User !
+</h1>
+
+<h2>
+	Your achievements :  
+</h2>
+
+<% @user.profile.achievements.each do |achievement|  %>
+	
+	<article>
+		<p>
+			<strong> Titlu : </strong> <%= achievement.title %>
+		</p>
+		<p>
+			<strong> Descriere : </strong>  <%= achievement.description %>
+		</p>
+	</article>
+
+<% end %>
