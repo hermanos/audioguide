@@ -36,3 +36,5 @@ gem 'devise'
 
 # To use debugger
 # gem 'debugger'
+require 'rubygems'
+require 'rqrcode'
