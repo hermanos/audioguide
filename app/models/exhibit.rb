@@ -5,11 +5,10 @@ class Exhibit < ActiveRecord::Base
 
   after_create :create_qr_code
 
-  	def create_qr_code
+  def create_qr_code
 
-  		qr_code = {id_exhibit: @exhibit.id, }
-
-  	end
+  	crypt_code = Digest::MD5.hexdigest(id.to_s + "-" + Time.now.to_s)
+  	update_attribute(:qr_code, crypt_code)
 
   end
 end
