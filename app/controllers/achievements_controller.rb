@@ -82,4 +82,12 @@ class AchievementsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def add_achievement_to_profile
+    user = current_user
+    achievement = Achievement.find(params[:id])
+    user.profile.achievements << achievement
+
+  end
+
 end

@@ -22,9 +22,16 @@ ActiveRecord::Schema.define(:version => 20130703103131) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "achievements_profiles", :force => true do |t|
+    t.integer  "achievement_id"
+    t.integer  "profile_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "exhibits", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.string   "audio"
     t.string   "video"
     t.integer  "floor"
@@ -50,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20130703103131) do
     t.string   "name"
     t.string   "role"
     t.integer  "coins"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "scans", :force => true do |t|
+    t.integer  "profile_id"
+    t.integer  "exhibit_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
