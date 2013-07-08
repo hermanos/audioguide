@@ -37,7 +37,7 @@
 
 <p>
   <b>Qr Code: </b><br>
-  <% qr = RQRCode::QRCode.new(@exhibit.qr_code,size: 4, length: :h) %>
+  <% qr = RQRCode::QRCode.new(@exhibit.qr_code,size: 6, length: :h) %>
 <table class="qr-code">
 <% qr.modules.each_index do |x| %>
   <tr>  

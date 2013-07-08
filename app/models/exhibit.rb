@@ -7,7 +7,7 @@ class Exhibit < ActiveRecord::Base
 
   def create_qr_code
   	exhibit_url = "http://localhost:3000/museums/" + museum_id.to_s + "/exhibits/" + id.to_s
-  	crypt_code = Digest::MD5.hexdigest(exhibit_url)
+  	crypt_code = exhibit_url
   	update_attribute(:qr_code, crypt_code)
 
   end
