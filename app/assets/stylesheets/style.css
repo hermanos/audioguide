@@ -78,3 +78,25 @@ ul.nav li a:hover {
 div.field {
 	color:white;
 }
+
+div.signbox {
+	padding:50px 10px;
+	margin: 50px 0px;
+	border-width: 5px;	
+	border-style: double;
+	border-color: #a94c4c;
+	border-radius: 30px;
+	box-shadow: 0px 0px 10px black;
+	background-color: rgba(255,255,255,0.5);
+}
+
+div.signbox form {
+	margin: 0 auto;
+	display: block;
+	width: 200px;
+
+}
+
+div.signbox a {
+	color: #a94c4c;
+}
