@@ -23,8 +23,10 @@
   </p>
 	<% end %>
 
-
+  <% if current_user.profile.role != 'user' %>
 	<%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %>
+  
 
 <%= link_to 'Edit', edit_museum_path(@museum) %> |
+  <% end %>
 <%= link_to 'Back', museums_path %>

@@ -1,7 +1,7 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
   before_filter :authenticate_user!
-
+  before_filter :redirectIfUser, only: [:new,:edit,:create,:update,:destroy]
   # GET /exhibits
   # GET /exhibits.json
   def index
@@ -35,7 +35,7 @@ class ExhibitsController < ApplicationController
   def new
     @museum = Museum.find(params[:museum_id])
     @exhibit = @museum.exhibits.new
-
+    # redirectIfUser
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exhibit }
@@ -46,6 +46,7 @@ class ExhibitsController < ApplicationController
   def edit
     @exhibit = Exhibit.find(params[:id])
     @museum = Museum.find(params[:museum_id])
+    
   end
 
   # POST /exhibits
@@ -96,4 +97,13 @@ class ExhibitsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def redirectIfUser
+    user = current_user
+    if user.profile.role == 'user'
+      redirect_to museum_path(params[:museum_id])
+      return
+    end
+  end
+
 end
