@@ -11,13 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703103131) do
+ActiveRecord::Schema.define(:version => 20130708083643) do
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.string   "image"
-    t.integer  "profile_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
