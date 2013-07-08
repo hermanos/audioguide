@@ -98,12 +98,5 @@ class ExhibitsController < ApplicationController
     end
   end
 
-  def redirectIfUser
-    user = current_user
-    if user.profile.role == 'user'
-      redirect_to museum_path(params[:museum_id])
-      return
-    end
-  end
 
 end
