@@ -4,7 +4,6 @@ class CreateAchievements < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.string :image
-      t.integer :profile_id
 
       t.timestamps
     end
