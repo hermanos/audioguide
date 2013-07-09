@@ -3,8 +3,6 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Lat</th>
-    <th>Long</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,15 +11,12 @@
 <% @museums.each do |museum| %>
   <tr>
     <td><%= museum.name %></td>
-    <td><%= museum.lat %></td>
-    <td><%= museum.long %></td>
     <td><%= link_to 'Show', museum %></td>
-    <td><%= link_to 'Edit', edit_museum_path(museum) %></td>
-    <td><%= link_to 'Destroy', museum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<% if current_user.profile.role != 'user' %>
 <%= link_to 'New Museum', new_museum_path %>
+<% end %>

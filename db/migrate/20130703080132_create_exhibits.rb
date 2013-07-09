@@ -10,7 +10,8 @@ class CreateExhibits < ActiveRecord::Migration
       t.integer :long
       t.string :qr_code
       t.integer :museum_id
-
+      t.integer :publish
+      
       t.timestamps
     end
   end

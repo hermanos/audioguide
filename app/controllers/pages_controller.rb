@@ -18,4 +18,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def users_reset
+    @user = User.all
+    render 'reset'
+    return
+  end
+
 end

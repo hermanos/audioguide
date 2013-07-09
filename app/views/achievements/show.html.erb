@@ -17,7 +17,4 @@
 
 <% if current_user.profile.role == "admin" %>
 	<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
-	<%= link_to 'Back', achievements_path %>
-<% else %>
-	<%= link_to 'Back', achievements_path %>
 <% end %>

@@ -1,6 +1,7 @@
 <nav class="main-menu">
   <ul>
     <% if user_signed_in? %>
+      <% unless current_user.profile.role == "admin" %>
       <li>
         <%= link_to "Account", edit_user_registration_path %>
       </li><li>
@@ -10,6 +11,7 @@
       </li><li>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       </li>
+      <% end %>
     <% else %>
       <% unless current_page?(new_user_session_path) or
         current_page?(new_user_registration_path) or
