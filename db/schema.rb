@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130708083643) do
 
-
   create_table "achievements", :force => true do |t|
     t.string   "title"
     t.string   "description"
@@ -29,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "exhibit_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "exhibits", :force => true do |t|
     t.string   "title"

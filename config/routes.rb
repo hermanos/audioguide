@@ -1,13 +1,13 @@
 
 AudioguideMuseum::Application.routes.draw do
 
-
+  resources :comments
   resources :ratings
   resources :achievements
   devise_for :users
   resources :profiles
   resources :museums do
-  resources :exhibits
+    resources :exhibits
   end
 
 

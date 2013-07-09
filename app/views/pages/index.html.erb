@@ -1,16 +1,12 @@
 <div class="span9">
 
-
 </div>
 
 <div class="span3">
-
 	<%= image_tag("phone.png", alt: "Phone Image", id:"phone") %>
-	
 </div>
 
 <p>
-
   <%= link_to "Sign up", new_user_path%>
 	<%= form_tag(signin_users_path, :method => "post") do |f| %>
   	<div class="field">
@@ -25,6 +21,5 @@
       <%= submit_tag "Sign in" %>
     </div>
   <% end %>
-
 </p>
 
