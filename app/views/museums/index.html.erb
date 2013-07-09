@@ -1,26 +1,33 @@
-<h1>Listing museums</h1>
+<h1>Museums</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Lat</th>
     <th>Long</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @museums.each do |museum| %>
   <tr>
-    <td><%= museum.name %></td>
+    <td width="500"><%= museum.name %></td>
     <td><%= museum.lat %></td>
     <td><%= museum.long %></td>
-    <td><%= link_to 'Show', museum %></td>
-    <% if current_user.profile.role != 'user'%>
-    <td><%= link_to 'Edit', edit_museum_path(museum) %></td>
-    <td><%= link_to 'Destroy', museum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
   </tr>
+  <tr>
+    <td colspan="3">
+      <%= link_to 'Show', museum %> |
+      <% if current_user.profile.role != 'user'%>
+      <%= link_to 'Edit', edit_museum_path(museum) %> |
+      <%= link_to 'Destroy', museum, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <hr>
+    </td>
+  </tr>
+
 <% end %>
 </table>
 

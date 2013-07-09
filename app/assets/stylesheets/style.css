@@ -15,7 +15,9 @@ hr {
 }
 
 html.simple body {
-  background-image: none;
+  background-image: url("nasty.png");
+  background-size: 10%;
+  background-repeat: repeat;
 }
 
 html.simple a {
@@ -113,8 +115,6 @@ div.content-box {
   padding: 15px 0;
 }
 
-
-
 img#phone {
 	height: 80%;
 	max-height: 500px;
@@ -129,10 +129,6 @@ img#facebook, img#twitter{
 	height: 50px;
 	width: 50px;
 	float: right;
-}
-
-div.field {
-	color:white;
 }
 
 div.signbox {
