@@ -3,6 +3,7 @@
 #
 # Examples:
 #
+
   achievement1 = Achievement.create!(title: "First Scan", description: "Congratulations for your first Scan !", image: "no_image")
   achievement2 = Achievement.create!(title: "100 Scans", description: "Congratulations for your 100th Scan !", image: "no_image")
   achievement3 = Achievement.create!(title: "Full Museum", description: "Congratulations for visiting an entire Museum !", image: "no_image")
@@ -13,9 +14,10 @@
   manager = User.create(email: 'manager@audioguide.com', password: 'manager123')
   manager.profile.update_attribute(:role, "manager")
   user = User.create(email: 'basic_user@audioguide.com', password: 'user1234')
-  user.profile.achievements << achievement1
-  user.profile.achievements << achievement2
+  #user.profile.achievements << achievement1
+  #user.profile.achievements << achievement2
 
   Museum.create([{name: 'Muzeul de Stiinte Naturale', lat: 45, long: 40 }, { name: 'Muzeul Brukenthal', lat: 45, long: 40 }])
 
-  Exhibit.create([{title: 'Sculptura transilvăneană în piatră din secolele XIII-XIX', description: 'Colecţia de piese sculpturale transilvănene medievale şi moderne timpurii din piatră a fost constituită treptat, începând cu prima jumătate a secolului al XIX-lea. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/1',museum_id: 2}]);
+  Exhibit.create([{title: 'Sculptura transilvaneana in piatra din secolele XIII-XIX', description: 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/1',museum_id: 2}]);
+
