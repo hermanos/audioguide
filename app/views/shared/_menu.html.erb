@@ -1,23 +1,25 @@
-<nav>
-  <ul class="nav nav-pills">
-    <li class='<%= get_menu_active('home') %>'>
-      <%= link_to 'Home'%>
-    </li>
-    <li>
-      <%= link_to 'News'%>
-    </li>
-    <li>
-      <%= link_to 'My Gold'%>
-    </li>
-    <li>
-      <%= link_to 'Contact'%>
-    </li> 
-    <li>
-    <% unless loged?%>
-      <%= link_to "Signout", signout_users_path %>
+<nav class="main-menu">
+  <ul>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to "Account", edit_user_registration_path %>
+      </li><li>
+        <%= link_to "Achievements", achievements_path %>
+      </li><li>
+        <%= link_to "Museums", museums_path %>
+      </li><li>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      </li>
     <% else %>
-      <%= link_to 'SignIn', signin_path %>
+      <% unless current_page?(new_user_session_path) or
+        current_page?(new_user_registration_path) or
+        current_page?(new_user_password_path) %>
+          <li>
+          <%= link_to "Sign In", new_user_session_path %>
+          </li><li>
+           <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+      <% end %>
     <% end %>
-    </li>
   </ul>
 </nav>

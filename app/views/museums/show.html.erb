@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @museum.name %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @museum.lat %>
+</p>
+
+<p>
+  <b>Long:</b>
+  <%= @museum.long %>
+</p>
+
+	<% @museum.exhibits.each do |exhibit| %>
+  <p>
+		<%= exhibit.title %>
+    <%= link_to "Show", museum_exhibit_path(@museum,exhibit) %>
+  
+  </p>
+	<% end %>
+
+  <% if current_user.profile.role != 'user' %>
+	<%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %>
+  
+
+<%= link_to 'Edit', edit_museum_path(@museum) %> |
+  <% end %>
+<%= link_to 'Back', museums_path %>

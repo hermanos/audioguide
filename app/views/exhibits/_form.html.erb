@@ -1,0 +1,49 @@
+<% url = museum_exhibits_path(@museum) %>
+<% url = museum_exhibit_path(@museum,@exhibit) if !@exhibit.new_record? %>
+<% method =  @exhibit.new_record? ? :post : :put %>
+
+<%= form_for(@exhibit, url: url, method: method) do |f| %>
+  <% if @exhibit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exhibit.errors.count, "error") %> prohibited this exhibit from being saved:</h2>
+
+      <ul>
+      <% @exhibit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :audio %><br />
+    <%= f.text_field :audio %>
+  </div>
+  <div class="field">
+    <%= f.label :video %><br />
+    <%= f.text_field :video %>
+  </div>
+  <div class="field">
+    <%= f.label :floor %><br />
+    <%= f.number_field :floor %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br />
+    <%= f.number_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :long %><br />
+    <%= f.number_field :long %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add Exhibit" %>
+  </div>
+<% end %>

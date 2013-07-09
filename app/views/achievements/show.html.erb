@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @achievement.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @achievement.description %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @achievement.image %>
+</p>
+
+<% if current_user.profile.role == "admin" %>
+	<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
+	<%= link_to 'Back', achievements_path %>
+<% else %>
+	<%= link_to 'Back', achievements_path %>
+<% end %>

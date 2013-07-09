@@ -1,0 +1,28 @@
+<div class="span5">
+
+</div>
+
+<div class="span7">
+	<div class="signbox">
+		<h2 class="text-center">
+			Sign up!
+		</h2> 
+
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	  <%= devise_error_messages! %>
+
+	  <div><%= f.label :email %>
+	  <%= f.email_field :email, :autofocus => true %></div>
+
+	  <div><%= f.label :password %>
+	  <%= f.password_field :password %></div>
+
+	  <div><%= f.label :password_confirmation %>
+	  <%= f.password_field :password_confirmation %></div>
+
+	  <div><%= f.submit "Sign up", class: "btn btn-inverse" %></div>
+	<% end %>
+
+	<%= render "users/shared/links" %>
+	</div>
+</div>
