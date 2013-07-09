@@ -2,6 +2,7 @@
 AudioguideMuseum::Application.routes.draw do
 
 
+  resources :ratings
   resources :achievements
   devise_for :users
   resources :profiles
