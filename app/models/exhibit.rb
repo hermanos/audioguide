@@ -1,5 +1,5 @@
 class Exhibit < ActiveRecord::Base
-  attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code, :title, :video
+  attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code, :title, :video, :publish
 
   belongs_to :museum
 

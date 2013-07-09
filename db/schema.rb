@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.integer  "long"
     t.string   "qr_code"
     t.integer  "museum_id"
+    t.integer  "publish"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -64,6 +65,14 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.string   "name"
     t.string   "role"
     t.integer  "coins"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "score"
+    t.integer  "user_id"
+    t.integer  "exhibit_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -95,5 +104,3 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
-
-
