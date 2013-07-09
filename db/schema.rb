@@ -11,27 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130701111940) do
-
-  create_table "jokes", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "museums", :force => true do |t|
-    t.string   "name"
-    t.integer  "lat"
-    t.integer  "long"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-=======
 ActiveRecord::Schema.define(:version => 20130708083643) do
->>>>>>> 74e274c326e31fd0ca4527e33f3e909faebad411
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
