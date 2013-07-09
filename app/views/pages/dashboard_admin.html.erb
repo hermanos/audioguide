@@ -1,17 +1,14 @@
-<h1>
-	Welcome Admin !
-</h1>
-
-<h4>
-	Your id is <%= @user.id %>
-</h4>
-
-<h4>
-	Your encrypted password is <%= @user.encrypted_password %>
-</h4>
-
-<h2>
-	Options 
-</h2>
-
-
+<nav>
+	<p>
+		<%= link_to "Achievements", achievements_path %>
+	</p>
+	<p>
+		<%= link_to "Museums", museums_path %>
+	</p>
+	<p>
+		<%= link_to "Users", reset_path %>
+	</p>
+	<p>
+		<%= link_to "Profile",  profiles_path %>
+	</p>
+</nav>
