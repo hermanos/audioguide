@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.integer  "long"
     t.string   "qr_code"
     t.integer  "museum_id"
-    t.integer  "publish"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "private",     :default => 1
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "museums", :force => true do |t|
