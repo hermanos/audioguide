@@ -8,6 +8,7 @@ class PagesController < ApplicationController
         render 'dashboard_admin'
         return
       elsif @user.profile.role == "manager"
+        @museum = Museum.all
         render 'dashboard_manager'
         return
       else

@@ -1,7 +1,8 @@
 <nav class="main-menu">
   <ul>
     <% if user_signed_in? %>
-      <% unless current_user.profile.role == "admin" %>
+      <% unless current_user.profile.role == "admin" or
+       current_user.profile.role == "manager" %>
       <li>
         <%= link_to "Account", edit_user_registration_path %>
       </li><li>
