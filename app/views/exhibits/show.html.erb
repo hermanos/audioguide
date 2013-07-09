@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<h1><%= @museum.name %></h1>
+<hr>
 <p>
   <b>Title:</b>
   <%= @exhibit.title %>
@@ -37,26 +38,10 @@
 
 <p>
   <b>Qr Code: </b><br>
-  <% qr = RQRCode::QRCode.new(@exhibit.qr_code,size: 6, length: :h) %>
-<table class="qr-code">
-<% qr.modules.each_index do |x| %>
-  <tr>  
-  <% qr.modules.each_index do |y| %>
-   <% if qr.dark?(x,y) %>
-    <td class="black"/>
-   <% else %>
-    <td class="white"/>
-   <% end %>
-  <% end %>
-  </tr>
-<% end %>
-</table>
+  <%= render "qr_table" %>
 </p>
 
-<p>
-  <b>Museum:</b>
-  <%= @exhibit.museum_id %>
-</p>
+
 
 
 <%= link_to 'Edit', edit_museum_exhibit_path(@museum,@exhibit) %> |
