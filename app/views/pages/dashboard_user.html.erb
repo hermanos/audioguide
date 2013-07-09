@@ -27,7 +27,7 @@
 	
 	<% @scan_prof.each do |scan|%>
 	<li>
-	<%= scan.exhibit.title %>
+	<%= scan.exhibit.title if scan.exhibit.private == 1%>
 	</li>
 	<% end %>
 </ul>
