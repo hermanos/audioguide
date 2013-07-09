@@ -8,9 +8,10 @@
         <%= link_to "Achievements", achievements_path %>
       </li><li>
         <%= link_to "Museums", museums_path %>
-      </li><% end %><li>
+      </li><li>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       </li>
+      <% end %>
     <% else %>
       <% unless current_page?(new_user_session_path) or
         current_page?(new_user_registration_path) or
