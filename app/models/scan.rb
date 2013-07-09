@@ -9,6 +9,7 @@ class Scan < ActiveRecord::Base
 		unless Scan.where(exhibit_id: ex_id, profile_id: prof_id).first
 			Scan.create(exhibit_id: ex_id, profile_id: prof_id)
 		end
+		
   end
 
 end
