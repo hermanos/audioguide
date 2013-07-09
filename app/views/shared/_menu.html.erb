@@ -11,6 +11,16 @@
       </li><% end %><li>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       </li>
+    <% else %>
+      <% unless current_page?(new_user_session_path) or
+        current_page?(new_user_registration_path) or
+        current_page?(new_user_password_path) %>
+          <li>
+          <%= link_to "Sign In", new_user_session_path %>
+          </li><li>
+           <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+      <% end %>
     <% end %>
   </ul>
 </nav>
