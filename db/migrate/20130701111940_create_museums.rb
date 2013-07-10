@@ -4,6 +4,7 @@ class CreateMuseums < ActiveRecord::Migration
       t.string :name
       t.integer :lat
       t.integer :long
+      t.integer :manager_id
 
       t.timestamps
     end

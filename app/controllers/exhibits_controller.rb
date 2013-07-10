@@ -19,6 +19,7 @@ class ExhibitsController < ApplicationController
     user = current_user
     @exhibit = Exhibit.find(params[:id])
     @museum = Museum.find(params[:museum_id])
+
     if user.profile.role == 'user'
         Scan.scanned?(@exhibit.id, user.profile.id)
           render 'show_user'
@@ -27,8 +28,8 @@ class ExhibitsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @exhibit }
+      format.png { render qrcode: @exhibit.qr_code }
     end
-
   end
 
   # GET /exhibits/new

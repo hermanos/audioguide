@@ -2,26 +2,28 @@
 
 <table>
   <tr>
+    <th>Image</th>
     <th>Title</th>
     <th>Description</th>
-    <th>Image</th>
+
+
   </tr>
 
 <% @achievements.each do |achievement| %>
   <tr>
+    <td><%= achievement.image %></td>
     <td width="300"><%= achievement.title %></td>
     <td width="400"><%= achievement.description %></td>
-    <td><%= achievement.image %></td>
   </tr>
   <tr>
     <% if current_user.profile.role == "admin" %>
       <td colspan="3">
-        <%= link_to 'Show', achievement %> |
         <%= link_to 'Edit', edit_achievement_path(achievement) %> |
         <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>
     <% else %>
       <td><%= link_to 'Show', achievement %></td>
+
     <% end %>
   </tr>
    <tr>
