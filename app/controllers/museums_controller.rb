@@ -48,7 +48,6 @@ class MuseumsController < ApplicationController
 
     respond_to do |format|
       if @museum.save
-        @museum.update_attribute(:published, 0)
         format.html { redirect_to @museum, notice: 'Museum was successfully created.' }
         format.json { render json: @museum, status: :created, location: @museum }
       else

@@ -6,7 +6,6 @@ class Museum < ActiveRecord::Base
   validates :name, presence: true
   validates :name, length: {minimum: 1}
   validates :manager_id, presence: true
-  validates :published, presence: true
   validates :description, presence: true
   validates :description, length: {minimum: 1}
 end

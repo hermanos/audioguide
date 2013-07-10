@@ -4,9 +4,9 @@ class CreateMuseums < ActiveRecord::Migration
       t.string :name
       t.integer :lat
       t.integer :long
-      t.integer :manager_id
-      t.integer :published
-      t.integer :description
+      t.integer :manager_id, default: 0
+      t.integer :published, default: 1
+      t.text :description
 
       t.timestamps
     end
