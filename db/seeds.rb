@@ -13,14 +13,12 @@
   manager = User.create!(email: 'manager@audioguide.com', password: 'manager123')
   manager.profile.update_attribute(:role, "manager")
   user = User.create(email: 'basic_user@audioguide.com', password: 'user1234')
-  user.profile.update_attribute(:coins, 100)
 
   user.profile.achievements << achievement1
   user.profile.achievements << achievement2
 
-  muzeu1 = Museum.create!(name: 'Muzeul de Stiinte Naturale', lat: 45, long: 40, published: 0)
-  muzeu2 = Museum.create!(name: 'Muzeul Brukenthal', lat: 45, long: 40, published: 0)
-  muzeu2.update_attribute(:manager_id, 2)
+  muzeu1 = Museum.create!(name: 'Muzeul de Stiinte Naturale', lat: 45, long: 40, description: "Cel mai tare muzeu",manager_id: manager.profile.id, published: 0 )
+  muzeu2 = Museum.create!(name: 'Muzeul Brukenthal', lat: 45, long: 40, description: "Al doilea cel mai tare",manager_id: manager.profile.id, published: 0 )
 
   exhibit1 = Exhibit.create!(title: 'Sculptura transilvăneană în piatră din secolele XIII-XIX', description: 'Colecţia de piese sculpturale transilvănene medievale şi moderne timpurii din piatră a fost constituită treptat, începând cu prima jumătate a secolului al XIX-lea. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/1',museum_id: 2)
   exhibit2 = Exhibit.create!(title: 'Monalisa', description: 'Pictura. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/2',museum_id: 2)

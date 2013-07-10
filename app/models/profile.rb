@@ -4,4 +4,8 @@ class Profile < ActiveRecord::Base
   has_one :user
   has_and_belongs_to_many :achievements
   has_many :scans
+
+  validates :name, presence: true
+  validates :name, length: {minimum: 1}
+  validates :role, presence: true
 end

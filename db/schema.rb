@@ -57,8 +57,9 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.integer  "long"
     t.integer  "manager_id"
     t.integer  "published"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "profiles", :force => true do |t|

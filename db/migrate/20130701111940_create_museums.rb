@@ -6,6 +6,7 @@ class CreateMuseums < ActiveRecord::Migration
       t.integer :long
       t.integer :manager_id
       t.integer :published
+      t.integer :description
 
       t.timestamps
     end
