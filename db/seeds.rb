@@ -14,35 +14,20 @@
   manager = User.create!(email: 'manager@audioguide.com', password: 'manager123')
   manager.profile.update_attribute(:role, "manager")
   user = User.create(email: 'basic_user@audioguide.com', password: 'user1234')
-<<<<<<< HEAD
-  #user.profile.achievements << achievement1
-  #user.profile.achievements << achievement2
-=======
   user.profile.update_attribute(:coins, 100)
 
-  user.profile.achievements << achievement1
-  user.profile.achievements << achievement2
-<<<<<<< HEAD
->>>>>>> d02f55753759b7de2f563651da82175df5ac2b22
-=======
->>>>>>> 31e5b7171a4a17382d5014e3ce3274cd0af9b20b
->>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
+  # user.profile.achievements << achievement1
+  # user.profile.achievements << achievement2
+
 
   muzeu1 = Museum.create!(name: 'Muzeul de Stiinte Naturale', lat: 45, long: 40)
   muzeu2 = Museum.create!(name: 'Muzeul Brukenthal', lat: 45, long: 40)
   muzeu2.update_attribute(:manager_id, 2)
 
-  exhibit1 = Exhibit.create!(title: 'Sculptura transilvăneană în piatră din secolele XIII-XIX', description: 'Colecţia de piese sculpturale transilvănene medievale şi moderne timpurii din piatră a fost constituită treptat, începând cu prima jumătate a secolului al XIX-lea. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/1',museum_id: 2)
+  exhibit1 = Exhibit.create!(title: 'Sculptura transilvaneana in piatra din secolele XIII-XIX', description: 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/1',museum_id: 2)
   exhibit2 = Exhibit.create!(title: 'Monalisa', description: 'Pictura. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/2',museum_id: 2)
 
-<<<<<<< HEAD
-  Exhibit.create([{title: 'Sculptura transilvaneana in piatra din secolele XIII-XIX', description: 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/1',museum_id: 2}]);
-
-=======
+  
   scan1 = Scan.create(profile_id: user.profile.id, exhibit_id: exhibit1.id)
   scan2 = Scan.create(profile_id: user.profile.id, exhibit_id: exhibit2.id)
-<<<<<<< HEAD
->>>>>>> d02f55753759b7de2f563651da82175df5ac2b22
-=======
->>>>>>> 31e5b7171a4a17382d5014e3ce3274cd0af9b20b
->>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
+

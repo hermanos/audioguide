@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
       @user = current_user
       if @user.profile.role == "admin"
-        render 'dashboard_admin'
+        render 'dashboard_admin', layout: 'simple'
         return
       elsif @user.profile.role == "manager"
         @museum = Museum.all

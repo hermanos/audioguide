@@ -25,7 +25,7 @@ end
 gem 'jquery-rails'
 gem 'devise'
 gem 'rqrcode-rails3'
-gem 'mini_magick'
+gem 'mini_magick', '3.5.0'
 
 
 # To use ActiveModel has_secure_password

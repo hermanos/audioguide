@@ -3,38 +3,22 @@
 <table>
   <tr>
     <th>Name</th>
-<<<<<<< HEAD
-    <th>Lat</th>
-    <th>Long</th>
-=======
-<<<<<<< HEAD
->>>>>>> d02f55753759b7de2f563651da82175df5ac2b22
-=======
->>>>>>> 31e5b7171a4a17382d5014e3ce3274cd0af9b20b
->>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
+
+
   </tr>
 
 <% @museums.each do |museum| %>
   <tr>
-<<<<<<< HEAD
-    <td width="500"><%= museum.name %></td>
-    <td><%= museum.lat %></td>
-    <td><%= museum.long %></td>
-=======
+
+
     <td><%= museum.name %></td>
     <td><%= link_to 'Show', museum %></td>
-<<<<<<< HEAD
->>>>>>> d02f55753759b7de2f563651da82175df5ac2b22
-=======
->>>>>>> 31e5b7171a4a17382d5014e3ce3274cd0af9b20b
->>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
+
   </tr>
   <tr>
     <td colspan="3">
       <%= link_to 'Show', museum %> |
       <% if current_user.profile.role != 'user'%>
-      <%= link_to 'Edit', edit_museum_path(museum) %> |
-      <%= link_to 'Destroy', museum, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </td>
   </tr>

@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
   // $("body").backstretch("/images/background.jpg");
-  $.backstretch("/assets/background.jpg");
-  
+  $('html.home body').backstretch("/assets/background.jpg");
+ 	  
 
   // sticky footer
   var docHeight = $(window).height();

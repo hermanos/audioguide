@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  layout 'simple'
+  
   # GET /profiles
   # GET /profiles.json
   
