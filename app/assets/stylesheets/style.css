@@ -158,7 +158,21 @@ div.signbox a {
 	color: #a94c4c;
 }
 
+html.simple nav ul.nav li {
+  border-radius: 10px;
+  background-color: #a94c4c;
+  margin: 10px;
+}
 
+html.simple nav ul.nav li a {
+    background-color: #a94c4c;
+}
+
+html.simple nav ul.nav li a:hover {
+    background-color: #E06565;
+}
+
+# HOME - page
 .description1{
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 50px;
@@ -168,7 +182,6 @@ div.signbox a {
   padding-top: 50px;
 }
 
-
 .description2{
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 20px;
@@ -176,15 +189,11 @@ div.signbox a {
   height: 50px;
 }
 
-
-
-
 .carousel-indicators{
   top: 400px;
   right: 150px;
 
 }
-
 
 .carousel-inner {
   width: 233px;
@@ -193,3 +202,4 @@ div.signbox a {
   height: 406px;
   border-radius: 3px 3px 3px 3px;
 }
+
