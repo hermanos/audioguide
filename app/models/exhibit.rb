@@ -8,9 +8,9 @@ class Exhibit < ActiveRecord::Base
   has_many :scans
 
   validates :title, presence: true
-  validates :title, lenght: {minimum: 1}
+  validates :title, length: {minimum: 1}
   validates :description, presence: true
-  validates :description, lenght: {minimum: 1}
+  validates :description, length: {minimum: 1}
   validates :floor, presence: true
   validates :floor, numericality: true
   validates :lat, presence: true
