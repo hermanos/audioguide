@@ -5,9 +5,7 @@ class Profile < ActiveRecord::Base
   has_and_belongs_to_many :achievements
   has_many :scans
 
-  validates :coins, presence: true
   validates :name, presence: true
-  validates :name, lenght: {minimum: 1}
-  validates :user_id, presence: true
+  validates :name, length: {minimum: 1}
   validates :role, presence: true
 end
