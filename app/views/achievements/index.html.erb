@@ -5,13 +5,24 @@
     <th>Image</th>
     <th>Title</th>
     <th>Description</th>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <th>Image</th>
+=======
+>>>>>>> d02f55753759b7de2f563651da82175df5ac2b22
+=======
 
 
+>>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
   </tr>
 
 <% @achievements.each do |achievement| %>
   <tr>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
     <td><%= achievement.image %></td>
+>>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
     <td width="300"><%= achievement.title %></td>
     <td width="400"><%= achievement.description %></td>
   </tr>
@@ -23,7 +34,18 @@
       </td>
     <% else %>
       <td><%= link_to 'Show', achievement %></td>
+<<<<<<< HEAD
+=======
+    <td><%= achievement.image %></td>
+    <td><%= achievement.title %></td>
+    <td><%= achievement.description %></td>
+    <% if current_user.profile.role == "admin" %>
+      <td><%= link_to 'Edit', edit_achievement_path(achievement) %></td>
+      <td><%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+>>>>>>> d02f55753759b7de2f563651da82175df5ac2b22
+=======
 
+>>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
     <% end %>
   </tr>
    <tr>
