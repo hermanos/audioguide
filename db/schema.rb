@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.string   "name"
     t.integer  "lat"
     t.integer  "long"
+    t.integer  "manager_id"
+    t.integer  "published"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

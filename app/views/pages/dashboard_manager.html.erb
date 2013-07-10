@@ -1,17 +1,16 @@
-<h1>
-	Welcome Manager !
-</h1>
-
-<h4>
-	Your id is <%= @user.id %>
-</h4>
-
-<h4>
-	Your encrypted password is <%= @user.encrypted_password %>
-</h4>
-
-<h2>
-	Options 
-</h2>
-
+<nav>
+	<% @museum.each do |museum| %>
+		<% if museum.manager_id == @user.profile.id %>		
+			<p>
+				<%= museum.name %> <%= link_to "Manage", museum %>
+			</p>
+		<% end %>
+	<% end %>
+	<p>
+		<br /><%= link_to "New Museum", new_museum_path %>
+	</p>
+	<p>
+		<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+	</p>
+</nav>
 

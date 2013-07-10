@@ -44,6 +44,8 @@ class MuseumsController < ApplicationController
   # POST /museums.json
   def create
     @museum = Museum.new(params[:museum])
+    @museum.update_attributes(:published, 0)
+    
 
     respond_to do |format|
       if @museum.save
