@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<h1><%= @museum.name %></h1>
+<hr>
 <p>
   <b>Title:</b>
   <%= @exhibit.title %>
@@ -24,39 +25,17 @@
   <b>Floor:</b>
   <%= @exhibit.floor %>
 </p>
+<p>
+  <b>Publish:</b>
+  <%= @exhibit.private == 0 ? "Is not publish." : "Is publish."%>
+</p>
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=45.769963,24.135438&amp;daddr=&amp;hl=ro&amp;geocode=&amp;sll=45.769925,24.136019&amp;sspn=0.004356,0.009871&amp;mra=mift&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;ll=45.769925,24.136019&amp;spn=0.004356,0.009871&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=45.769963,24.135438&amp;daddr=&amp;hl=ro&amp;geocode=&amp;sll=45.769925,24.136019&amp;sspn=0.004356,0.009871&amp;mra=mift&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;ll=45.769925,24.136019&amp;spn=0.004356,0.009871&amp;t=m" style="color:#0000FF;text-align:left">Vizualizare hartă mărită</a></small>
 
 <p>
-  <b>Lat:</b>
-  <%= @exhibit.lat %>
+  <%= link_to "QR Code for print", museum_exhibit_path(@museum,@exhibit)+".png" %>
 </p>
 
-<p>
-  <b>Long:</b>
-  <%= @exhibit.long %>
-</p>
 
-<p>
-  <b>Qr Code: </b><br>
-  <% qr = RQRCode::QRCode.new(@exhibit.qr_code,size: 6, length: :h) %>
-<table class="qr-code">
-<% qr.modules.each_index do |x| %>
-  <tr>  
-  <% qr.modules.each_index do |y| %>
-   <% if qr.dark?(x,y) %>
-    <td class="black"/>
-   <% else %>
-    <td class="white"/>
-   <% end %>
-  <% end %>
-  </tr>
-<% end %>
-</table>
-</p>
-
-<p>
-  <b>Museum:</b>
-  <%= @exhibit.museum_id %>
-</p>
 
 
 <%= link_to 'Edit', edit_museum_exhibit_path(@museum,@exhibit) %> |
