@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
+  layout 'simple'
   # GET /profiles
   # GET /profiles.json
+  
   def index
     @profiles = Profile.all
 

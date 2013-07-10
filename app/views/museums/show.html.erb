@@ -1,9 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h3 class="text-center">
   <%= @museum.name %>
-</p>
+</h3>
 
 <p>
   <b>Lat:</b>
@@ -24,7 +23,7 @@
 	<% end %>
 
   <% if current_user.profile.role != 'user' %>
-	<%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %>
+	<%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %> |
   
 
 <%= link_to 'Edit', edit_museum_path(@museum) %> |

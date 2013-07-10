@@ -14,7 +14,9 @@ hr {
 }
 
 html.simple body {
-  background-image: none;
+  background-image: url("nasty.png");
+  background-size: 10%;
+  background-repeat: repeat;
 }
 
 html.simple a {
@@ -131,7 +133,10 @@ img#facebook, img#twitter{
 	float: right;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 589549af16d01e5fa731704fc2e052d71557501d
 div.signbox {
   height:300px;
   width:350px;

@@ -1,27 +1,33 @@
-<h1>Listing achievements</h1>
+<h1>Achievements</h1>
 
 <table>
   <tr>
     <th>Title</th>
     <th>Description</th>
     <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @achievements.each do |achievement| %>
   <tr>
-    <td><%= achievement.title %></td>
-    <td><%= achievement.description %></td>
+    <td width="300"><%= achievement.title %></td>
+    <td width="400"><%= achievement.description %></td>
     <td><%= achievement.image %></td>
+  </tr>
+  <tr>
     <% if current_user.profile.role == "admin" %>
-      <td><%= link_to 'Show', achievement %></td>
-      <td><%= link_to 'Edit', edit_achievement_path(achievement) %></td>
-      <td><%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td colspan="3">
+        <%= link_to 'Show', achievement %> |
+        <%= link_to 'Edit', edit_achievement_path(achievement) %> |
+        <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
     <% else %>
       <td><%= link_to 'Show', achievement %></td>
     <% end %>
+  </tr>
+   <tr>
+    <td colspan="3">
+      <hr>
+    </td>
   </tr>
 <% end %>
 </table>
