@@ -1,8 +1,31 @@
-<div class="span9">
+<div class="span4">
+	<%= image_tag("phone.png", alt: "Phone Image", id:"phone") %>
+
+    <div id="myCarousel" class="carousel slide">
+      <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+      <div class="active item"><%= image_tag("carousel1.jpg") %></div>
+      <div class="item"><%= image_tag("carousel2.jpg") %></div>
+      <div class="item"><%= image_tag("carousel3.jpg") %></div>
+      </div>
+    </div>
 
 </div>
 
-<div class="span3">
-	<%= image_tag("phone.png", alt: "Phone Image", id:"phone") %>
+
+
+<div class="span8">
+	<p class="description1">Learn the secrets of the still life</p>
+	<p class="description2">Get the Audioguide for museum and start Your journey in time!</p>
+	<p id="download">
+		<%= image_tag("appstore.png", alt: "Appstore Image", id:"appstore") %>
+		<%= image_tag("googleplay.png", alt: "Googleplay Image", id:"googleplay") %>
+  </p>
+  
 </div>
 
