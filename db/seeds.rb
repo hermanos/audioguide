@@ -22,7 +22,11 @@
 
   user.profile.achievements << achievement1
   user.profile.achievements << achievement2
+<<<<<<< HEAD
 >>>>>>> d02f55753759b7de2f563651da82175df5ac2b22
+=======
+>>>>>>> 31e5b7171a4a17382d5014e3ce3274cd0af9b20b
+>>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
 
   muzeu1 = Museum.create!(name: 'Muzeul de Stiinte Naturale', lat: 45, long: 40)
   muzeu2 = Museum.create!(name: 'Muzeul Brukenthal', lat: 45, long: 40)
@@ -37,4 +41,8 @@
 =======
   scan1 = Scan.create(profile_id: user.profile.id, exhibit_id: exhibit1.id)
   scan2 = Scan.create(profile_id: user.profile.id, exhibit_id: exhibit2.id)
+<<<<<<< HEAD
 >>>>>>> d02f55753759b7de2f563651da82175df5ac2b22
+=======
+>>>>>>> 31e5b7171a4a17382d5014e3ce3274cd0af9b20b
+>>>>>>> 091e7fc713de537438a263d356c3d3be4ddd1473
