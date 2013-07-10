@@ -18,3 +18,20 @@
 	</article>
 
 <% end %>
+<h2>Coins:</h2>
+<p>
+	<%= @user.profile.coins%>
+</p>
+<h2>History:</h2>
+<ul>
+	
+	<% @scan_prof.each do |scan|%>
+	<li>
+	<%= scan.exhibit.title if scan.exhibit.private == 1%>
+	</li>
+	<% end %>
+</ul>
+<h2>New Exhibit:</h2>
+<p>
+	<%= @exhibit.title %>
+</p>
