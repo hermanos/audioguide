@@ -6,12 +6,13 @@ class MuseumsController < ApplicationController
   # GET /museums.json
   def index
     @museums = Museum.all
+    @user = current_user
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @museums }
     end
-  end
+  end 
 
   # GET /museums/1
   # GET /museums/1.json
@@ -44,11 +45,10 @@ class MuseumsController < ApplicationController
   # POST /museums.json
   def create
     @museum = Museum.new(params[:museum])
-    @museum.update_attributes(:published, 0)
-    
 
     respond_to do |format|
       if @museum.save
+        @museum.update_attribute(:published, 0)
         format.html { redirect_to @museum, notice: 'Museum was successfully created.' }
         format.json { render json: @museum, status: :created, location: @museum }
       else
@@ -84,6 +84,18 @@ class MuseumsController < ApplicationController
       format.html { redirect_to museums_url }
       format.json { head :no_content }
     end
+  end
+
+  def activate
+    @museum = Museum.find(params[:id])
+    @museum.update_attribute(:published, 1)
+    redirect_to museums_path
+  end
+
+  def deactivate
+    @museum = Museum.find(params[:id])
+    @museum.update_attribute(:published, 0)
+    redirect_to museums_path
   end
 
   
