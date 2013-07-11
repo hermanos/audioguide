@@ -8,4 +8,5 @@ class Museum < ActiveRecord::Base
   validates :manager_id, presence: true
   validates :description, presence: true
   validates :description, length: {minimum: 1}
+
 end
