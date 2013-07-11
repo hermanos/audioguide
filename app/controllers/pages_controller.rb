@@ -9,7 +9,7 @@ class PagesController < ApplicationController
         return
       elsif @user.profile.role == "manager"
         @museum = Museum.all
-        render 'dashboard_manager'
+        render 'dashboard_manager', layout: 'simple'
         return
       else
         @scans = Scan.all

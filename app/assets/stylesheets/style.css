@@ -89,16 +89,37 @@ nav.main-menu ul li a:hover, nav.main-menu ul li.active a {
   border-bottom: 2px solid #a94c4c;
 }
 
-html.simple nav.main-menu ul li a {
-  color: #a94c4c;
-  border-bottom: none;
-  text-shadow: none;
+html.simple nav ul.nav li {
+  border-radius: 5px;
+  background-color: #a94c4c;
+  margin: 20px;
+}
+
+html.simple nav ul.nav li a {
+  color: white;
+  background-color: #a94c4c;
   padding: 10px 10px;
 }
 
-html.simple nav.main-menu ul li a:hover, html.simple nav.main-menu ul li.active a {
-  text-decoration: underline;
-  border-bottom: none;
+html.simple nav ul.nav li a:hover, html.simple nav ul.nav li.active a {
+  text-decoration: none;
+  background-color: #E06565;
+}
+
+html.simple table.table-hover {
+  width: 880px;
+}
+
+html.simple table.table-hover tbody tr:hover td{
+  background-color: #f1e7e7;
+}
+
+html.simple table td#show a{
+  float: right;
+}
+
+html.simple p#showdescription {
+  padding-right: 30px;
 }
 
 div.content-box-outer {
@@ -158,18 +179,8 @@ div.signbox a {
 	color: #a94c4c;
 }
 
-html.simple nav ul.nav li {
-  border-radius: 10px;
-  background-color: #a94c4c;
-  margin: 10px;
-}
-
-html.simple nav ul.nav li a {
-    background-color: #a94c4c;
-}
-
-html.simple nav ul.nav li a:hover {
-    background-color: #E06565;
+div.signout a {
+  float:right;
 }
 
 # HOME - page
