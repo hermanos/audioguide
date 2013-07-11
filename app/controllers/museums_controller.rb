@@ -1,7 +1,7 @@
 class MuseumsController < ApplicationController
   layout 'simple'
   before_filter :authenticate_user!
-  before_filter :redirectIfUser, only: [:new,:edit,:create,:update,:destroy]
+
   # GET /museums
   # GET /museums.json
   def index
@@ -39,12 +39,20 @@ class MuseumsController < ApplicationController
   # GET /museums/1/edit
   def edit
     @museum = Museum.find(params[:id])
+
+    if can? :edit, Museum 
+      render 'edit'
+    else
+      render 'index'
+    end 
   end
 
   # POST /museums
   # POST /museums.json
   def create
     @museum = Museum.new(params[:museum])
+    @museum.manager_id = current_user.id
+    @museum.published = 0
 
     respond_to do |format|
       if @museum.save

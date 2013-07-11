@@ -13,11 +13,11 @@
     <td>
     	<%= link_to 'Show', museum %>
     </td>
-    <% if @user.profile.role == "admin" and museum.published == 0 %>
+    <% if can? :manage, Museum and museum.published == 0 %>
 		  <td>
 		  	<%= link_to "Activate", activate_museum_path(museum), data: { confirm: 'Are you sure?' } %>
 		  </td>
-		<% elsif @user.profile.role == "admin" and museum.published == 1 %>
+		<% elsif can? :manage, Museum and museum.published == 1 %>
 			<td>
 		  	<%= link_to "Deactivate", deactivate_museum_path(museum), data: { confirm: 'Are you sure?' } %>
 		  </td>

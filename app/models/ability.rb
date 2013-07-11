@@ -29,14 +29,19 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
-    user = current_user
     if user.profile.role == "admin"
         can :manage, :all
     elsif user.profile.role == "manager"
-        can :manage, Museums, :manager_id => user.profile.id 
+        can :read, Museum, :manager_id => user.profile.id 
+        can :create, Museum
+        can :update, Museum, :manager_id => user.profile.id
+        can :destroy, Museum, :manager_id => user.profile.id   
     elsif user.profile.role == "user"
-        can :read, Achievements
+        can :read, Achievement
+        cannot :manage, Museum
+        can :manage, Profile
+        cannot :manage, Exhibit 
     end
-    
+
   end
 end

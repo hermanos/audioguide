@@ -13,13 +13,11 @@ class User < ActiveRecord::Base
 	has_one :profile
 
  
+  after_create :create_profile
+
   def create_profile
     p = Profile.create!(role: 'user', name: "Guest")
     update_attribute(:profile, p)
   end
-
-  after_create :create_profile
-
-
     
 end
