@@ -16,9 +16,10 @@
 	<% end %>
   </table>
 
-  <% if current_user.profile.role != 'user' %>
+  <% if current_user.admin? or current_user.museum_manager?(@museum) %>
 
     <%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %> |
     <%= link_to 'Edit', edit_museum_path(@museum) %> |
     <%= link_to 'Destroy', @museum, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
   <% end %>

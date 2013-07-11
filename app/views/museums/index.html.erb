@@ -14,13 +14,13 @@
     <td id="show">
     	<%= link_to 'Show', museum %>
     </td>
-    <% if can? :manage, Museum and museum.published == 0 %>
+    <% if museum.published == 0 %>
 		  <td>
-		  	<%= link_to "Activate", activate_museum_path(museum), data: { confirm: 'Are you sure?' } %>
+		  	<%= link_to "Activate", activate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.admin? %>
 		  </td>
-		<% elsif can? :manage, Museum and museum.published == 1 %>
+		<% elsif museum.published == 1 %>
 			<td>
-		  	<%= link_to "Deactivate", deactivate_museum_path(museum), data: { confirm: 'Are you sure?' } %>
+		  	<%= link_to "Deactivate", deactivate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.admin? %>
 		  </td>
     <% end %>
   </tr>
@@ -29,8 +29,4 @@
 </table>
 
 <br>
-
-
-<% if current_user.profile.role != 'user' %>
-	<%= link_to 'New Museum', new_museum_path %>
-<% end %>
+<%= link_to 'New Museum', new_museum_path if current_user.admin?%>
