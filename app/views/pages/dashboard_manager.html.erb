@@ -2,14 +2,11 @@
 	<% @museum.each do |museum| %>
 		<% if museum.manager_id == @user.profile.id %>		
 			<p>
-<<<<<<< HEAD
-				<%= museum.name %> <%= link_to "Manage", museum %>
-=======
 				<h4><%= museum.name %></h4>
 			</p>
 			<p>
-				 <%= link_to "Manage", edit_museum_path(museum.id) %>
->>>>>>> bebd695d15c6e710f0c39d4e223ea81b85b1a386
+				 <%= link_to "Manage", museum %>
+
 			</p>
 		<% end %>
 	<% end %>
