@@ -1,6 +1,6 @@
 body {
-	font-family: "Open Sans", Arial, sans-serif;
-	width: 100%;
+  font-family: "Open Sans", Arial, sans-serif;
+  width: 100%;
   height: 100%;
   color:white;
 }
@@ -29,7 +29,7 @@ html.simple a:hover {
 }
 
 header {
-	height: 60px;
+height: 60px;
   padding: 15px 0;
 }
 
@@ -134,14 +134,14 @@ div.content-box {
 }
 
 img#phone {
-	max-height: 500px;
+  max-height: 500px;
   position:absolute;
   top:70px;
 }
 
 img#appstore, img#googleplay{
-	height: 50px;
-	width: 150px;
+height: 50px;
+width: 150px;
   padding:0 20px;
 }
 
@@ -150,19 +150,19 @@ p#download{
 }
 
 img#facebook, img#twitter{
-	height: 50px;
-	width: 50px;
-	float: right;
+  height: 50px;
+  width: 50px;
+  float: right;
 }
 
 div.signbox {
   height:300px;
   width:350px;
-	padding:0px 10px;
-	margin: 50px 120px;
-	border-width: 5px;
-	border-color: #a94c4c;
-	box-shadow:0px 0px 5px 50px rgba(255,255,255,0.8); 
+  padding:0px 10px;
+  margin: 50px 120px;
+  border-width: 5px;
+  border-color: #a94c4c;
+  box-shadow:0px 0px 5px 50px rgba(255,255,255,0.8);
   background-color: white;
   color: #a94c4c;
   background-color: rgba(255,255,255,0.8);
@@ -171,19 +171,18 @@ div.signbox {
 
 div.signbox form {
 
-	display: block;
-	width: 200px;
+display: block;
+width: 200px;
 }
 
 div.signbox a {
-	color: #a94c4c;
+color: #a94c4c;
 }
 
 div.signout a {
   float:right;
 }
 
-# HOME - page
 .description1{
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 50px;
@@ -203,7 +202,6 @@ div.signout a {
 .carousel-indicators{
   top: 400px;
   right: 150px;
-
 }
 
 .carousel-inner {
@@ -213,4 +211,3 @@ div.signout a {
   height: 406px;
   border-radius: 3px 3px 3px 3px;
 }
-
