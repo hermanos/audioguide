@@ -2,7 +2,8 @@ class Museum < ActiveRecord::Base
   attr_accessible :lat, :long, :name, :manager_id, :published, :description, :image
 
   has_many :exhibits
-
+  mount_uploader :image, ImageUploader
+  
   validates :name, presence: true
   validates :name, length: {minimum: 1}
   validates :manager_id, presence: true

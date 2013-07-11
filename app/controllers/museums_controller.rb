@@ -29,7 +29,6 @@ class MuseumsController < ApplicationController
   # GET /museums/new.json
   def new
     @museum = Museum.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @museum }
