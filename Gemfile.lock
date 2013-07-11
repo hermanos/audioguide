@@ -30,9 +30,12 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.4)
     cancan (1.6.10)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -64,10 +67,6 @@ GEM
       subexec (~> 0.2.1)
     multi_json (1.7.7)
     mysql2 (0.3.11)
-<<<<<<< HEAD
-    mysql2 (0.3.11-x86-mingw32)
-=======
->>>>>>> 4318af791e2369fc441fa4b5fc7cd083e5a16ad0
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -127,14 +126,11 @@ GEM
 
 PLATFORMS
   ruby
-<<<<<<< HEAD
-  x86-mingw32
-=======
->>>>>>> 4318af791e2369fc441fa4b5fc7cd083e5a16ad0
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   cancan
+  carrierwave
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
