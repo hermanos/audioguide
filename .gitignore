@@ -16,3 +16,6 @@
 tmp
 config/database.yml
 app/assets/images/Thumbs.db
+Gemfile.lock
+
+

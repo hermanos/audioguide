@@ -1,8 +1,9 @@
-<h1>Listing museums</h1>
+<h1>Museums</h1>
 
-<table>
+<table class="table table-striped  table-hover">
   <tr>
     <th>Name</th>
+    <th></th>
   </tr>
 
 <% @museums.each do |museum| %>
@@ -10,7 +11,7 @@
     <td>
     	<%= museum.name %>
     </td>
-    <td>
+    <td id="show">
     	<%= link_to 'Show', museum %>
     </td>
     <% if can? :manage, Museum and museum.published == 0 %>
@@ -24,9 +25,12 @@
     <% end %>
   </tr>
 <% end %>
+
 </table>
 
 <br>
+
+
 <% if current_user.profile.role != 'user' %>
 	<%= link_to 'New Museum', new_museum_path %>
 <% end %>

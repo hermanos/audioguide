@@ -1,9 +1,8 @@
 body {
-	background-image: url("background.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	font-family: "OpenSans", Arial, sans-serif;
-	height: 100%;
+  font-family: "Open Sans", Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  color:white;
 }
 
 h1, h2 {
@@ -15,7 +14,10 @@ hr {
 }
 
 html.simple body {
-  background-image: none;
+  background-image: url("tapet.png");
+  background-size: 10%;
+  background-repeat: repeat;
+  color:black;
 }
 
 html.simple a {
@@ -27,8 +29,8 @@ html.simple a:hover {
 }
 
 header {
-	height: 60px;
-  padding: 20px 0;
+height: 60px;
+  padding: 15px 0;
 }
 
 html.simple header {
@@ -62,12 +64,9 @@ a.logo {
   font-weight: 200;
 }
 
-html.simple a.logo {
-  color: #a94c4c;
-}
-
 a.logo:hover {
   text-decoration: none;
+  color:#a94c4c;
 }
 
 nav.main-menu {
@@ -82,24 +81,45 @@ nav.main-menu ul li a {
   color: white;
   text-shadow: 0px 0px 4px #000;
   border-bottom: 1px solid white;
-  padding: 10px 20px;
+  padding: 5px 20px;
 }
 
 nav.main-menu ul li a:hover, nav.main-menu ul li.active a {
   text-decoration: none;
-  border-bottom: 1px solid #a94c4c;
+  border-bottom: 2px solid #a94c4c;
 }
 
-html.simple nav.main-menu ul li a {
-  color: #a94c4c;
-  border-bottom: none;
-  text-shadow: none;
+html.simple nav ul.nav li {
+  border-radius: 5px;
+  background-color: #a94c4c;
+  margin: 20px;
+}
+
+html.simple nav ul.nav li a {
+  color: white;
+  background-color: #a94c4c;
   padding: 10px 10px;
 }
 
-html.simple nav.main-menu ul li a:hover, html.simple nav.main-menu ul li.active a {
-  text-decoration: underline;
-  border-bottom: none;
+html.simple nav ul.nav li a:hover, html.simple nav ul.nav li.active a {
+  text-decoration: none;
+  background-color: #E06565;
+}
+
+html.simple table.table-hover {
+  width: 880px;
+}
+
+html.simple table.table-hover tbody tr:hover td{
+  background-color: #f1e7e7;
+}
+
+html.simple table td#show a{
+  float: right;
+}
+
+html.simple p#showdescription {
+  padding-right: 30px;
 }
 
 div.content-box-outer {
@@ -113,46 +133,81 @@ div.content-box {
   padding: 15px 0;
 }
 
-
-
 img#phone {
-	height: 80%;
-	max-height: 500px;
+  max-height: 500px;
+  position:absolute;
+  top:70px;
 }
 
 img#appstore, img#googleplay{
-	height: 50px;
-	width: 150px;
+height: 50px;
+width: 150px;
+  padding:0 20px;
+}
+
+p#download{
+  padding:0 100px;
 }
 
 img#facebook, img#twitter{
-	height: 50px;
-	width: 50px;
-	float: right;
-}
-
-div.field {
-	color:white;
+  height: 50px;
+  width: 50px;
+  float: right;
 }
 
 div.signbox {
-	padding:50px 10px;
-	margin: 50px 0px;
-	border-width: 5px;
-	border-style: double;
-	border-color: #a94c4c;
-	border-radius: 30px;
-	box-shadow: 0px 0px 10px black;
-	background-color: rgba(255,255,255,0.5);
+  height:300px;
+  width:350px;
+  padding:0px 10px;
+  margin: 50px 120px;
+  border-width: 5px;
+  border-color: #a94c4c;
+  box-shadow:0px 0px 5px 50px rgba(255,255,255,0.8);
+  background-color: white;
+  color: #a94c4c;
+  background-color: rgba(255,255,255,0.8);
+
 }
 
 div.signbox form {
-	margin: 0 auto;
-	display: block;
-	width: 200px;
 
+display: block;
+width: 200px;
 }
 
 div.signbox a {
-	color: #a94c4c;
+color: #a94c4c;
+}
+
+div.signout a {
+  float:right;
+}
+
+.description1{
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 50px;
+  height: 250px;
+  padding-top: 50px;
+}
+
+.description2{
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  height: 50px;
+}
+
+.carousel-indicators{
+  top: 400px;
+  right: 150px;
+}
+
+.carousel-inner {
+  width: 233px;
+  left: 11px;
+  top: 26px;
+  height: 406px;
+  border-radius: 3px 3px 3px 3px;
 }

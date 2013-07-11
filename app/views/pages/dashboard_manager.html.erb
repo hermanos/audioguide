@@ -2,16 +2,18 @@
 	<% @museum.each do |museum| %>
 		<% if museum.manager_id == @user.profile.id %>		
 			<p>
-				<%= museum.name %> <%= link_to "Manage", museum %>
+				<h4><%= museum.name %></h4>
+			</p>
+			<p>
+				 <%= link_to "Manage", museum %>
+
 			</p>
 		<% end %>
 	<% end %>
 	<p>
-		<br /><%= link_to "New Museum", new_museum_path %>
+		<%= link_to "New Museum", new_museum_path %>
 	</p>
-	<p>
-		<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-	</p>
+
 </nav>
 
 	
