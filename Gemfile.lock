@@ -127,10 +127,7 @@ GEM
 
 PLATFORMS
   ruby
-<<<<<<< HEAD
-=======
   x86-mingw32
->>>>>>> 8c4a1147cc7875c8abb8d3186cb312da90f35daf
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
