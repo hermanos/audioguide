@@ -9,7 +9,7 @@
 
 <% @achievements.each do |achievement| %>
   <tr>
-    <td><%= achievement.image %></td>
+    <td><%= image_tag(achievement.image_url) if achievement.image? %></td>
     <td width="300"><%= achievement.title %></td>
     <td width="400"><%= achievement.description %></td>
   </tr>

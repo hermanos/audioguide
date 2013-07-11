@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711131423) do
+ActiveRecord::Schema.define(:version => 20130711132309) do
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "image"
   end
 
   create_table "achievements_profiles", :force => true do |t|
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(:version => 20130711131423) do
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
-    t.string   "avatar"
     t.string   "name"
     t.string   "role"
     t.integer  "coins"
