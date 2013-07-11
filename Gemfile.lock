@@ -64,10 +64,7 @@ GEM
       subexec (~> 0.2.1)
     multi_json (1.7.7)
     mysql2 (0.3.11)
-<<<<<<< HEAD
     mysql2 (0.3.11-x86-mingw32)
-=======
->>>>>>> 4318af791e2369fc441fa4b5fc7cd083e5a16ad0
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -127,10 +124,7 @@ GEM
 
 PLATFORMS
   ruby
-<<<<<<< HEAD
   x86-mingw32
-=======
->>>>>>> 4318af791e2369fc441fa4b5fc7cd083e5a16ad0
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)

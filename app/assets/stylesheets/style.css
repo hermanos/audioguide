@@ -29,7 +29,7 @@ html.simple a:hover {
 }
 
 header {
-height: 60px;
+  height: 60px;
   padding: 15px 0;
 }
 
@@ -47,15 +47,18 @@ footer p {
 
 html.simple footer p {
   margin-top: 20px;
-}
-
-html.simple footer p {
   color: #a94c4c;
   text-shadow: none;
 }
 
 html.simple footer hr {
   display: none;
+}
+
+html.home-user footer p {
+  margin-top: 20px;
+  color: #8C3F3F;
+  text-shadow: 0px 0px 1px #000;
 }
 
 a.logo {
@@ -110,11 +113,16 @@ html.simple table.table-hover {
   width: 880px;
 }
 
-html.simple table.table-hover tbody tr:hover td{
+html.home-user table.table-hover {
+  width: 880px;
+  background-color: #FCFCFC; 
+}
+
+html.simple table.table-hover tbody tr:hover td, html.home-user table.table-hover tbody tr:hover td {
   background-color: #f1e7e7;
 }
 
-html.simple table td#show a{
+html.simple table td#show a, html.home-user table td#show a {
   float: right;
 }
 
@@ -133,6 +141,16 @@ div.content-box {
   padding: 15px 0;
 }
 
+html.home-user div.user-box {
+  margin:50px auto;
+  border-width: 5px;
+  border-color: #a94c4c;
+  box-shadow:0px 0px 5px 50px rgba(255,255,255,0.8);
+  background-color: white;
+  color: #a94c4c;
+  background-color: rgba(255,255,255,0.8);
+}
+
 img#phone {
   max-height: 500px;
   position:absolute;
@@ -140,8 +158,8 @@ img#phone {
 }
 
 img#appstore, img#googleplay{
-height: 50px;
-width: 150px;
+  height: 50px;
+  width: 150px;
   padding:0 20px;
 }
 
@@ -166,17 +184,16 @@ div.signbox {
   background-color: white;
   color: #a94c4c;
   background-color: rgba(255,255,255,0.8);
-
 }
 
-div.signbox form {
 
-display: block;
-width: 200px;
+div.signbox form {
+  display: block;
+  width: 200px;
 }
 
 div.signbox a {
-color: #a94c4c;
+  color: #a94c4c;
 }
 
 div.signout a {
