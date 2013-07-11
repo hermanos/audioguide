@@ -1,5 +1,5 @@
 class ExhibitsController < ApplicationController
-  layout 'simple'
+  layout 'user_layout'
   before_filter :authenticate_user!
   
   # GET /exhibits
