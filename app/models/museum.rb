@@ -1,5 +1,5 @@
 class Museum < ActiveRecord::Base
-  attr_accessible :lat, :long, :name, :manager_id, :published, :description
+  attr_accessible :lat, :long, :name, :manager_id, :published, :description, :image
 
   has_many :exhibits
 
