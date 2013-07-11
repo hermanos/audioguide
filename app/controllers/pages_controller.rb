@@ -4,10 +4,10 @@ class PagesController < ApplicationController
     if user_signed_in?
 
       @user = current_user
-      if @user.profile.role == "admin"
+      if @user.admin?
         render 'dashboard_admin', layout: 'simple'
         return
-      elsif @user.profile.role == "manager"
+      elsif @user.manager?
         @museum = Museum.all
         render 'dashboard_manager', layout: 'simple'
         return

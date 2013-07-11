@@ -24,13 +24,20 @@ class User < ActiveRecord::Base
     self.profile.role == "admin" ? true : false
   end
 
-  def museum_manager?(museum)
-    
-    if self.profile.role == "manager" and self.profile.id == museum.manager_id
+  def user?
+    self.profile.role == "user" ? true : false
+  end
+
+  def manager?
+    self.profile.role == "manager" ? true : false
+  end
+
+  def manage_museum?(museum)
+    if self.manager? and self.profile == museum.manager
       return true
     else
       return false
     end
-
   end
+
 end

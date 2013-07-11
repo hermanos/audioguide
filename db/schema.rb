@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.float    "lat"
     t.float    "long"
     t.integer  "manager_id",  :default => 0
-    t.integer  "published",   :default => 1
+    t.integer  "published",   :default => 0
     t.text     "description"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
