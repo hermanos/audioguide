@@ -2,8 +2,8 @@ class CreateMuseums < ActiveRecord::Migration
   def change
     create_table :museums do |t|
       t.string :name
-      t.integer :lat
-      t.integer :long
+      t.float :lat
+      t.float :long
       t.integer :manager_id, default: 0
       t.integer :published, default: 0
       t.text :description

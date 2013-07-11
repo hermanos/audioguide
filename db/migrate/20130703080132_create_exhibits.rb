@@ -6,8 +6,8 @@ class CreateExhibits < ActiveRecord::Migration
       t.string :audio
       t.string :video
       t.integer :floor
-      t.integer :lat
-      t.integer :long
+      t.float :lat
+      t.float :long
       t.string :qr_code
       t.integer :museum_id
       t.integer :private, default: 1

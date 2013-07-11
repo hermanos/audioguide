@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.string   "audio"
     t.string   "video"
     t.integer  "floor"
-    t.integer  "lat"
-    t.integer  "long"
+    t.float    "lat"
+    t.float    "long"
     t.string   "qr_code"
     t.integer  "museum_id"
     t.integer  "private",     :default => 1
@@ -53,11 +53,11 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
 
   create_table "museums", :force => true do |t|
     t.string   "name"
-    t.integer  "lat"
-    t.integer  "long"
-    t.integer  "manager_id"
+    t.float    "lat"
+    t.float    "long"
+    t.integer  "manager_id",  :default => 0
     t.integer  "published",   :default => 1
-    t.integer  "description"
+    t.text     "description"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
