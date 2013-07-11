@@ -4,9 +4,8 @@
   <b>Title:</b>
   <%= @exhibit.title %>
 </p>
-
+<%= image_tag(@exhibit.image_url) if @exhibit.image? %>
 <p>
-
   <b>Description:</b>
   <%= @exhibit.description %>
 </p>

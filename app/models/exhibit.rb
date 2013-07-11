@@ -1,7 +1,9 @@
 class Exhibit < ActiveRecord::Base
-  attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code, :title, :video, :private, :image
+  attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code, :title, :video, :private, :image, :remote_image_url
 
   belongs_to :museum
+  
+  mount_uploader :image, ImageUploader
 
   after_create :create_qr_code
 

@@ -5,6 +5,8 @@
   <%= @exhibit.title %>
 </h3>
 
+<%= image_tag(@exhibit.image_url) if @exhibit.image? %>
+
 <p id="showdescription">
   <b>Description:</b><br>
   <%= @exhibit.description %>

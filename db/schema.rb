@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708083643) do
+ActiveRecord::Schema.define(:version => 20130711125405) do
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.string   "qr_code"
     t.integer  "museum_id"
     t.integer  "private",     :default => 1
-    t.integer  "image"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "image"
   end
 
   create_table "museums", :force => true do |t|
@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.integer  "manager_id",  :default => 0
     t.integer  "published",   :default => 0
     t.text     "description"
-    t.integer  "image"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "image"
   end
 
   create_table "profiles", :force => true do |t|
