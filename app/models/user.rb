@@ -20,4 +20,7 @@ class User < ActiveRecord::Base
     update_attribute(:profile, p)
   end
     
+  def admin?
+    self.profile.role == "admin" ? true : false
+  end
 end

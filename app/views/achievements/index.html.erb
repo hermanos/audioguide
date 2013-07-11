@@ -13,16 +13,16 @@
     <td width="300"><%= achievement.title %></td>
     <td width="400"><%= achievement.description %></td>
   </tr>
-  <tr>
-      <td colspan="3">
-        <%= link_to 'Edit', edit_achievement_path(achievement) %> |
-        <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-  </tr> 
+  <% if current_user.admin? %>
+    <tr>
+        <td colspan="3">
+          <%= link_to 'Edit', edit_achievement_path(achievement) %> |
+          <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+    </tr>
+  <% end %> 
 <% end %>
 </table>
 
 <br />
-<% if current_user.profile.role == "admin" %>
-  <%= link_to 'New Achievement', new_achievement_path %>
-<% end %>
+  <%= link_to 'New Achievement', new_achievement_path if current_user.admin? %>

@@ -15,6 +15,4 @@
   <%= @achievement.image %>
 </p>
 
-<% if current_user.profile.role == "admin" %>
-	<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
-<% end %>
+<%= link_to 'Edit', edit_achievement_path(@achievement) if current_user.admin? %> |
