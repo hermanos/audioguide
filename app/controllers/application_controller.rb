@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
       return
     end
   end
+
+  def get_layout
+  	
+  end
+
 end

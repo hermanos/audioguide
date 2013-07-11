@@ -1,11 +1,10 @@
 class AchievementsController < ApplicationController
-  layout 'simple'
+  layout 'user_layout'
 
   # GET /achievements
   # GET /achievements.json
   def index
-    @achievements = Achievement.all
-
+    @achievements = Achievement.all 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @achievements }

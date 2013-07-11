@@ -1,5 +1,5 @@
 class MuseumsController < ApplicationController
-  layout 'simple'
+  layout 'user_layout'
   before_filter :authenticate_user!
   before_filter :redirectIfUser, only: [:new,:edit,:create,:update,:destroy]
   # GET /museums
