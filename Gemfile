@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -24,12 +26,12 @@ gem "cancan"
 gem 'jquery-rails'
 gem 'devise'
 gem 'rqrcode-rails3'
-gem 'mini_magick'
+gem 'mini_magick', '3.5.0'
 
 
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
