@@ -2,12 +2,11 @@ class AchievementsController < ApplicationController
   layout 'simple'
   before_filter :authenticate_user!
   load_and_authorize_resource
-  
+
   # GET /achievements
   # GET /achievements.json
   def index
-    @achievements = Achievement.all
-
+    @achievements = Achievement.all 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @achievements }

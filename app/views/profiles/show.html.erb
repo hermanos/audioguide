@@ -7,7 +7,7 @@
 
 <p>
   <b>Avatar:</b>
-  <%= @profile.avatar %>
+  <%= image_tag(@profile.image_url(:thumb_avatars)) if @profile.image? %>
 </p>
 
 <p>

@@ -12,6 +12,7 @@ class CreateExhibits < ActiveRecord::Migration
       t.integer :museum_id
       t.integer :private, default: 1
       
+
       t.timestamps
     end
   end

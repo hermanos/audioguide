@@ -1,5 +1,5 @@
 class MuseumsController < ApplicationController
-  layout 'simple'
+  layout 'user_layout'
   before_filter :authenticate_user!
   load_and_authorize_resource
 
@@ -30,7 +30,6 @@ class MuseumsController < ApplicationController
   # GET /museums/new.json
   def new
     @museum = Museum.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @museum }

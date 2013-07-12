@@ -12,7 +12,7 @@
 
 <p>
   <b>Image:</b>
-  <%= @achievement.image %>
+  <%= image_tag(@achievement.image_url(:thumb_achievements)) if @achievement.image? %>
 </p>
 
 <%= link_to 'Edit', edit_achievement_path(@achievement) if current_user.admin? %> |
