@@ -1,6 +1,7 @@
 class ExhibitsController < ApplicationController
   layout 'user_layout'
   before_filter :authenticate_user!
+  load_and_authorize_resource
   
   # GET /exhibits
   # GET /exhibits.json
@@ -17,14 +18,20 @@ class ExhibitsController < ApplicationController
   # GET /exhibits/1.json
   def show
     user = current_user
-    @exhibit = Exhibit.find(params[:id])
     @museum = Museum.find(params[:museum_id])
-
-    if user.profile.role == 'user'
-        Scan.scanned?(@exhibit.id, user.profile.id)
-          render 'show_user'
+    
+    unless @museum.exhibits.where(id: params[:id]).first.nil? 
+      @exhibit = @museum.exhibits.where(id: params[:id]).first 
+      render 'show'
       return 
     end
+
+    if user.user?
+      Scan.scanned?(@exhibit.id, user.profile.id)
+      render 'show_user'
+      return 
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @exhibit }
@@ -48,15 +55,6 @@ class ExhibitsController < ApplicationController
   def edit
     @exhibit = Exhibit.find(params[:id])
     @museum = Museum.find(params[:museum_id])
-
-    if can? :edit, Museum
-      render 'edit'
-      return 
-    else    
-      redirect_to museums_path
-      return
-    end
-
   end
 
   # POST /exhibits
@@ -107,6 +105,4 @@ class ExhibitsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-
 end

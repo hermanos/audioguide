@@ -1,6 +1,7 @@
+<%= render 'shared/alerts' %>
 <nav>
 	<% @museum.each do |museum| %>
-		<% if museum.manager_id == @user.profile.id %>		
+		<% if @user.manage_museum?(museum) %>		
 			<p>
 				<h4><%= museum.name %></h4>
 			</p>
