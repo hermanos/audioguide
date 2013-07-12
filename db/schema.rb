@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708083643) do
+ActiveRecord::Schema.define(:version => 20130711132309) do
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "image"
   end
 
   create_table "achievements_profiles", :force => true do |t|
@@ -42,34 +42,36 @@ ActiveRecord::Schema.define(:version => 20130708083643) do
     t.string   "audio"
     t.string   "video"
     t.integer  "floor"
-    t.integer  "lat"
-    t.integer  "long"
+    t.float    "lat"
+    t.float    "long"
     t.string   "qr_code"
     t.integer  "museum_id"
     t.integer  "private",     :default => 1
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "image"
   end
 
   create_table "museums", :force => true do |t|
     t.string   "name"
-    t.integer  "lat"
-    t.integer  "long"
-    t.integer  "manager_id"
-    t.integer  "published",   :default => 1
-    t.integer  "description"
+    t.float    "lat"
+    t.float    "long"
+    t.integer  "manager_id",  :default => 0
+    t.integer  "published",   :default => 0
+    t.text     "description"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "image"
   end
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
-    t.string   "avatar"
     t.string   "name"
     t.string   "role"
     t.integer  "coins"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "image"
   end
 
   create_table "ratings", :force => true do |t|

@@ -14,7 +14,7 @@
 <% @profiles.each do |profile| %>
   <tr>
     <td><%= profile.user_id %></td>
-    <td><%= profile.avatar %></td>
+    <td><%= image_tag(profile.image_url(:thumb_avatars)) if profile.image? %></td>
     <td><%= profile.name %></td>
     <td><%= profile.coins %></td>
     <td><%= link_to 'Show', profile %></td>

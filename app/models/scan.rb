@@ -6,6 +6,7 @@ class Scan < ActiveRecord::Base
 
   validates :exhibit_id, presence: true
   validates :profile_id, presence: true
+  
   def self.scanned?(ex_id, prof_id)
 		unless Scan.where(exhibit_id: ex_id, profile_id: prof_id).first
 			Scan.create(exhibit_id: ex_id, profile_id: prof_id)

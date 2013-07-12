@@ -1,11 +1,10 @@
 class Exhibit < ActiveRecord::Base
-  attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code, :title, :video, :private
+  attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code, :title, :video, :private, :image, :remote_image_url
 
   belongs_to :museum
-
-  after_create :create_qr_code
-
   has_many :scans
+
+  mount_uploader :image, ImageUploader
 
   validates :title, presence: true
   validates :title, length: {minimum: 1}
@@ -21,10 +20,16 @@ class Exhibit < ActiveRecord::Base
   validates :qr_code, presence: true
   validates :private, presence: true
 
+
+  after_create :create_qr_code
   def create_qr_code
   	exhibit_url = "http://10.0.0.64:3000/museums/" + museum_id.to_s + "/exhibits/" + id.to_s
   	crypt_code = exhibit_url
   	update_attribute(:qr_code, crypt_code)
-
   end
+  
+  def private?
+    self.private == "1" ? true : false
+  end
+
 end
