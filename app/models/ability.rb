@@ -45,7 +45,9 @@ class Ability
         cannot :destroy, Profile
     else
         can :read, Achievement
-        can :manage, Profile
+        can :manage, Profile, id: user
+        can :read, Museum
+        can :read, Exhibit, private: 0
         cannot :manage, Museum
         cannot :manage, Exhibit 
         cannot :manage, Achievement

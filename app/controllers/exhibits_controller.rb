@@ -19,8 +19,12 @@ class ExhibitsController < ApplicationController
   def show
     user = current_user
     @museum = Museum.find(params[:museum_id])
-    if @museum.exhibits.where(id: params[:id]).first.nil? 
-      @exhibit = @museum.exhibits.where(id: params[:id]).first  
+    
+    unless @museum.exhibits.where(id: params[:id]).first.nil? 
+      @exhibit = @museum.exhibits.where(id: params[:id]).first 
+      render 'show'
+      return 
+    end
 
     if user.user?
       Scan.scanned?(@exhibit.id, user.profile.id)
@@ -101,6 +105,4 @@ class ExhibitsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-
 end

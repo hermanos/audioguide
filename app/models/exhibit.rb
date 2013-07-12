@@ -2,9 +2,6 @@ class Exhibit < ActiveRecord::Base
   attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code, :title, :video, :private
 
   belongs_to :museum
-
-  after_create :create_qr_code
-
   has_many :scans
 
   validates :title, presence: true
@@ -21,10 +18,16 @@ class Exhibit < ActiveRecord::Base
   validates :qr_code, presence: true
   validates :private, presence: true
 
+
+  after_create :create_qr_code
   def create_qr_code
   	exhibit_url = "http://10.0.0.64:3000/museums/" + museum_id.to_s + "/exhibits/" + id.to_s
   	crypt_code = exhibit_url
   	update_attribute(:qr_code, crypt_code)
   end
   
+  def private?
+    self.private == "1" ? true : false
+  end
+
 end

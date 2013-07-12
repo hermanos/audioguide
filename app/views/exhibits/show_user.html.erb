@@ -1,41 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/alerts'%>
 
-<p >
-  <b>Title:</b>
-  <%= @exhibit.title %>
-</p>
-
-<p>
-
-  <b>Description:</b>
-  <%= @exhibit.description %>
-</p>
-
-<p>
-  <b>Audio:</b>
-  <%= @exhibit.audio %>
-</p>
-
-<p>
-  <b>Video:</b>
-  <%= @exhibit.video %>
-</p>
-
-<p>
-  <b>Floor:</b>
-  <%= @exhibit.floor %>
-</p>
-
-<p>
-  <b>Lat:</b>
-  <%= @exhibit.lat %>
-</p>
-
-<p>
-  <b>Long:</b>
-  <%= @exhibit.long %>
-
-</p>
+<% unless @exhibit.private? %>
+  
+  <p>
+    <b>Title:</b>
+    <%= @exhibit.title %>
+  </p>
+  <p>
+    <b>Description:</b>
+    <%= @exhibit.description %>
+  </p>
+  <p>
+    <b>Audio:</b>
+    <%= @exhibit.audio %>
+  </p>
+  <p>
+    <b>Video:</b>
+    <%= @exhibit.video %>
+  </p>
+  <p>
+    <b>Floor:</b>
+    <%= @exhibit.floor %>
+  </p>
+  <p>
+    <b>Lat:</b>
+    <%= @exhibit.lat %>
+  </p>
+  <p>
+    <b>Long:</b>
+    <%= @exhibit.long %>
+  </p>
+  
+<% end %>
 
 
 
