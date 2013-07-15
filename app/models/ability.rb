@@ -32,8 +32,9 @@ class Ability
     if user.admin?
         can :manage, :all
         cannot :destroy, Profile
+        cannot :destroy, User
     elsif user.manager?
-        can :manage, Profile
+        can :manage, User, id: user
         can :manage, Museum, manager: user.profile
         can :create, Museum
         can :manage, Exhibit do |exhibit|
@@ -42,18 +43,20 @@ class Ability
         cannot :manage, Achievement
         cannot :manage, Comment
         cannot :manage, Rating
-        cannot :destroy, Profile
+        cannot :manage, Profile
     else
         can :read, Achievement
-        can :manage, Profile, id: user
+        can :manage, User, id: user
         can :read, Museum
         can :read, Exhibit, private: 0
         cannot :manage, Museum
         cannot :manage, Exhibit 
-        cannot :manage, Achievement
+        cannot :create, Achievement
+        cannot :destroy, Achievement
+        cannot :update, Achievement
         cannot :manage, Comment
         cannot :manage, Rating
-        cannot :destroy, Profile
+        cannot :manage, Profile
     end
 
   end
