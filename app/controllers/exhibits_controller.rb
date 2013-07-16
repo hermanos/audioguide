@@ -19,12 +19,6 @@ class ExhibitsController < ApplicationController
   def show
     user = current_user
     @museum = Museum.find(params[:museum_id])
-    
-    unless @museum.exhibits.where(id: params[:id]).first.nil? 
-      @exhibit = @museum.exhibits.where(id: params[:id]).first 
-      render 'show'
-      return 
-    end
 
     if user.user?
       Scan.scanned?(@exhibit.id, user.profile.id)

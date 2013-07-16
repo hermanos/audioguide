@@ -17,13 +17,12 @@ class Exhibit < ActiveRecord::Base
   validates :long, presence: true
   validates :long, numericality: true
   validates :museum_id, presence: true
-  validates :qr_code, presence: true
   validates :private, presence: true
 
 
   after_create :create_qr_code
   def create_qr_code
-  	exhibit_url = "http://10.0.0.64:3000/museums/" + museum_id.to_s + "/exhibits/" + id.to_s
+  	exhibit_url = "http://localhost:3000/museums/" + museum_id.to_s + "/exhibits/" + id.to_s
   	crypt_code = exhibit_url
   	update_attribute(:qr_code, crypt_code)
   end

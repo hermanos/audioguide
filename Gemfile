@@ -29,6 +29,13 @@ gem 'rqrcode-rails3'
 gem 'mini_magick', '3.5.0'
 gem 'carrierwave'
 
+ # Rspec 
+gem 'rspec'
+gem 'rspec-core'
+gem 'rspec-expectations'
+gem 'rspec-mocks'
+gem 'rspec-rails'
+
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
