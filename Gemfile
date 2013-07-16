@@ -37,6 +37,8 @@ group :test, :development do
 	gem 'rspec-mocks'
 end
 
+gem 'rack-cors', :require => 'rack/cors'
+
 gem "capybara"
 gem 'nokogiri', '1.3.3'
 
