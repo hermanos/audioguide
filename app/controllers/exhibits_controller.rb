@@ -22,8 +22,7 @@ class ExhibitsController < ApplicationController
     @exhibit = Exhibit.find(params[:id])
 
     if @museum != @exhibit.museum
-      flash[:notice] = "Te crezi HACKER? Incearca maine! "
-      redirect_to root_path
+      redirect_to root_path, notice: "Te crezi HACKER? Incearca maine! "
       return
     end
     # if user.user?

@@ -40,9 +40,9 @@ class Ability
         # can :manage, Exhibit do |exhibit|
         #   exhibit.museum.manager == user.profile
         # end
-        # can :create, Exhibit do |exhibit|
-        #     exhibit.museum.try(:manager) == user.profile_id 
-        # end
+        can :create, Exhibit do |exhibit|
+            exhibit.museum.try(:manager) == user.profile_id
+        end
         can :manage, Exhibit do |exhibit|
             exhibit.museum.try(:manager) == user.profile 
         end
