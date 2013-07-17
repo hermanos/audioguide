@@ -19,12 +19,13 @@ class ExhibitsController < ApplicationController
   def show
     user = current_user
     @museum = Museum.find(params[:museum_id])
+    @exhibit = Exhibit.find(params[:id])
 
-    if user.user?
-      Scan.scanned?(@exhibit.id, user.profile.id)
-      render 'show_user'
-      return 
-    end
+    # if user.user?
+    #   Scan.scanned?(@exhibit, user.profile)
+    #   render 'show_user'
+    #   return 
+    # end
 
     respond_to do |format|
       format.html # show.html.erb

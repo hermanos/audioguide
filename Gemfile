@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 
-
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -38,7 +37,10 @@ group :test, :development do
 	gem 'rspec-mocks'
 end
 
+gem 'rack-cors', :require => 'rack/cors'
+
 gem "capybara"
+gem 'nokogiri', '1.3.3'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
