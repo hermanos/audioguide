@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="simple">
+<head>
+  <title>AudioguideMuseum</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+          			<%= link_to root_path, class: 'logo' do %>
+            			AudioGuide
+          			<% end %>
+				</div>
+				<div class="span9 signout">
+						 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="content-box-outer">
+  		<div class="row content-box">
+        <div class="span12">
+          <%= yield %>
+        </div>
+      </div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+          <hr>
+					<p>
+            Get the Audioguide for the museum and start your journey in time!
+          </p>
+					<p>
+  					<%= image_tag("appstore.png", alt: "Appstore Image", id:"appstore") %>
+  					<%= image_tag("googleplay.png", alt: "Googleplay Image", id:"googleplay") %>
+          </p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

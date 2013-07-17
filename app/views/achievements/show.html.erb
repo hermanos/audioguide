@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @achievement.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @achievement.description %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag(@achievement.image_url(:thumb_achievements)) if @achievement.image? %>
+</p>
+
+<%= link_to 'Edit', edit_achievement_path(@achievement) if current_user.admin? %> |

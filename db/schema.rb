@@ -11,16 +11,101 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701111506) do
+ActiveRecord::Schema.define(:version => 20130711132309) do
 
-  create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.string   "email"
-    t.integer  "role"
-    t.integer  "coins"
+  create_table "achievements", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "image"
+  end
+
+  create_table "achievements_profiles", :force => true do |t|
+    t.integer  "achievement_id"
+    t.integer  "profile_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "exhibit_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "exhibits", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "audio"
+    t.string   "video"
+    t.integer  "floor"
+    t.float    "lat"
+    t.float    "long"
+    t.string   "qr_code"
+    t.integer  "museum_id"
+    t.integer  "private",     :default => 1
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "image"
+  end
+
+  create_table "museums", :force => true do |t|
+    t.string   "name"
+    t.float    "lat"
+    t.float    "long"
+    t.integer  "manager_id",  :default => 0
+    t.integer  "published",   :default => 0
+    t.text     "description"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "image"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "role"
+    t.integer  "coins"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "image"
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "score"
+    t.integer  "user_id"
+    t.integer  "exhibit_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "scans", :force => true do |t|
+    t.integer  "profile_id"
+    t.integer  "exhibit_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.integer  "profile_id"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

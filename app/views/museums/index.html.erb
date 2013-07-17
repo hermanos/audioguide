@@ -1,0 +1,32 @@
+<h1>Museums</h1>
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @museums.each do |museum| %>
+  <tr>
+    <td>
+    	<%= museum.name %>
+    </td>
+    <td id="show">
+    	<%= link_to 'Show', museum %>
+    </td>
+    <% if museum.published == 0 %>
+		  <td>
+		  	<%= link_to "Activate", activate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.admin? %>
+		  </td>
+		<% elsif museum.published == 1 %>
+			<td>
+		  	<%= link_to "Deactivate", deactivate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.admin? %>
+		  </td>
+    <% end %>
+  </tr>
+<% end %>
+
+</table>
+
+<br>
+<%= link_to 'New Museum', new_museum_path if current_user.admin? %>

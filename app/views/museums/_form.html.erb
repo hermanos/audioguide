@@ -1,0 +1,44 @@
+<%= form_for(@museum) do |f| %>
+  <% if @museum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@museum.errors.count, "error") %> prohibited this museum from being saved:</h2>
+
+      <ul>
+      <% @museum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :lat %>
+    <%= f.number_field :lat, type: 'float' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :long %>
+    <%= f.number_field :long, type: 'float' %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+  </p>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

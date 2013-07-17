@@ -1,11 +1,20 @@
-AudioguideMuseum::Application.routes.draw do
-  
-  get "pages/index", as:"index"
-  resources :users do 
-    match 'signin', :on => :collection, as: "signin"
-    match 'signout', :on => :collection, as: "singout"
-  end 
 
+AudioguideMuseum::Application.routes.draw do
+
+  resources :comments
+  resources :ratings
+  resources :achievements
+  devise_for :users
+  resources :profiles
+  resources :museums do
+    resources :exhibits
+  end
+
+
+  get "pages/index", as:"index"
+  get "pages/reset", to: "pages#users_reset" , as: "reset"
+  get "museums/activate/:id", to:"museums#activate", as: "activate_museum"
+  get "museums/deactivate/:id", to:"museums#deactivate", as: "deactivate_museum"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -56,6 +65,7 @@ AudioguideMuseum::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+
   root :to => 'pages#index'
 
   # See how all your routes lay out with "rake routes"
@@ -63,4 +73,5 @@ AudioguideMuseum::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
 end

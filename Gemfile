@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -20,10 +21,29 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem "cancan"
 gem 'jquery-rails'
+gem 'devise'
+gem 'rqrcode-rails3'
+gem 'mini_magick', '3.5.0'
+gem 'carrierwave'
+
+ # Rspec
+group :test, :development do
+  gem "rspec-rails", "~> 2.4"
+  gem 'rspec'
+	gem 'rspec-core'
+	gem 'rspec-expectations'
+	gem 'rspec-mocks'
+end
+
+gem 'rack-cors', :require => 'rack/cors'
+
+gem "capybara"
+gem 'nokogiri', '1.3.3'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
