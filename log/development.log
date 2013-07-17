@@ -2533,3 +2533,240 @@ Migrating to AddImageToAchievements (20130711132309)
   [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
   [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (123.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (210.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateMuseums (20130701111940)
+  [1m[35m (121.8ms)[0m  CREATE TABLE `museums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `lat` float, `long` float, `manager_id` int(11) DEFAULT 0, `published` int(11) DEFAULT 0, `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130701111940')[0m
+Migrating to CreateProfiles (20130702132952)
+  [1m[35m (120.4ms)[0m  CREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `role` varchar(255), `coins` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130702132952')[0m
+Migrating to CreateExhibits (20130703080132)
+  [1m[35m (120.2ms)[0m  CREATE TABLE `exhibits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `audio` varchar(255), `video` varchar(255), `floor` int(11), `lat` float, `long` float, `qr_code` varchar(255), `museum_id` int(11), `private` int(11) DEFAULT 1, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703080132')[0m
+Migrating to CreateRatings (20130703083411)
+  [1m[35m (121.5ms)[0m  CREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703083411')[0m
+Migrating to CreateComments (20130703090944)
+  [1m[35m (109.4ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703090944')[0m
+Migrating to DeviseCreateUsers (20130703094119)
+  [1m[35m (108.5ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (187.9ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (188.0ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (54.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703094119')[0m
+Migrating to CreateAchievements (20130703103131)
+  [1m[35m (120.6ms)[0m  CREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703103131')[0m
+Migrating to AchievementsProfiles (20130708065028)
+  [1m[35m (342.2ms)[0m  CREATE TABLE `achievements_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `achievement_id` int(11), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708065028')[0m
+Migrating to CreateScans (20130708083643)
+  [1m[35m (109.4ms)[0m  CREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `profile_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708083643')[0m
+Migrating to AddImageToMuseums (20130711124327)
+  [1m[35m (254.6ms)[0m  ALTER TABLE `museums` ADD `image` varchar(255)
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711124327')[0m
+Migrating to AddImageToExhibits (20130711125405)
+  [1m[35m (276.9ms)[0m  ALTER TABLE `exhibits` ADD `image` varchar(255)
+  [1m[36m (44.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711125405')[0m
+Migrating to AddImageToProfiles (20130711131423)
+  [1m[35m (243.8ms)[0m  ALTER TABLE `profiles` ADD `image` varchar(255)
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711131423')[0m
+Migrating to AddImageToAchievements (20130711132309)
+  [1m[35m (288.0ms)[0m  ALTER TABLE `achievements` ADD `image` varchar(255)
+  [1m[36m (54.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (103.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (199.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateMuseums (20130701111940)
+  [1m[35m (121.7ms)[0m  CREATE TABLE `museums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `lat` float, `long` float, `manager_id` int(11) DEFAULT 0, `published` int(11) DEFAULT 0, `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130701111940')[0m
+Migrating to CreateProfiles (20130702132952)
+  [1m[35m (120.1ms)[0m  CREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `role` varchar(255), `coins` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130702132952')[0m
+Migrating to CreateExhibits (20130703080132)
+  [1m[35m (119.9ms)[0m  CREATE TABLE `exhibits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `audio` varchar(255), `video` varchar(255), `floor` int(11), `lat` float, `long` float, `qr_code` varchar(255), `museum_id` int(11), `private` int(11) DEFAULT 1, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703080132')[0m
+Migrating to CreateRatings (20130703083411)
+  [1m[35m (120.3ms)[0m  CREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703083411')[0m
+Migrating to CreateComments (20130703090944)
+  [1m[35m (109.1ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (55.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703090944')[0m
+Migrating to DeviseCreateUsers (20130703094119)
+  [1m[35m (297.2ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (343.3ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (187.6ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (43.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703094119')[0m
+Migrating to CreateAchievements (20130703103131)
+  [1m[35m (109.4ms)[0m  CREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703103131')[0m
+Migrating to AchievementsProfiles (20130708065028)
+  [1m[35m (109.2ms)[0m  CREATE TABLE `achievements_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `achievement_id` int(11), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708065028')[0m
+Migrating to CreateScans (20130708083643)
+  [1m[35m (109.1ms)[0m  CREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `profile_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708083643')[0m
+Migrating to AddImageToMuseums (20130711124327)
+  [1m[35m (243.6ms)[0m  ALTER TABLE `museums` ADD `image` varchar(255)
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711124327')[0m
+Migrating to AddImageToExhibits (20130711125405)
+  [1m[35m (254.8ms)[0m  ALTER TABLE `exhibits` ADD `image` varchar(255)
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711125405')[0m
+Migrating to AddImageToProfiles (20130711131423)
+  [1m[35m (255.8ms)[0m  ALTER TABLE `profiles` ADD `image` varchar(255)
+  [1m[36m (54.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711131423')[0m
+Migrating to AddImageToAchievements (20130711132309)
+  [1m[35m (298.9ms)[0m  ALTER TABLE `achievements` ADD `image` varchar(255)
+  [1m[36m (54.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (139.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (199.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateMuseums (20130701111940)
+  [1m[35m (112.5ms)[0m  CREATE TABLE `museums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `lat` float, `long` float, `manager_id` int(11) DEFAULT 0, `published` int(11) DEFAULT 0, `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130701111940')[0m
+Migrating to CreateProfiles (20130702132952)
+  [1m[35m (109.0ms)[0m  CREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `role` varchar(255), `coins` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130702132952')[0m
+Migrating to CreateExhibits (20130703080132)
+  [1m[35m (108.8ms)[0m  CREATE TABLE `exhibits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `audio` varchar(255), `video` varchar(255), `floor` int(11), `lat` float, `long` float, `qr_code` varchar(255), `museum_id` int(11), `private` int(11) DEFAULT 1, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703080132')[0m
+Migrating to CreateRatings (20130703083411)
+  [1m[35m (109.3ms)[0m  CREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703083411')[0m
+Migrating to CreateComments (20130703090944)
+  [1m[35m (109.1ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703090944')[0m
+Migrating to DeviseCreateUsers (20130703094119)
+  [1m[35m (108.4ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (199.0ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (221.5ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703094119')[0m
+Migrating to CreateAchievements (20130703103131)
+  [1m[35m (120.5ms)[0m  CREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703103131')[0m
+Migrating to AchievementsProfiles (20130708065028)
+  [1m[35m (120.3ms)[0m  CREATE TABLE `achievements_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `achievement_id` int(11), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708065028')[0m
+Migrating to CreateScans (20130708083643)
+  [1m[35m (120.4ms)[0m  CREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `profile_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708083643')[0m
+Migrating to AddImageToMuseums (20130711124327)
+  [1m[35m (254.6ms)[0m  ALTER TABLE `museums` ADD `image` varchar(255)
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711124327')[0m
+Migrating to AddImageToExhibits (20130711125405)
+  [1m[35m (254.6ms)[0m  ALTER TABLE `exhibits` ADD `image` varchar(255)
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711125405')[0m
+Migrating to AddImageToProfiles (20130711131423)
+  [1m[35m (243.6ms)[0m  ALTER TABLE `profiles` ADD `image` varchar(255)
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711131423')[0m
+Migrating to AddImageToAchievements (20130711132309)
+  [1m[35m (287.7ms)[0m  ALTER TABLE `achievements` ADD `image` varchar(255)
+  [1m[36m (54.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (141.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (200.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateMuseums (20130701111940)
+  [1m[35m (121.3ms)[0m  CREATE TABLE `museums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `lat` float, `long` float, `manager_id` int(11) DEFAULT 0, `published` int(11) DEFAULT 0, `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130701111940')[0m
+Migrating to CreateProfiles (20130702132952)
+  [1m[35m (120.2ms)[0m  CREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `role` varchar(255), `coins` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130702132952')[0m
+Migrating to CreateExhibits (20130703080132)
+  [1m[35m (120.0ms)[0m  CREATE TABLE `exhibits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `audio` varchar(255), `video` varchar(255), `floor` int(11), `lat` float, `long` float, `qr_code` varchar(255), `museum_id` int(11), `private` int(11) DEFAULT 1, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703080132')[0m
+Migrating to CreateRatings (20130703083411)
+  [1m[35m (120.2ms)[0m  CREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703083411')[0m
+Migrating to CreateComments (20130703090944)
+  [1m[35m (120.1ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703090944')[0m
+Migrating to DeviseCreateUsers (20130703094119)
+  [1m[35m (109.0ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (198.6ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (210.8ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703094119')[0m
+Migrating to CreateAchievements (20130703103131)
+  [1m[35m (120.3ms)[0m  CREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703103131')[0m
+Migrating to AchievementsProfiles (20130708065028)
+  [1m[35m (120.7ms)[0m  CREATE TABLE `achievements_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `achievement_id` int(11), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708065028')[0m
+Migrating to CreateScans (20130708083643)
+  [1m[35m (120.4ms)[0m  CREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `profile_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708083643')[0m
+Migrating to AddImageToMuseums (20130711124327)
+  [1m[35m (256.1ms)[0m  ALTER TABLE `museums` ADD `image` varchar(255)
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711124327')[0m
+Migrating to AddImageToExhibits (20130711125405)
+  [1m[35m (254.9ms)[0m  ALTER TABLE `exhibits` ADD `image` varchar(255)
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711125405')[0m
+Migrating to AddImageToProfiles (20130711131423)
+  [1m[35m (254.8ms)[0m  ALTER TABLE `profiles` ADD `image` varchar(255)
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711131423')[0m
+Migrating to AddImageToAchievements (20130711132309)
+  [1m[35m (354.4ms)[0m  ALTER TABLE `achievements` ADD `image` varchar(255)
+  [1m[36m (54.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (129.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (409.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateMuseums (20130701111940)
+  [1m[35m (121.7ms)[0m  CREATE TABLE `museums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `lat` float, `long` float, `manager_id` int(11) DEFAULT 0, `published` int(11) DEFAULT 0, `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130701111940')[0m
+Migrating to CreateProfiles (20130702132952)
+  [1m[35m (109.0ms)[0m  CREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `role` varchar(255), `coins` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130702132952')[0m
+Migrating to CreateExhibits (20130703080132)
+  [1m[35m (120.0ms)[0m  CREATE TABLE `exhibits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `audio` varchar(255), `video` varchar(255), `floor` int(11), `lat` float, `long` float, `qr_code` varchar(255), `museum_id` int(11), `private` int(11) DEFAULT 1, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703080132')[0m
+Migrating to CreateRatings (20130703083411)
+  [1m[35m (109.3ms)[0m  CREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (165.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703083411')[0m
+Migrating to CreateComments (20130703090944)
+  [1m[35m (254.2ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (88.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703090944')[0m
+Migrating to DeviseCreateUsers (20130703094119)
+  [1m[35m (119.9ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (176.7ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (198.8ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703094119')[0m
+Migrating to CreateAchievements (20130703103131)
+  [1m[35m (131.4ms)[0m  CREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703103131')[0m
+Migrating to AchievementsProfiles (20130708065028)
+  [1m[35m (120.2ms)[0m  CREATE TABLE `achievements_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `achievement_id` int(11), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708065028')[0m
+Migrating to CreateScans (20130708083643)
+  [1m[35m (120.4ms)[0m  CREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `profile_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708083643')[0m
+Migrating to AddImageToMuseums (20130711124327)
+  [1m[35m (243.7ms)[0m  ALTER TABLE `museums` ADD `image` varchar(255)
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711124327')[0m
+Migrating to AddImageToExhibits (20130711125405)
+  [1m[35m (243.6ms)[0m  ALTER TABLE `exhibits` ADD `image` varchar(255)
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711125405')[0m
+Migrating to AddImageToProfiles (20130711131423)
+  [1m[35m (256.0ms)[0m  ALTER TABLE `profiles` ADD `image` varchar(255)
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711131423')[0m
+Migrating to AddImageToAchievements (20130711132309)
+  [1m[35m (254.7ms)[0m  ALTER TABLE `achievements` ADD `image` varchar(255)
+  [1m[36m (54.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
