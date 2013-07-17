@@ -37,6 +37,12 @@ group :test, :development do
 	gem 'rspec-mocks'
 end
 
+group :production do
+  gem 'unicorn'
+end
+
+gem 'mina'
+gem 'mina_extensions'
 gem 'rack-cors', :require => 'rack/cors'
 
 gem "capybara"
@@ -44,15 +50,3 @@ gem 'nokogiri', '1.3.3'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
