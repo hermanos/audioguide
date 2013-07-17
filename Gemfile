@@ -43,7 +43,6 @@ end
 
 gem 'mina'
 gem 'mina_extensions'
-gem 'rack-cors', :require => 'rack/cors'
 
 gem "capybara"
 gem 'nokogiri', '1.3.3'
