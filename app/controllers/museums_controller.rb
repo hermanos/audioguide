@@ -46,7 +46,6 @@ class MuseumsController < ApplicationController
   def create
     @museum = Museum.new(params[:museum])
     @museum.manager_id = current_user.profile.id
-    @museum.published = 0
 
     respond_to do |format|
       if @museum.save
