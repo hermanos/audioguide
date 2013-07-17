@@ -21,6 +21,10 @@ class ExhibitsController < ApplicationController
     @museum = Museum.find(params[:museum_id])
     @exhibit = Exhibit.find(params[:id])
 
+    if @museum != @exhibit.museum
+      redirect_to root_path, notice: "Te crezi HACKER? Incearca maine! "
+      return
+    end
     # if user.user?
     #   Scan.scanned?(@exhibit, user.profile)
     #   render 'show_user'

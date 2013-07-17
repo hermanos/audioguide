@@ -37,9 +37,18 @@ class Ability
         can :manage, User, id: user
         can :manage, Museum, manager: user.profile
         can :create, Museum
+        # can :manage, Exhibit do |exhibit|
+        #   exhibit.museum.manager == user.profile
+        # end
+        can :create, Exhibit do |exhibit|
+            exhibit.museum.try(:manager) == user.profile_id
+        end
         can :manage, Exhibit do |exhibit|
-          exhibit.museum.manager == user.profile 
-        end  
+            exhibit.museum.try(:manager) == user.profile 
+        end
+        # can :read, Exhibit do |exhibit|
+        #     exhibit.museum.try(:manager) == user.profile_id 
+        # end
         cannot :manage, Achievement
         cannot :manage, Comment
         cannot :manage, Rating

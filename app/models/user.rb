@@ -16,7 +16,8 @@ class User < ActiveRecord::Base
   after_create :create_profile
 
   def create_profile
-    p = Profile.create!(role: 'user', name: "Guest")
+    role = Profile.all.blank? ? "admin" : "user"
+    p = Profile.create(role: role, name: "Guest")
     update_attribute(:profile, p)
   end
     
