@@ -12,6 +12,7 @@ AudioguideMuseum::Application.routes.draw do
 
 
   get "pages/index", as:"index"
+  get "pages/test"
   get "pages/reset", to: "pages#users_reset" , as: "reset"
   get "museums/activate/:id", to:"museums#activate", as: "activate_museum"
   get "museums/deactivate/:id", to:"museums#deactivate", as: "deactivate_museum"
