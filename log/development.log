@@ -2,3 +2,236 @@ Connecting to database specified by database.yml
   [1m[36m (187.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
   [1m[35m (421.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
   [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (104.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (221.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateMuseums (20130701111940)
+  [1m[35m (99.8ms)[0m  CREATE TABLE `museums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `lat` float, `long` float, `manager_id` int(11) DEFAULT 0, `published` int(11) DEFAULT 0, `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130701111940')[0m
+Migrating to CreateProfiles (20130702132952)
+  [1m[35m (109.7ms)[0m  CREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `role` varchar(255), `coins` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130702132952')[0m
+Migrating to CreateExhibits (20130703080132)
+  [1m[35m (109.3ms)[0m  CREATE TABLE `exhibits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `audio` varchar(255), `video` varchar(255), `floor` int(11), `lat` float, `long` float, `qr_code` varchar(255), `museum_id` int(11), `private` int(11) DEFAULT 1, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703080132')[0m
+Migrating to CreateRatings (20130703083411)
+  [1m[35m (109.5ms)[0m  CREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703083411')[0m
+Migrating to CreateComments (20130703090944)
+  [1m[35m (109.3ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703090944')[0m
+Migrating to DeviseCreateUsers (20130703094119)
+  [1m[35m (119.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (210.0ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (199.1ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (54.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703094119')[0m
+Migrating to CreateAchievements (20130703103131)
+  [1m[35m (120.3ms)[0m  CREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703103131')[0m
+Migrating to AchievementsProfiles (20130708065028)
+  [1m[35m (120.1ms)[0m  CREATE TABLE `achievements_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `achievement_id` int(11), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708065028')[0m
+Migrating to CreateScans (20130708083643)
+  [1m[35m (109.6ms)[0m  CREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `profile_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (44.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708083643')[0m
+Migrating to AddImageToMuseums (20130711124327)
+  [1m[35m (243.9ms)[0m  ALTER TABLE `museums` ADD `image` varchar(255)
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711124327')[0m
+Migrating to AddImageToExhibits (20130711125405)
+  [1m[35m (255.0ms)[0m  ALTER TABLE `exhibits` ADD `image` varchar(255)
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711125405')[0m
+Migrating to AddImageToProfiles (20130711131423)
+  [1m[35m (254.9ms)[0m  ALTER TABLE `profiles` ADD `image` varchar(255)
+  [1m[36m (43.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711131423')[0m
+Migrating to AddImageToAchievements (20130711132309)
+  [1m[35m (254.0ms)[0m  ALTER TABLE `achievements` ADD `image` varchar(255)
+  [1m[36m (54.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 10:20:00', 'Congratulations for your first Scan !', NULL, 'First Scan', '2013-07-17 10:20:00')[0m
+  [1m[35m (70.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 10:20:00', 'Congratulations for your 100th Scan !', NULL, '100 Scans', '2013-07-17 10:20:00')
+  [1m[36m (52.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 10:20:00', 'Congratulations for visiting an entire Museum !', NULL, 'Full Museum', '2013-07-17 10:20:00')[0m
+  [1m[35m (52.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 10:20:00', 'Congratulations for optaining 1000 coins !', NULL, 'Rich', '2013-07-17 10:20:00')
+  [1m[36m (51.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@audioguide.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 10:20:00', NULL, NULL, 'admin@audioguide.com', '$2a$10$ORDOW.k/sdUGoprDJYRg7.62XKe04hPKbrg.CFyDRaufE2mPf9Il6', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 10:20:00')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 10:20:00', NULL, 'Guest', 'user', '2013-07-17 10:20:00', NULL)[0m
+  [1m[35mProfile Load (0.4ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mUPDATE `profiles` SET `user_id` = 1, `updated_at` = '2013-07-17 10:20:00' WHERE `profiles`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  UPDATE `users` SET `email` = 'admin@audioguide.com', `encrypted_password` = '$2a$10$ORDOW.k/sdUGoprDJYRg7.62XKe04hPKbrg.CFyDRaufE2mPf9Il6', `created_at` = '2013-07-17 10:20:00', `updated_at` = '2013-07-17 10:20:00' WHERE `users`.`id` = 1
+  [1m[36m (48.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mUPDATE `profiles` SET `role` = 'admin', `updated_at` = '2013-07-17 10:20:00' WHERE `profiles`.`id` = 1[0m
+  [1m[35m (53.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'manager@audioguide.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 10:20:00', NULL, NULL, 'manager@audioguide.com', '$2a$10$z3UQkc7zik93czGf2XD13e84ODr63NFTpmOCS5.QWl3f1bmGloJeS', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 10:20:00')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 10:20:00', NULL, 'Guest', 'user', '2013-07-17 10:20:00', NULL)
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE `profiles` SET `user_id` = 2, `updated_at` = '2013-07-17 10:20:00' WHERE `profiles`.`id` = 2
+  [1m[36m (0.2ms)[0m  [1mUPDATE `users` SET `email` = 'manager@audioguide.com', `encrypted_password` = '$2a$10$z3UQkc7zik93czGf2XD13e84ODr63NFTpmOCS5.QWl3f1bmGloJeS', `created_at` = '2013-07-17 10:20:00', `updated_at` = '2013-07-17 10:20:00' WHERE `users`.`id` = 2[0m
+  [1m[35m (53.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (88.6ms)[0m  UPDATE `profiles` SET `role` = 'manager', `updated_at` = '2013-07-17 10:20:00' WHERE `profiles`.`id` = 2
+  [1m[36m (104.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'basic_user@audioguide.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 10:20:01', NULL, NULL, 'basic_user@audioguide.com', '$2a$10$zEtrMM2LRNx7zwkfu20ZvuMEywDk57iWQzRTyye.bHDND9F7m2kBW', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 10:20:01')
+  [1m[36mSQL (19.9ms)[0m  [1mINSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 10:20:01', NULL, 'Guest', 'user', '2013-07-17 10:20:01', NULL)[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 3 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mUPDATE `profiles` SET `user_id` = 3, `updated_at` = '2013-07-17 10:20:01' WHERE `profiles`.`id` = 3[0m
+  [1m[35m (0.3ms)[0m  UPDATE `users` SET `email` = 'basic_user@audioguide.com', `encrypted_password` = '$2a$10$zEtrMM2LRNx7zwkfu20ZvuMEywDk57iWQzRTyye.bHDND9F7m2kBW', `created_at` = '2013-07-17 10:20:01', `updated_at` = '2013-07-17 10:20:01' WHERE `users`.`id` = 3
+  [1m[36m (117.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `achievements_profiles` (`profile_id`, `achievement_id`) VALUES (3, 1)[0m
+  [1m[35m (103.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (43.8ms)[0m  INSERT INTO `achievements_profiles` (`profile_id`, `achievement_id`) VALUES (3, 2)
+  [1m[36m (76.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `museums` (`created_at`, `description`, `image`, `lat`, `long`, `manager_id`, `name`, `published`, `updated_at`) VALUES ('2013-07-17 10:20:01', 'Cel mai tare muzeu', NULL, 45.75515, 24.116297, 2, 'Muzeul de Stiinte Naturale', 0, '2013-07-17 10:20:01')[0m
+  [1m[35m (54.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `museums` (`created_at`, `description`, `image`, `lat`, `long`, `manager_id`, `name`, `published`, `updated_at`) VALUES ('2013-07-17 10:20:01', 'Al doilea cel mai tare', NULL, 45.79652, 24.150545, 1, 'Muzeul Brukenthal', 0, '2013-07-17 10:20:01')
+  [1m[36m (39.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `exhibits` (`audio`, `created_at`, `description`, `floor`, `image`, `lat`, `long`, `museum_id`, `private`, `qr_code`, `title`, `updated_at`, `video`) VALUES (NULL, '2013-07-17 10:20:01', 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ', 0, NULL, 40.0, 40.0, 1, 1, 'http://10.0.0.64:3000/museums/2/exhibits/1', 'Sculptura transilvaneana in piatra din secolele XIII-XIX', '2013-07-17 10:20:01', NULL)[0m
+  [1m[35m (0.3ms)[0m  UPDATE `exhibits` SET `title` = 'Sculptura transilvaneana in piatra din secolele XIII-XIX', `description` = 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ', `floor` = 0, `lat` = 40.0, `long` = 40.0, `qr_code` = 'http://localhost:3000/museums/1/exhibits/1', `museum_id` = 1, `created_at` = '2013-07-17 10:20:01', `updated_at` = '2013-07-17 10:20:01' WHERE `exhibits`.`id` = 1
+  [1m[36m (43.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `exhibits` (`audio`, `created_at`, `description`, `floor`, `image`, `lat`, `long`, `museum_id`, `private`, `qr_code`, `title`, `updated_at`, `video`) VALUES (NULL, '2013-07-17 10:20:01', 'Pictura. ', 0, NULL, 40.0, 40.0, 2, 0, 'http://10.0.0.64:3000/museums/2/exhibits/2', 'Monalisa', '2013-07-17 10:20:01', NULL)[0m
+  [1m[35m (0.3ms)[0m  UPDATE `exhibits` SET `title` = 'Monalisa', `description` = 'Pictura. ', `floor` = 0, `lat` = 40.0, `long` = 40.0, `qr_code` = 'http://localhost:3000/museums/2/exhibits/2', `museum_id` = 2, `private` = 0, `created_at` = '2013-07-17 10:20:01', `updated_at` = '2013-07-17 10:20:01' WHERE `exhibits`.`id` = 2
+  [1m[36m (37.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `scans` (`created_at`, `exhibit_id`, `profile_id`, `updated_at`) VALUES ('2013-07-17 10:20:01', 1, 3, '2013-07-17 10:20:01')[0m
+  [1m[35m (44.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `scans` (`created_at`, `exhibit_id`, `profile_id`, `updated_at`) VALUES ('2013-07-17 10:20:01', 2, 3, '2013-07-17 10:20:01')
+  [1m[36m (41.9ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+  [1m[36m (139.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (276.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateMuseums (20130701111940)
+  [1m[35m (123.0ms)[0m  CREATE TABLE `museums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `lat` float, `long` float, `manager_id` int(11) DEFAULT 0, `published` int(11) DEFAULT 0, `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130701111940')[0m
+Migrating to CreateProfiles (20130702132952)
+  [1m[35m (109.1ms)[0m  CREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `role` varchar(255), `coins` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130702132952')[0m
+Migrating to CreateExhibits (20130703080132)
+  [1m[35m (108.9ms)[0m  CREATE TABLE `exhibits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `audio` varchar(255), `video` varchar(255), `floor` int(11), `lat` float, `long` float, `qr_code` varchar(255), `museum_id` int(11), `private` int(11) DEFAULT 1, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703080132')[0m
+Migrating to CreateRatings (20130703083411)
+  [1m[35m (109.2ms)[0m  CREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703083411')[0m
+Migrating to CreateComments (20130703090944)
+  [1m[35m (109.2ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703090944')[0m
+Migrating to DeviseCreateUsers (20130703094119)
+  [1m[35m (108.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (198.5ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (210.5ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (43.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703094119')[0m
+Migrating to CreateAchievements (20130703103131)
+  [1m[35m (120.3ms)[0m  CREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703103131')[0m
+Migrating to AchievementsProfiles (20130708065028)
+  [1m[35m (131.4ms)[0m  CREATE TABLE `achievements_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `achievement_id` int(11), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708065028')[0m
+Migrating to CreateScans (20130708083643)
+  [1m[35m (131.5ms)[0m  CREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `profile_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708083643')[0m
+Migrating to AddImageToMuseums (20130711124327)
+  [1m[35m (289.1ms)[0m  ALTER TABLE `museums` ADD `image` varchar(255)
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711124327')[0m
+Migrating to AddImageToExhibits (20130711125405)
+  [1m[35m (243.6ms)[0m  ALTER TABLE `exhibits` ADD `image` varchar(255)
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711125405')[0m
+Migrating to AddImageToProfiles (20130711131423)
+  [1m[35m (254.8ms)[0m  ALTER TABLE `profiles` ADD `image` varchar(255)
+  [1m[36m (43.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711131423')[0m
+Migrating to AddImageToAchievements (20130711132309)
+  [1m[35m (243.8ms)[0m  ALTER TABLE `achievements` ADD `image` varchar(255)
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 10:23:18', 'Congratulations for your first Scan !', NULL, 'First Scan', '2013-07-17 10:23:18')[0m
+  [1m[35m (57.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 10:23:18', 'Congratulations for your 100th Scan !', NULL, '100 Scans', '2013-07-17 10:23:18')
+  [1m[36m (38.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 10:23:18', 'Congratulations for visiting an entire Museum !', NULL, 'Full Museum', '2013-07-17 10:23:18')[0m
+  [1m[35m (40.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 10:23:18', 'Congratulations for optaining 1000 coins !', NULL, 'Rich', '2013-07-17 10:23:18')
+  [1m[36m (40.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@audioguide.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 10:23:18', NULL, NULL, 'admin@audioguide.com', '$2a$10$GMZaXgBy42yZ8ywX8WXr8eaCjnlJf7X.9n/S6gsxRPGx0EYiqdoNG', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 10:23:18')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 10:23:18', NULL, 'Guest', 'user', '2013-07-17 10:23:18', NULL)[0m
+  [1m[35mProfile Load (0.4ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE `profiles` SET `user_id` = 1, `updated_at` = '2013-07-17 10:23:18' WHERE `profiles`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE `users` SET `email` = 'admin@audioguide.com', `encrypted_password` = '$2a$10$GMZaXgBy42yZ8ywX8WXr8eaCjnlJf7X.9n/S6gsxRPGx0EYiqdoNG', `created_at` = '2013-07-17 10:23:18', `updated_at` = '2013-07-17 10:23:18' WHERE `users`.`id` = 1
+  [1m[36m (45.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `profiles` SET `role` = 'admin', `updated_at` = '2013-07-17 10:23:18' WHERE `profiles`.`id` = 1[0m
+  [1m[35m (41.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'manager@audioguide.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 10:23:18', NULL, NULL, 'manager@audioguide.com', '$2a$10$diYcWtmDcmXxh3cmyb2WgONIG7EJBPf7GI75CHKI9e6Vb2ftM9Hoy', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 10:23:18')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 10:23:18', NULL, 'Guest', 'user', '2013-07-17 10:23:18', NULL)
+  [1m[36mProfile Load (0.3ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE `profiles` SET `user_id` = 2, `updated_at` = '2013-07-17 10:23:18' WHERE `profiles`.`id` = 2
+  [1m[36m (0.3ms)[0m  [1mUPDATE `users` SET `email` = 'manager@audioguide.com', `encrypted_password` = '$2a$10$diYcWtmDcmXxh3cmyb2WgONIG7EJBPf7GI75CHKI9e6Vb2ftM9Hoy', `created_at` = '2013-07-17 10:23:18', `updated_at` = '2013-07-17 10:23:18' WHERE `users`.`id` = 2[0m
+  [1m[35m (41.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE `profiles` SET `role` = 'manager', `updated_at` = '2013-07-17 10:23:18' WHERE `profiles`.`id` = 2
+  [1m[36m (41.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'basic_user@audioguide.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 10:23:18', NULL, NULL, 'basic_user@audioguide.com', '$2a$10$YHiq2f0BuOCcB2QLvp7vHO17KOxzMfREB6zb64WnJXZpWLQqhuNK6', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 10:23:18')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 10:23:18', NULL, 'Guest', 'user', '2013-07-17 10:23:18', NULL)[0m
+  [1m[35mProfile Load (0.3ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 3 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mUPDATE `profiles` SET `user_id` = 3, `updated_at` = '2013-07-17 10:23:18' WHERE `profiles`.`id` = 3[0m
+  [1m[35m (0.3ms)[0m  UPDATE `users` SET `email` = 'basic_user@audioguide.com', `encrypted_password` = '$2a$10$YHiq2f0BuOCcB2QLvp7vHO17KOxzMfREB6zb64WnJXZpWLQqhuNK6', `created_at` = '2013-07-17 10:23:18', `updated_at` = '2013-07-17 10:23:18' WHERE `users`.`id` = 3
+  [1m[36m (87.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO `achievements_profiles` (`profile_id`, `achievement_id`) VALUES (3, 1)[0m
+  [1m[35m (52.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (79.2ms)[0m  INSERT INTO `achievements_profiles` (`profile_id`, `achievement_id`) VALUES (3, 2)
+  [1m[36m (151.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (26.5ms)[0m  [1mINSERT INTO `museums` (`created_at`, `description`, `image`, `lat`, `long`, `manager_id`, `name`, `published`, `updated_at`) VALUES ('2013-07-17 10:23:19', 'Cel mai tare muzeu', NULL, 45.75515, 24.116297, 2, 'Muzeul de Stiinte Naturale', 0, '2013-07-17 10:23:19')[0m
+  [1m[35m (87.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (97.2ms)[0m  INSERT INTO `museums` (`created_at`, `description`, `image`, `lat`, `long`, `manager_id`, `name`, `published`, `updated_at`) VALUES ('2013-07-17 10:23:19', 'Al doilea cel mai tare', NULL, 45.79652, 24.150545, 1, 'Muzeul Brukenthal', 0, '2013-07-17 10:23:19')
+  [1m[36m (98.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `exhibits` (`audio`, `created_at`, `description`, `floor`, `image`, `lat`, `long`, `museum_id`, `private`, `qr_code`, `title`, `updated_at`, `video`) VALUES (NULL, '2013-07-17 10:23:19', 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ', 0, NULL, 40.0, 40.0, 1, 1, 'http://10.0.0.64:3000/museums/2/exhibits/1', 'Sculptura transilvaneana in piatra din secolele XIII-XIX', '2013-07-17 10:23:19', NULL)[0m
+  [1m[35m (0.4ms)[0m  UPDATE `exhibits` SET `title` = 'Sculptura transilvaneana in piatra din secolele XIII-XIX', `description` = 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ', `floor` = 0, `lat` = 40.0, `long` = 40.0, `qr_code` = 'http://localhost:3000/museums/1/exhibits/1', `museum_id` = 1, `created_at` = '2013-07-17 10:23:19', `updated_at` = '2013-07-17 10:23:19' WHERE `exhibits`.`id` = 1
+  [1m[36m (62.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `exhibits` (`audio`, `created_at`, `description`, `floor`, `image`, `lat`, `long`, `museum_id`, `private`, `qr_code`, `title`, `updated_at`, `video`) VALUES (NULL, '2013-07-17 10:23:19', 'Pictura. ', 0, NULL, 40.0, 40.0, 2, 0, 'http://10.0.0.64:3000/museums/2/exhibits/2', 'Monalisa', '2013-07-17 10:23:19', NULL)[0m
+  [1m[35m (0.4ms)[0m  UPDATE `exhibits` SET `title` = 'Monalisa', `description` = 'Pictura. ', `floor` = 0, `lat` = 40.0, `long` = 40.0, `qr_code` = 'http://localhost:3000/museums/2/exhibits/2', `museum_id` = 2, `private` = 0, `created_at` = '2013-07-17 10:23:19', `updated_at` = '2013-07-17 10:23:19' WHERE `exhibits`.`id` = 2
+  [1m[36m (91.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `scans` (`created_at`, `exhibit_id`, `profile_id`, `updated_at`) VALUES ('2013-07-17 10:23:19', 1, 3, '2013-07-17 10:23:19')[0m
+  [1m[35m (46.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `scans` (`created_at`, `exhibit_id`, `profile_id`, `updated_at`) VALUES ('2013-07-17 10:23:19', 2, 3, '2013-07-17 10:23:19')
+  [1m[36m (40.1ms)[0m  [1mCOMMIT[0m
