@@ -15,13 +15,20 @@ class PagesController < ApplicationController
         @scans = Scan.all
         @scan_prof = []
         @scans.each do |s|
-          @scan_prof << s if s.profile_id == @user.profile.id          
+          @scan_prof << s if s.profile_id == @user.profile.id
         end
         @exhibit = Exhibit.last
         render 'dashboard_user'
         return
       end
 
+    end
+  end
+
+  def test
+    respond_to do |format|
+      format.html { render text: 'tst' }
+      format.json { render json: {doi: 'trei'} }
     end
   end
 
