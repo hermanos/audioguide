@@ -13,9 +13,9 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
-tmp
+/tmp
 
-config/database.yml
+/config/database.yml
 app/assets/images/Thumbs.db
 Gemfile.lock
 public/uploads/

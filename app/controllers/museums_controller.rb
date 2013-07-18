@@ -7,13 +7,12 @@ class MuseumsController < ApplicationController
   # GET /museums.json
   def index
     @museums = Museum.all
-    @user = current_user
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @museums }
     end
-  end 
+  end
 
   # GET /museums/1
   # GET /museums/1.json
@@ -98,5 +97,5 @@ class MuseumsController < ApplicationController
     redirect_to museums_path
   end
 
-  
+
 end

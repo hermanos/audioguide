@@ -5,13 +5,13 @@ class CreateExhibits < ActiveRecord::Migration
       t.text :description
       t.string :audio
       t.string :video
-      t.integer :floor
-      t.float :lat
-      t.float :long
+      t.integer :floor, default: 0, null: false
+      t.float :lat, default: 0, null: false
+      t.float :long, default: 0, null: false
       t.string :qr_code
       t.integer :museum_id
-      t.integer :private, default: 1
-      
+      t.integer :private, default: 1, null: false
+
 
       t.timestamps
     end
