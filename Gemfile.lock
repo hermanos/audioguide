@@ -119,8 +119,8 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  cancan
   bcrypt-ruby (~> 3.0.0)
+  cancan
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
