@@ -1,7 +1,8 @@
 class MuseumsController < ApplicationController
-  layout 'user_layout'
+  layout 'simple'
   before_filter :authenticate_user!
-  before_filter :redirectIfUser, only: [:new,:edit,:create,:update,:destroy]
+  load_and_authorize_resource
+
   # GET /museums
   # GET /museums.json
   def index
@@ -29,7 +30,6 @@ class MuseumsController < ApplicationController
   # GET /museums/new.json
   def new
     @museum = Museum.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @museum }
@@ -45,6 +45,8 @@ class MuseumsController < ApplicationController
   # POST /museums.json
   def create
     @museum = Museum.new(params[:museum])
+    @museum.manager_id = current_user.profile.id
+    @museum.published = 0
 
     respond_to do |format|
       if @museum.save

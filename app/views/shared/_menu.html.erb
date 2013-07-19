@@ -1,14 +1,14 @@
 <nav class="main-menu">
   <ul>
     <% if user_signed_in? %>
-      <% unless current_user.profile.role == "admin" or current_user.profile.role == "manager" %>
+      <% unless current_user.admin? or current_user.manager? %>
       <li>
         <%= link_to "Account", edit_user_registration_path %>
       </li><li>
         <%= link_to "Achievements", achievements_path %>
-      </li><li>
+      </li><% if can? :read, Museum %><li>
         <%= link_to "Museums", museums_path %>
-      </li><li>
+      </li><% end %><li>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
       </li>
       <% end %>

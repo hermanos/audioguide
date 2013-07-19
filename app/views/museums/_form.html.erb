@@ -18,16 +18,25 @@
   <br>
   <div class="field">
     <%= f.label :lat %>
-    <%= f.number_field :lat %>
+    <%= f.number_field :lat, type: 'float' %>
   </div>
   <br>
   <div class="field">
     <%= f.label :long %>
-    <%= f.number_field :long %>
+    <%= f.number_field :long, type: 'float' %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+  </p>
   </div>
   <div class="actions">
     <%= f.submit %>

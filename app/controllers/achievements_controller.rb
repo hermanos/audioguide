@@ -1,5 +1,7 @@
 class AchievementsController < ApplicationController
-  layout 'user_layout'
+  layout 'simple'
+  before_filter :authenticate_user!
+  load_and_authorize_resource
 
   # GET /achievements
   # GET /achievements.json
@@ -52,6 +54,7 @@ class AchievementsController < ApplicationController
         format.json { render json: @achievement.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PUT /achievements/1
@@ -68,6 +71,7 @@ class AchievementsController < ApplicationController
         format.json { render json: @achievement.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /achievements/1
@@ -75,7 +79,7 @@ class AchievementsController < ApplicationController
   def destroy
     @achievement = Achievement.find(params[:id])
     @achievement.destroy
-
+  
     respond_to do |format|
       format.html { redirect_to achievements_url }
       format.json { head :no_content }
