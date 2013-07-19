@@ -15,20 +15,8 @@ class User < ActiveRecord::Base
     self.profile.role == role.to_s
   end
 
-  def admin?
-    self.profile.role == "admin"
-  end
-
-  def user?
-    self.profile.role == "user"
-  end
-
-  def manager?
-    self.profile.role == "manager"
-  end
-
   def manage_museum?(museum)
-    self.manager? and self.profile == museum.manager
+    self.is?(:manager) and self.profile == museum.manager
   end
 
   private

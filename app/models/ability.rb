@@ -5,7 +5,7 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
-    #   if user.admin?
+    #   if user.is?(:admin)
     #     can :manage, :all
     #   else
     #     can :read, :all
@@ -29,11 +29,11 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
-    if user.admin?
+    if user.is?(:admin)
         can :manage, :all
         cannot :destroy, Profile
         cannot :destroy, User
-    elsif user.manager?
+    elsif user.is?(:manager)
         can :manage, User, id: user
         can :manage, Museum, manager: user.profile
         can :create, Museum

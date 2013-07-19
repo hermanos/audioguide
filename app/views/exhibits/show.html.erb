@@ -37,7 +37,8 @@
 </p>
 
 
-
-<%= link_to 'Edit', edit_museum_exhibit_path(@museum,@exhibit) %> |
-<%= link_to 'Delete',museum_exhibit_path(@museum,@exhibit), method: :delete %> |
-<%= link_to 'Back', museum_path(@museum) %>
+<% if current_user %>
+  <%= link_to 'Edit', edit_museum_exhibit_path(@museum,@exhibit) %> |
+  <%= link_to 'Delete',museum_exhibit_path(@museum,@exhibit), method: :delete %> |
+  <%= link_to 'Back', museum_path(@museum) %>
+<% end %>
