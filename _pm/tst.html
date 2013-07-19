@@ -10,21 +10,21 @@
 
         $(document).ready(function(){
           $.ajax({
-                  type       : "POST",
+                  type       : "GET",
                   // url        : 'http://www.grrrid.com/home/test.json',
-                  url: 'http://staging.mooseumapp.com/users/sign_in.json',
+                  url: 'http://staging.mooseumapp.com/museums/1/exhibits/1.json',
                   // crossDomain: true,
-                  dataType: 'json',
-                  data: {'user[email]' : 'admin@audioguide.com', 'user[password]' : 'admin123'},
+                  dataType: 'jsonp',
+                  // data: {},
                   // processdata: true,
-                  success    : function(response) {
-                    alert(response['description']);
+                  success    : function(data) {
+                    alert('success');
                   },
-                  error      : function(error1, error2, error3) {
-                    alert(error1['responseText']);
+                  error      : function() {
+                    alert('error');
                   }
               });
-          // $.getJSON('http://staging.mooseumapp.com/museums/1/exhibits/1.json').done(function(response){ alert(response);});
+          // $.getJSON('http://localhost:3000/museums/1/exhibits/1.json').done(function(response){ alert(response);});
         });
         </script>
     </head>
