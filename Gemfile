@@ -27,6 +27,7 @@ gem 'devise'
 gem 'rqrcode-rails3'
 gem 'mini_magick', '3.5.0'
 gem 'carrierwave'
+gem 'factory_girl_rails'
 
  # Rspec
 group :test, :development do
