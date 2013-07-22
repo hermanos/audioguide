@@ -15,6 +15,57 @@ describe User do
 			expect(@user.profile.role).to eq('user')
 			expect(@user.profile.name).to eq('Guest')
 		end
+
+		#                              DEVISE TESTS 
+		# it "should return an error if there is a blank email" do
+		# 	user2 = User.create!(password:'123456789')
+			
+		# 	user2.should_not_be_valid
+		# 	user2.errors.on(:email).should_equal "Email can't be blank"
+
+		# 	user2.email = 'joe@bexemple.com'
+  #   	user2.should_be_valid
+		# end
+
+		# it "should return an error if the input is not an email" do
+		# 	user2 = User.create!(email:'joe', password:'123456789')
+			
+		# 	user2.should_not_be_valid
+		# 	user2.errors.on(:email).should_equal "Please insert an email address"
+
+		# 	user2.email = 'joe@bexemple.com'
+  #   	user2.should_be_valid
+		# end
+
+		# it "should return an error if there is no password" do
+		# 	user2 = User.create!(email: "vasile@mymail.com")
+			
+		# 	user2.should_not_be_valid
+		# 	user2.errors.on(:password).should_equal "Password can't be blank"
+
+		# 	user2.password = '123456789'
+  #   	user2.should_be_valid
+		# end
+
+		# it "should return an error if the password is < 8" do
+		# 	user2 = User.create!(password:'1234', email: "vasile@mymail.com")
+			
+		# 	user2.should_not_be_valid
+		# 	user2.errors.on(:password).should_equal "Password is too short (minimum is 8 characters)"
+
+		# 	user2.password = '123456789'
+  #   	user2.should_be_valid
+		# end
+
+		# it "should return an error if the password doesn't match the confirmation" do
+		# 	user2 = User.create!(password:'12345678', password_confirmation: '87654321', email: "vasile@mymail.com")
+			
+		# 	user2.should_not_be_valid
+		# 	user2.errors.on(:password).should_equal "Password doesn't match confirmation"
+
+		# 	user2.password_confirmation = '12345678'
+  #   	user2.should_be_valid
+		# end
 	end
 
 	context "roles check : " do
