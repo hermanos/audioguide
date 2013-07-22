@@ -16,11 +16,11 @@
     </td>
     <% if museum.published == 0 %>
 		  <td>
-		  	<%= link_to "Activate", activate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.admin? %>
+		  	<%= link_to "Activate", activate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.is?(:admin) %>
 		  </td>
 		<% elsif museum.published == 1 %>
 			<td>
-		  	<%= link_to "Deactivate", deactivate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.admin? %>
+		  	<%= link_to "Deactivate", deactivate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.is?(:admin) %>
 		  </td>
     <% end %>
   </tr>
@@ -29,4 +29,4 @@
 </table>
 
 <br>
-<%= link_to 'New Museum', new_museum_path if current_user.admin? %>
+<%= link_to 'New Museum', new_museum_path if current_user.is?(:admin) %>

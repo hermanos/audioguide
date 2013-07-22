@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(:version => 20130711132309) do
     t.text     "description"
     t.string   "audio"
     t.string   "video"
-    t.integer  "floor"
-    t.float    "lat"
-    t.float    "long"
+    t.integer  "floor",       :default => 0,   :null => false
+    t.float    "lat",         :default => 0.0, :null => false
+    t.float    "long",        :default => 0.0, :null => false
     t.string   "qr_code"
     t.integer  "museum_id"
-    t.integer  "private",     :default => 1
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.integer  "private",     :default => 1,   :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "image"
   end
 
@@ -100,11 +100,13 @@ ActiveRecord::Schema.define(:version => 20130711132309) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
     t.integer  "profile_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
 
+  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

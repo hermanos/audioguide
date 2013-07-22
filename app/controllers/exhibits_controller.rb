@@ -1,7 +1,6 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
-  before_filter :authenticate_user!
-  load_and_authorize_resource
+  before_filter :authenticate_user!, except: :show
   
   # GET /exhibits
   # GET /exhibits.json
@@ -21,11 +20,7 @@ class ExhibitsController < ApplicationController
     @museum = Museum.find(params[:museum_id])
     @exhibit = Exhibit.find(params[:id])
 
-    if @museum != @exhibit.museum
-      redirect_to root_path, notice: "Te crezi HACKER? Incearca maine! "
-      return
-    end
-    # if user.user?
+    # if user.is?(:user)
     #   Scan.scanned?(@exhibit, user.profile)
     #   render 'show_user'
     #   return 

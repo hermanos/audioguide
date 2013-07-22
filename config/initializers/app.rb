@@ -1,0 +1,1 @@
+DEFAULT_PROFILE_NAME = "Guest"
