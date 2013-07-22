@@ -28,7 +28,11 @@ class ExhibitsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @exhibit }
+      format.json do 
+        exhibit = @exhibit.attributes
+        exhibit[:image] = "http://staging.mooseumapp.com"+@exhibit.image.to_s
+        render json: exhibit 
+      end
       format.png { render qrcode: @exhibit.qr_code }
     end
   end
