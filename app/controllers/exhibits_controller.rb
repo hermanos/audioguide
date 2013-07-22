@@ -30,11 +30,7 @@ class ExhibitsController < ApplicationController
       format.html # show.html.erb
       format.json do 
         exhibit = @exhibit.attributes
-<<<<<<< HEAD
         exhibit[:image] = "http://staging.mooseumapp.com"+@exhibit.image.to_s
-=======
-        exhibit.except!('image') if @exhibit.image.url.nil?
->>>>>>> 88fc994d13cc7d90a17dc28a40c517776c31e087
         render json: exhibit 
       end
       format.png { render qrcode: @exhibit.qr_code }
