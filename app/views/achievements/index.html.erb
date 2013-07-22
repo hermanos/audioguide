@@ -13,7 +13,7 @@
     <td width="300"><%= achievement.title %></td>
     <td width="400"><%= achievement.description %></td>
   </tr>
-  <% if current_user.admin? %>
+  <% if current_user.is?(:admin) %>
     <tr>
         <td colspan="3">
           <%= link_to 'Edit', edit_achievement_path(achievement) %> |
@@ -25,4 +25,5 @@
 </table>
 
 <br />
-  <%= link_to 'New Achievement', new_achievement_path if current_user.admin? %>
+  <%= link_to 'New Achievement', new_achievement_path 
+  if current_user.is?(:admin) %>

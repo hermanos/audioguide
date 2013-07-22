@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jquery</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script>
+        // $.support.cors = true;
+        // $.mobile.allowCrossDomainPages = true;
+
+        $(document).ready(function(){
+          $.ajax({
+                  type       : "GET",
+                  // url        : 'http://www.grrrid.com/home/test.json',
+                  url: 'http://staging.mooseumapp.com/museums/1/exhibits/1.json',
+                  // crossDomain: true,
+                  dataType: 'jsonp',
+                  // data: {},
+                  // processdata: true,
+                  success    : function(data) {
+                    alert('success');
+                  },
+                  error      : function() {
+                    alert('error');
+                  }
+              });
+          // $.getJSON('http://localhost:3000/museums/1/exhibits/1.json').done(function(response){ alert(response);});
+        });
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="index">
+            <div data-theme="b" data-role="header">
+                <h1>Index page</h1>
+            </div>
+
+            <div data-role="content">
+
+            </div>
+        </div>
+    </body>
+</html>
