@@ -20,4 +20,4 @@ app/assets/images/Thumbs.db
 Gemfile.lock
 public/uploads/
 log/
-
+tmp/
