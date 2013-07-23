@@ -11,7 +11,7 @@ class CreateExhibits < ActiveRecord::Migration
       t.string :qr_code
       t.integer :museum_id
       t.integer :private, default: 1, null: false
-      t.string :language, default: 'Romana'
+      t.string :language, default: 'RO'
 
 
       t.timestamps

@@ -35,6 +35,12 @@
     <%= f.text_field :video %>
   </div>
   <br>
+    <div class="field">
+    <%= f.label :language %>
+    <%= f.select :language, 
+    options_for_select([['Romana', 'RO'], ['Engleza', 'EN'], ['Germana', 'DE'], ['Franceza', 'FR']], 'RO') %>
+  </div>
+  <br>
   <div class="field">
     <%= f.label :floor %>
     <%= f.number_field :floor %>
