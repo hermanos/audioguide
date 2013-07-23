@@ -1,6 +1,6 @@
 class Exhibit < ActiveRecord::Base
   attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code,
-    :title, :video, :private, :image, :remote_image_url
+    :title, :video, :private, :image, :remote_image_url, :language
 
   belongs_to :museum
   has_many :scans

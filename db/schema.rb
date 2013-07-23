@@ -41,14 +41,15 @@ ActiveRecord::Schema.define(:version => 20130711132309) do
     t.text     "description"
     t.string   "audio"
     t.string   "video"
-    t.integer  "floor",       :default => 0,   :null => false
-    t.float    "lat",         :default => 0.0, :null => false
-    t.float    "long",        :default => 0.0, :null => false
+    t.integer  "floor",       :default => 0,        :null => false
+    t.float    "lat",         :default => 0.0,      :null => false
+    t.float    "long",        :default => 0.0,      :null => false
     t.string   "qr_code"
     t.integer  "museum_id"
-    t.integer  "private",     :default => 1,   :null => false
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.integer  "private",     :default => 1,        :null => false
+    t.string   "language",    :default => "Romana"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "image"
   end
 
