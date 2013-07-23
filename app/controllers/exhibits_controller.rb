@@ -109,6 +109,7 @@ class ExhibitsController < ApplicationController
     respond_to do |format|
       format.json do 
         if exhibits.count == 0  
+          QrCode.create(qrcode: params[:q])
           render json: {id: 0} 
         else 
           render json: exhibits.first 
