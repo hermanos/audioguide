@@ -4,6 +4,1543 @@ Connecting to database specified by database.yml
   [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+<<<<<<< HEAD
+  [1m[36m (130.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (243.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateMuseums (20130701111940)
+  [1m[35m (132.6ms)[0m  CREATE TABLE `museums` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `lat` float, `long` float, `manager_id` int(11) DEFAULT 0, `published` int(11) DEFAULT 0, `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (53.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130701111940')[0m
+Migrating to CreateProfiles (20130702132952)
+  [1m[35m (131.5ms)[0m  CREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `role` varchar(255), `coins` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130702132952')[0m
+Migrating to CreateExhibits (20130703080132)
+  [1m[35m (109.1ms)[0m  CREATE TABLE `exhibits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `audio` varchar(255), `video` varchar(255), `floor` int(11), `lat` float, `long` float, `qr_code` varchar(255), `museum_id` int(11), `private` int(11) DEFAULT 1, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703080132')[0m
+Migrating to CreateRatings (20130703083411)
+  [1m[35m (109.5ms)[0m  CREATE TABLE `ratings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `score` int(11), `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703083411')[0m
+Migrating to CreateComments (20130703090944)
+  [1m[35m (110.7ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `user_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703090944')[0m
+Migrating to DeviseCreateUsers (20130703094119)
+  [1m[35m (120.3ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (187.8ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (198.7ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (188.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703094119')[0m
+Migrating to CreateAchievements (20130703103131)
+  [1m[35m (219.8ms)[0m  CREATE TABLE `achievements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130703103131')[0m
+Migrating to AchievementsProfiles (20130708065028)
+  [1m[35m (131.5ms)[0m  CREATE TABLE `achievements_profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `achievement_id` int(11), `profile_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (55.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708065028')[0m
+Migrating to CreateScans (20130708083643)
+  [1m[35m (120.6ms)[0m  CREATE TABLE `scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `profile_id` int(11), `exhibit_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (54.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130708083643')[0m
+Migrating to AddImageToMuseums (20130711124327)
+  [1m[35m (310.3ms)[0m  ALTER TABLE `museums` ADD `image` varchar(255)
+  [1m[36m (54.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711124327')[0m
+Migrating to AddImageToExhibits (20130711125405)
+  [1m[35m (255.5ms)[0m  ALTER TABLE `exhibits` ADD `image` varchar(255)
+  [1m[36m (43.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711125405')[0m
+Migrating to AddImageToProfiles (20130711131423)
+  [1m[35m (245.1ms)[0m  ALTER TABLE `profiles` ADD `image` varchar(255)
+  [1m[36m (43.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711131423')[0m
+Migrating to AddImageToAchievements (20130711132309)
+  [1m[35m (255.3ms)[0m  ALTER TABLE `achievements` ADD `image` varchar(255)
+  [1m[36m (43.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130711132309')[0m
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 08:03:42', 'Congratulations for your first Scan !', NULL, 'First Scan', '2013-07-17 08:03:42')[0m
+  [1m[35m (38.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 08:03:42', 'Congratulations for your 100th Scan !', NULL, '100 Scans', '2013-07-17 08:03:42')
+  [1m[36m (41.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 08:03:42', 'Congratulations for visiting an entire Museum !', NULL, 'Full Museum', '2013-07-17 08:03:42')[0m
+  [1m[35m (40.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `achievements` (`created_at`, `description`, `image`, `title`, `updated_at`) VALUES ('2013-07-17 08:03:42', 'Congratulations for optaining 1000 coins !', NULL, 'Rich', '2013-07-17 08:03:42')
+  [1m[36m (40.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@audioguide.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 08:03:42', NULL, NULL, 'admin@audioguide.com', '$2a$10$o4mtyXf5YkFdptADZtyNleY3eXSxh7XEkpzuD0ixZ9zdqBA.AKfZS', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 08:03:42')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 08:03:42', NULL, 'Guest', 'user', '2013-07-17 08:03:42', NULL)[0m
+  [1m[35mProfile Load (0.4ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mUPDATE `profiles` SET `user_id` = 1, `updated_at` = '2013-07-17 08:03:42' WHERE `profiles`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE `users` SET `email` = 'admin@audioguide.com', `encrypted_password` = '$2a$10$o4mtyXf5YkFdptADZtyNleY3eXSxh7XEkpzuD0ixZ9zdqBA.AKfZS', `created_at` = '2013-07-17 08:03:42', `updated_at` = '2013-07-17 08:03:42' WHERE `users`.`id` = 1
+  [1m[36m (42.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mUPDATE `profiles` SET `role` = 'admin', `updated_at` = '2013-07-17 08:03:42' WHERE `profiles`.`id` = 1[0m
+  [1m[35m (40.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'manager@audioguide.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 08:03:42', NULL, NULL, 'manager@audioguide.com', '$2a$10$FIjq5OtbGNvOyc9Zyz5Rt.MLmMr5hS8KmTD9SrMnPMlCm6jOi0SUG', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 08:03:42')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 08:03:42', NULL, 'Guest', 'user', '2013-07-17 08:03:42', NULL)
+  [1m[36mProfile Load (0.4ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 2 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  UPDATE `profiles` SET `user_id` = 2, `updated_at` = '2013-07-17 08:03:42' WHERE `profiles`.`id` = 2
+  [1m[36m (0.3ms)[0m  [1mUPDATE `users` SET `email` = 'manager@audioguide.com', `encrypted_password` = '$2a$10$FIjq5OtbGNvOyc9Zyz5Rt.MLmMr5hS8KmTD9SrMnPMlCm6jOi0SUG', `created_at` = '2013-07-17 08:03:42', `updated_at` = '2013-07-17 08:03:42' WHERE `users`.`id` = 2[0m
+  [1m[35m (54.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE `profiles` SET `role` = 'manager', `updated_at` = '2013-07-17 08:03:42' WHERE `profiles`.`id` = 2
+  [1m[36m (52.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'basic_user@audioguide.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `profile_id`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-07-17 08:03:42', NULL, NULL, 'basic_user@audioguide.com', '$2a$10$nDikMWXnWkRyDVS12QA0yOfLlZZ/S73uSTsxDKtR3/2XkYjQN3H9u', NULL, NULL, NULL, NULL, NULL, NULL, 0, '2013-07-17 08:03:42')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `profiles` (`coins`, `created_at`, `image`, `name`, `role`, `updated_at`, `user_id`) VALUES (NULL, '2013-07-17 08:03:42', NULL, 'Guest', 'user', '2013-07-17 08:03:42', NULL)[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 3 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mUPDATE `profiles` SET `user_id` = 3, `updated_at` = '2013-07-17 08:03:42' WHERE `profiles`.`id` = 3[0m
+  [1m[35m (0.1ms)[0m  UPDATE `users` SET `email` = 'basic_user@audioguide.com', `encrypted_password` = '$2a$10$nDikMWXnWkRyDVS12QA0yOfLlZZ/S73uSTsxDKtR3/2XkYjQN3H9u', `created_at` = '2013-07-17 08:03:42', `updated_at` = '2013-07-17 08:03:42' WHERE `users`.`id` = 3
+  [1m[36m (64.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO `achievements_profiles` (`profile_id`, `achievement_id`) VALUES (3, 1)[0m
+  [1m[35m (54.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO `achievements_profiles` (`profile_id`, `achievement_id`) VALUES (3, 2)
+  [1m[36m (53.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `museums` (`created_at`, `description`, `image`, `lat`, `long`, `manager_id`, `name`, `published`, `updated_at`) VALUES ('2013-07-17 08:03:42', 'Cel mai tare muzeu', NULL, 45.75515, 24.116297, 2, 'Muzeul de Stiinte Naturale', 0, '2013-07-17 08:03:42')[0m
+  [1m[35m (54.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `museums` (`created_at`, `description`, `image`, `lat`, `long`, `manager_id`, `name`, `published`, `updated_at`) VALUES ('2013-07-17 08:03:43', 'Al doilea cel mai tare', NULL, 45.79652, 24.150545, 1, 'Muzeul Brukenthal', 0, '2013-07-17 08:03:43')
+  [1m[36m (50.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `exhibits` (`audio`, `created_at`, `description`, `floor`, `image`, `lat`, `long`, `museum_id`, `private`, `qr_code`, `title`, `updated_at`, `video`) VALUES (NULL, '2013-07-17 08:03:43', 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ', 0, NULL, 40.0, 40.0, 1, 1, 'http://10.0.0.64:3000/museums/2/exhibits/1', 'Sculptura transilvaneana in piatra din secolele XIII-XIX', '2013-07-17 08:03:43', NULL)[0m
+  [1m[35m (0.4ms)[0m  UPDATE `exhibits` SET `title` = 'Sculptura transilvaneana in piatra din secolele XIII-XIX', `description` = 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ', `floor` = 0, `lat` = 40.0, `long` = 40.0, `qr_code` = 'http://localhost:3000/museums/1/exhibits/1', `museum_id` = 1, `created_at` = '2013-07-17 08:03:43', `updated_at` = '2013-07-17 08:03:43' WHERE `exhibits`.`id` = 1
+  [1m[36m (76.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `exhibits` (`audio`, `created_at`, `description`, `floor`, `image`, `lat`, `long`, `museum_id`, `private`, `qr_code`, `title`, `updated_at`, `video`) VALUES (NULL, '2013-07-17 08:03:43', 'Pictura. ', 0, NULL, 40.0, 40.0, 2, 0, 'http://10.0.0.64:3000/museums/2/exhibits/2', 'Monalisa', '2013-07-17 08:03:43', NULL)[0m
+  [1m[35m (0.4ms)[0m  UPDATE `exhibits` SET `title` = 'Monalisa', `description` = 'Pictura. ', `floor` = 0, `lat` = 40.0, `long` = 40.0, `qr_code` = 'http://localhost:3000/museums/2/exhibits/2', `museum_id` = 2, `private` = 0, `created_at` = '2013-07-17 08:03:43', `updated_at` = '2013-07-17 08:03:43' WHERE `exhibits`.`id` = 2
+  [1m[36m (47.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `scans` (`created_at`, `exhibit_id`, `profile_id`, `updated_at`) VALUES ('2013-07-17 08:03:43', 1, 3, '2013-07-17 08:03:43')[0m
+  [1m[35m (55.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `scans` (`created_at`, `exhibit_id`, `profile_id`, `updated_at`) VALUES ('2013-07-17 08:03:43', 2, 3, '2013-07-17 08:03:43')
+  [1m[36m (53.0ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:03:59 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (3.7ms)
+Compiled pages.css  (165ms)  (pid 10140)
+Compiled application.css  (36ms)  (pid 10140)
+Compiled application.js  (5ms)  (pid 10140)
+  Rendered shared/_menu.html.erb (3.4ms)
+  Rendered shared/_alerts.html.erb (0.8ms)
+Completed 200 OK in 324ms (Views: 323.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /achievements.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /comments.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /exhibits.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /pages.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /museums.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /profiles.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /ratings.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /style.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /pages.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /backstretch.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:00 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (9.4ms)
+  Rendered shared/_menu.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.1ms)
+Completed 200 OK in 86ms (Views: 61.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /achievements.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /comments.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:01 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-07-17 11:04:06 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TD32gPEsjLDNY+/ER9peaijOrw5EyaO2XlYj+tbNWVs=", "user"=>{"email"=>"admin@audioguide.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'admin@audioguide.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2013-07-17 08:04:07', `current_sign_in_at` = '2013-07-17 08:04:07', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2013-07-17 08:04:07' WHERE `users`.`id` = 1[0m
+  [1m[35m (51.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 153ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (1.2ms)
+Completed 200 OK in 84ms (Views: 19.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /achievements.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:07 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Processing by MuseumsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36mMuseum Load (0.2ms)[0m  [1mSELECT `museums`.* FROM `museums` [0m
+  Rendered museums/index.html.erb within layouts/simple (2.7ms)
+Completed 200 OK in 80ms (Views: 22.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /achievements.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /profiles.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:08 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums/2" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Processing by MuseumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mMuseum Load (0.3ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
+  [1m[35mProfile Load (0.1ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
+  [1m[35mExhibit Load (0.4ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`museum_id` = 2
+  Rendered museums/show.html.erb within layouts/simple (60.2ms)
+Completed 200 OK in 84ms (Views: 74.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:13 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums/2/exhibits/2" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Processing by ExhibitsController#show as HTML
+  Parameters: {"museum_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mExhibit Load (0.4ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mMuseum Load (0.1ms)[0m  SELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1[0m
+  Rendered exhibits/show.html.erb within layouts/simple (2.9ms)
+Completed 200 OK in 33ms (Views: 20.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /museums.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:04:15 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums/2/exhibits/2.png" for 127.0.0.1 at 2013-07-17 11:04:17 +0300
+Processing by ExhibitsController#show as PNG
+  Parameters: {"museum_id"=>"2", "id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mExhibit Load (0.1ms)[0m  [1mSELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1[0m
+  [1m[35mProfile Load (0.1ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36mMuseum Load (0.0ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 410ms (Views: 402.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.1ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (1.3ms)
+Completed 200 OK in 25ms (Views: 20.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /achievements.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /exhibits.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:13 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Processing by MuseumsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.1ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36mMuseum Load (0.1ms)[0m  [1mSELECT `museums`.* FROM `museums` [0m
+  Rendered museums/index.html.erb within layouts/simple (1.1ms)
+Completed 200 OK in 65ms (Views: 54.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:15 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums/2" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Processing by MuseumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mMuseum Load (0.1ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
+  [1m[35mProfile Load (0.1ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
+  [1m[35mExhibit Load (0.1ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`museum_id` = 2
+  Rendered museums/show.html.erb within layouts/simple (1.7ms)
+Completed 200 OK in 27ms (Views: 17.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /exhibits.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:17 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums/2/exhibits/2" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Processing by ExhibitsController#show as HTML
+  Parameters: {"museum_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mExhibit Load (0.2ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1
+  [1m[36mProfile Load (0.5ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mMuseum Load (0.2ms)[0m  SELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1[0m
+  Rendered exhibits/show.html.erb within layouts/simple (1.1ms)
+Completed 200 OK in 69ms (Views: 17.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /achievements.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /profiles.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:18:19 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums/2/exhibits/2.json" for 127.0.0.1 at 2013-07-17 11:18:24 +0300
+Processing by ExhibitsController#show as JSON
+  Parameters: {"museum_id"=>"2", "id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mExhibit Load (0.3ms)[0m  [1mSELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  [1m[36mMuseum Load (0.1ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.0ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (0.5ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /comments.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /ratings.css - 304 Not Modified (40ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:34 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.3ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (0.5ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:39 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.1ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (0.7ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /achievements.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /profiles.css - 304 Not Modified (37ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /style.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:41 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (0.9ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /achievements.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /exhibits.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (0.5ms)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /achievements.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /ratings.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /style.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:42 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (0.2ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (0.7ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /achievements.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:43 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TD32gPEsjLDNY+/ER9peaijOrw5EyaO2XlYj+tbNWVs="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_menu.html.erb (0.7ms)
+  Rendered shared/_alerts.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /achievements.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /comments.css - 304 Not Modified (38ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 11:21:44 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_menu.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 70.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /achievements.css - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /bootstrap-responsive.min.css - 200 OK (3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /bootstrap.min.css - 200 OK (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /comments.css - 200 OK (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /exhibits.css - 200 OK (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /museums.css - 200 OK (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /profiles.css - 200 OK (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /ratings.css - 200 OK (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /style.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /backstretch.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /bootstrap.min.js - 200 OK (39ms)
+
+
+Started GET "/assets/pages.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:20 +0300
+Served asset /pages.js - 200 OK (0ms)
+
+
+Started GET "/users/sign_in" for 10.0.0.64 at 2013-07-17 11:25:52 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.erb (0.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered shared/_menu.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:53 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:53 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:53 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:53 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 10.0.0.64 at 2013-07-17 11:25:53 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 10.0.0.64 at 2013-07-17 11:26:25 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HYRP1qUFF107OmaCEeF5/EiFb0VO/ud75JamOq+v7i8=", "user"=>{"email"=>"admin@audioguide.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'admin@audioguide.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2013-07-17 08:26:25', `current_sign_in_ip` = '10.0.0.64', `sign_in_count` = 2, `updated_at` = '2013-07-17 08:26:25' WHERE `users`.`id` = 1
+  [1m[36m (66.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://10.0.0.64:3000/
+Completed 302 Found in 147ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.0.64 at 2013-07-17 11:26:25 +0300
+Processing by PagesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1[0m
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (0.9ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:26 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:26 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:26 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:26 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:26 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums" for 10.0.0.64 at 2013-07-17 11:26:37 +0300
+Processing by MuseumsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mProfile Load (0.2ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mMuseum Load (0.1ms)[0m  SELECT `museums`.* FROM `museums` 
+  Rendered museums/index.html.erb within layouts/simple (1.1ms)
+Completed 200 OK in 66ms (Views: 52.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:38 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:38 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:38 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:38 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:38 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/museums/2" for 10.0.0.64 at 2013-07-17 11:26:52 +0300
+Processing by MuseumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMuseum Load (0.1ms)[0m  SELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1
+  [1m[36mProfile Load (0.1ms)[0m  [1mSELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1
+  [1m[36mExhibit Load (0.1ms)[0m  [1mSELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`museum_id` = 2[0m
+  Rendered museums/show.html.erb within layouts/simple (2.0ms)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:53 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:53 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:53 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:53 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 10.0.0.64 at 2013-07-17 11:26:53 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+=======
   [1m[36m (104.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
   [1m[35m (221.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
   [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
@@ -4800,3 +6337,4 @@ Processing by ExhibitsController#show as JSON
   [1m[36mMuseum Load (0.1ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
   [1m[35mExhibit Load (0.1ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1
 Completed 200 OK in 91ms (Views: 0.4ms | ActiveRecord: 5.0ms)
+>>>>>>> 6349790ee9e7d5920b6ad40bb2aa52dbb0102ad4
