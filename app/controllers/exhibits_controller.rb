@@ -1,6 +1,6 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
-  before_filter :authenticate_user!, except: :show
+  before_filter :authenticate_user!, except: :search
   
   # GET /exhibits
   # GET /exhibits.json
@@ -101,6 +101,19 @@ class ExhibitsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @museum, notice: "Exhibit successfully deleted" }
       format.json { head :no_content }
+    end
+  end
+
+  def search
+    exhibits = Exhibit.where(qr_code: params[:q])
+    respond_to do |format|
+      format.json do 
+        if exhibits.count == 0  
+          render json: {id: 0} 
+        else 
+          render json: exhibits.first 
+        end
+      end
     end
   end
 end
