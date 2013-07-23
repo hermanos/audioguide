@@ -1,5 +1,8 @@
 AudioguideMuseum::Application.routes.draw do
 
+  resources :qr_codes
+
+
   devise_for :users
 
   resources :museums do

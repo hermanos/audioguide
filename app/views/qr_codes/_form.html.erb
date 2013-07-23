@@ -1,0 +1,25 @@
+<%= form_for(@qr_code) do |f| %>
+  <% if @qr_code.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@qr_code.errors.count, "error") %> prohibited this qr_code from being saved:</h2>
+
+      <ul>
+      <% @qr_code.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :qrcode %><br />
+    <%= f.text_field :qrcode %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
