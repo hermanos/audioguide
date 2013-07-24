@@ -77322,3 +77322,862 @@ Served asset /phone.png - 200 OK (0ms)
 
 Started GET "/assets/logo%20hover.png" for 127.0.0.1 at 2013-07-24 12:56:06 +0300
 Served asset /logo%20hover.png - 200 OK (2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (4.2ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+  Rendered shared/_steps.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /application.css - 200 OK (73ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /bootstrap-responsive.min.css - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /bootstrap.min.css - 200 OK (4ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /achievements.css - 200 OK (2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /comments.css - 200 OK (3ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /museums.css - 200 OK (1ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /pages.css - 200 OK (3ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /profiles.css - 200 OK (5ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /ratings.css - 200 OK (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /scaffolds.css - 200 OK (7ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /style.css - 200 OK (2ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /exhibits.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /jquery_ujs.js - 200 OK (7ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /backstretch.js - 200 OK (2ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /bootstrap.min.js - 200 OK (3ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /pages.js - 200 OK (1ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /qr_codes.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /application.js - 200 OK (43ms)
+
+
+Started GET "/assets/carousel1.jpg" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /carousel1.jpg - 200 OK (6ms)
+
+
+Started GET "/assets/googleplay.png" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /googleplay.png - 200 OK (1ms)
+
+
+Started GET "/assets/carousel2.jpg" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /carousel2.jpg - 200 OK (1ms)
+
+
+Started GET "/assets/carousel3.jpg" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /carousel3.jpg - 200 OK (1ms)
+
+
+Started GET "/assets/phone.png" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /phone.png - 200 OK (1ms)
+
+
+Started GET "/assets/appstore.png" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /appstore.png - 200 OK (1ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /logo.png - 200 OK (5ms)
+
+
+Started GET "/assets/b1.png" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /b1.png - 200 OK (0ms)
+
+
+Started GET "/assets/b2.png" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /b2.png - 200 OK (1ms)
+
+
+Started GET "/assets/b3.png" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /b3.png - 200 OK (4ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-24 16:50:16 +0300
+Served asset /background.jpg - 200 OK (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (2.9ms)
+  Rendered shared/_alerts.html.erb (0.1ms)
+  Rendered shared/_steps.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /application.css - 200 OK (10ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /achievements.css - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /bootstrap-responsive.min.css - 200 OK (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /comments.css - 200 OK (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /museums.css - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /bootstrap.min.css - 200 OK (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /profiles.css - 200 OK (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /ratings.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /exhibits.css - 200 OK (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /style.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /backstretch.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /bootstrap.min.js - 200 OK (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /qr_codes.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /application.js - 200 OK (1ms)
+
+
+Started GET "/assets/carousel1.jpg" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /carousel1.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/carousel2.jpg" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /carousel2.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/carousel3.jpg" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /carousel3.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/appstore.png" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /appstore.png - 200 OK (0ms)
+
+
+Started GET "/assets/phone.png" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /phone.png - 200 OK (0ms)
+
+
+Started GET "/assets/googleplay.png" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /googleplay.png - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/b1.png" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /b1.png - 200 OK (0ms)
+
+
+Started GET "/assets/b2.png" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /b2.png - 200 OK (0ms)
+
+
+Started GET "/assets/b3.png" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /b3.png - 200 OK (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-24 16:50:17 +0300
+Served asset /background.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/logo%20hover.png" for 127.0.0.1 at 2013-07-24 16:50:27 +0300
+Served asset /logo%20hover.png - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+  Rendered shared/_steps.html.erb (0.0ms)
+Completed 200 OK in 60ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /exhibits.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /qr_codes.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/carousel1.jpg" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /carousel1.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel3.jpg" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /carousel3.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel2.jpg" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /carousel2.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/googleplay.png" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /googleplay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/appstore.png" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /appstore.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /background.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+  Rendered shared/_steps.html.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:58 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /achievements.css - 304 Not Modified (39ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /qr_codes.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/carousel1.jpg" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /carousel1.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel2.jpg" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /carousel2.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/googleplay.png" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /googleplay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/appstore.png" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /appstore.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel3.jpg" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /carousel3.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-24 16:52:59 +0300
+Served asset /background.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.7ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+  Rendered shared/_steps.html.erb (0.0ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Served asset /achievements.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:17 +0300
+Served asset /profiles.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /ratings.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /qr_codes.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel1.jpg" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /carousel1.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel3.jpg" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /carousel3.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/googleplay.png" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /googleplay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/appstore.png" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /appstore.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel2.jpg" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /carousel2.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-24 16:56:18 +0300
+Served asset /background.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.2ms)
+Compiled style.css  (0ms)  (pid 22880)
+Compiled application.css  (2ms)  (pid 22880)
+  Rendered shared/_alerts.html.erb (0.0ms)
+  Rendered shared/_steps.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /profiles.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /ratings.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /style.css - 200 OK (3ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /qr_codes.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/carousel1.jpg" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /carousel1.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel2.jpg" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /carousel2.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/googleplay.png" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /googleplay.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/appstore.png" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /appstore.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carousel3.jpg" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /carousel3.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/phone.png" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /phone.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/b1.png" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /b1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/b2.png" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /b2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/b3.png" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /b3.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-24 16:57:17 +0300
+Served asset /background.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo%20hover.png" for 127.0.0.1 at 2013-07-24 16:57:37 +0300
+Served asset /logo%20hover.png - 304 Not Modified (0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2013-07-24 16:57:41 +0300
+
+ActionController::RoutingError (No route matches [GET] "/sign_in"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2013-07-24 16:57:46 +0300
+
+ActionController::RoutingError (No route matches [GET] "/user/sign_in"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2013-07-24 16:57:52 +0300
+
+ActionController::RoutingError (No route matches [GET] "/sign_in"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2013-07-24 16:57:56 +0300
+
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2013-07-24 16:59:34 +0300
+
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/rares/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
