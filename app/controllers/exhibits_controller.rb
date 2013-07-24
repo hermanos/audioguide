@@ -1,7 +1,8 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
-  before_filter :authenticate_user!, except: [:show]
-  
+
+  before_filter :authenticate_user!, except: [:search,:show]
+
   # GET /exhibits
   # GET /exhibits.json
   def index
@@ -18,19 +19,15 @@ class ExhibitsController < ApplicationController
   def show
     user = current_user
     @museum = Museum.find(params[:museum_id])
-    
-    unless @museum.exhibits.where(id: params[:id]).first.nil? 
-      @exhibit = @museum.exhibits.where(id: params[:id]).first 
-      render 'show'
-      return 
-    end
+    @exhibit = Exhibit.find(params[:id])
 
-    # if user.user?
-    #   Scan.scanned?(@exhibit.id, user.profile.id)
+    # if user.is?(:user)
+    #   Scan.scanned?(@exhibit, user.profile)
     #   render 'show_user'
-    #   return 
+    #   return
     # end
 
+    QrCode.scan(@exhibit.qr_code) if user.nil? 
     if user_signed_in?    
       respond_to do |format|
         format.html # show.html.erb
@@ -47,7 +44,7 @@ class ExhibitsController < ApplicationController
   def new
     @museum = Museum.find(params[:museum_id])
     @exhibit = @museum.exhibits.new
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exhibit }
@@ -106,6 +103,23 @@ class ExhibitsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @museum, notice: "Exhibit successfully deleted" }
       format.json { head :no_content }
+    end
+  end
+
+  def search
+    exhibits = Exhibit.where(qr_code: params[:q])
+    respond_to do |format|
+      format.json do
+        if exhibits.count == 0
+          QrCode.create(qrcode: params[:q])
+          render json: {id: 0}
+        else
+          root_url = Rails.application.routes.url_helpers.root_url
+          exhibit = exhibits.first.attributes
+          exhibit["image"] = root_url[0..-2]+exhibits.first.image.url
+          render json: exhibit
+        end
+      end
     end
   end
 end

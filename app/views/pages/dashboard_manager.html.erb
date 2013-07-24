@@ -1,20 +1,4 @@
 <%= render 'shared/alerts' %>
-<nav>
-	<% @museum.each do |museum| %>
-		<% if @user.manage_museum?(museum) %>		
-			<p>
-				<h4><%= museum.name %></h4>
-			</p>
-			<p>
-				 <%= link_to "Manage", museum %>
 
-			</p>
-		<% end %>
-	<% end %>
-	<p>
-		<%= link_to "New Museum", new_museum_path %>
-	</p>
+<%= link_to "Manage museums", museums_path %>
 
-</nav>
-
-	

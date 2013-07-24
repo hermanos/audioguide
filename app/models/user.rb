@@ -1,43 +1,31 @@
 class User < ActiveRecord::Base
 
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  # Include default devise modules. Others available are :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+    :trackable, :validatable, :token_authenticatable
 
-  # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :profile
-  # attr_accessible :title, :body
-  
+
 	has_one :profile
 
- 
   after_create :create_profile
 
-  def create_profile
-    p = Profile.create!(role: 'user', name: "Guest")
-    update_attribute(:profile, p)
-  end
-    
-  def admin?
-    self.profile.role == "admin" ? true : false
-  end
-
-  def user?
-    self.profile.role == "user" ? true : false
-  end
-
-  def manager?
-    self.profile.role == "manager" ? true : false
+  # user.is?(:admin) true/false
+  def is?(role)
+    self.profile.role == role.to_s
   end
 
   def manage_museum?(museum)
-    if self.manager? and self.profile == museum.manager
-      return true
-    else
-      return false
-    end
+    self.is?(:manager) and self.profile == museum.manager
+  end
+
+  private
+
+  def create_profile
+    role = Profile.all.blank? ? "admin" : "user"
+
+    p = Profile.create(role: role, name: DEFAULT_PROFILE_NAME)
+    update_attribute(:profile, p)
   end
 
 end

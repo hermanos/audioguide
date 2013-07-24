@@ -6,13 +6,12 @@ class MuseumsController < ApplicationController
   # GET /museums.json
   def index
     @museums = Museum.all
-    @user = current_user
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @museums }
     end
-  end 
+  end
 
   # GET /museums/1
   # GET /museums/1.json
@@ -45,7 +44,6 @@ class MuseumsController < ApplicationController
   def create
     @museum = Museum.new(params[:museum])
     @museum.manager_id = current_user.profile.id
-    @museum.published = 0
 
     respond_to do |format|
       if @museum.save
@@ -98,5 +96,5 @@ class MuseumsController < ApplicationController
     redirect_to museums_path
   end
 
-  
+
 end
