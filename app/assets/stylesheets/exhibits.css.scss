@@ -1,3 +1,35 @@
 // Place all the styles related to the Exhibits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div#download
+{
+  padding-top: 20px;
+	height: 210px;
+  width: 97.7%;
+  margin-left: -20px;
+  margin-top: -15px;
+  background-color: #333;
+  color: #FF0000;
+  text-align: center;
+} 
+
+div#download a
+{
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: green;
+	width: 200px;
+	color: yellow;
+	position: relative;
+}
+
+div#download p
+{
+	text-align: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}

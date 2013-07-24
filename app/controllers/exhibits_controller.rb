@@ -1,7 +1,6 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
-  before_filter :authenticate_user!
-  load_and_authorize_resource
+  before_filter :authenticate_user!, except: [:show]
   
   # GET /exhibits
   # GET /exhibits.json
@@ -26,16 +25,20 @@ class ExhibitsController < ApplicationController
       return 
     end
 
-    if user.user?
-      Scan.scanned?(@exhibit.id, user.profile.id)
-      render 'show_user'
-      return 
-    end
+    # if user.user?
+    #   Scan.scanned?(@exhibit.id, user.profile.id)
+    #   render 'show_user'
+    #   return 
+    # end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @exhibit }
-      format.png { render qrcode: @exhibit.qr_code }
+    if user_signed_in?    
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @exhibit }
+        format.png { render qrcode: @exhibit.qr_code }
+      end
+    else 
+      render 'show_unauthenticated'
     end
   end
 
