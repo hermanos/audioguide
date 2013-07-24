@@ -25,7 +25,7 @@ class ExhibitsController < ApplicationController
     #   render 'show_user'
     #   return
     # end
-    QrCode.scan(@exhibit.qr_code) if user.nil? 
+    QrCode.scan(@exhibit.qr_code,'found') if user.nil? 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: exhibit }
@@ -105,12 +105,13 @@ class ExhibitsController < ApplicationController
     respond_to do |format|
       format.json do
         if exhibits.count == 0
-          QrCode.create(qrcode: params[:q])
+          QrCode.scan(params[:q],'new')
           render json: {id: 0}
         else
           root_url = Rails.application.routes.url_helpers.root_url
           exhibit = exhibits.first.attributes
-          exhibit["image"] = root_url[0..-2]+exhibits.first.image.url
+          exhibit["image"] = root_url[0..-2].to_s+exhibits.first.image.url.to_s
+          QrCode.scan(exhibit['qr_code'],'found')
           render json: exhibit
         end
       end
