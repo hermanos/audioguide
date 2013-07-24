@@ -133,10 +133,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   cancan
-<<<<<<< HEAD
-=======
   carrierwave
->>>>>>> 8f1efb02ccab1140eaf37430331890f9ad3967c9
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails

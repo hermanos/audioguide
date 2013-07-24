@@ -9,25 +9,23 @@
 </head>
 
 <body>
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="span3">
-          <%= link_to root_path, class: 'logo' do %>
-            AudioGuide
-          <% end %>
-				</div>
-				<div class="span9">
-						<%= render partial: 'shared/menu' %>
-				</div>
-			</div>
-		</div>
-	</header>
+
 
 	<div class="container">
 		<div class="row">
 				<%= render partial: 'shared/alerts' %>
-  			<%= yield %>
+		</div>
+	</div>
+
+	<div class="background-up">
+		<div class="container">
+					<%= yield %>
+		</div>
+	</div>
+	
+	<div class="background-down">
+		<div class="container">
+		  <%= render partial: 'shared/steps' %>
 		</div>
 	</div>
 
