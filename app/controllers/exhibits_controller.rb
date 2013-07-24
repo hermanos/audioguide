@@ -25,7 +25,7 @@ class ExhibitsController < ApplicationController
     #   render 'show_user'
     #   return
     # end
-    QrCode.scan(@exhibit.qr_code)
+    QrCode.scan(@exhibit.qr_code) if user.nil? 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: exhibit }
