@@ -6,11 +6,18 @@
 
 # Ignore bundler config
 /.bundle
+.DS_Store
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
+
+
+
+config/database.yml
+app/assets/images/Thumbs.db
+Gemfile.lock
+public/uploads/
+log
 tmp
-/config/database.yml

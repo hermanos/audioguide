@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="home-user">
+<head>
+  <title> 
+  	Mooseum 
+  </title>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700', :media => 'all' %>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+          <%= link_to root_path, class: 'logo' do %>
+            Mooseum
+          <% end %>
+				</div>
+				<div class="span9">
+						<%= render partial: 'shared/menu' %>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="row user-box">
+			<div class="span12">
+  				<%= yield %>
+  			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<hr>
+					<p>
+            Get the Mooseum app and start your journey in time!
+          </p>
+          <p>
+  					<%= image_tag("appstore.png", alt: "Appstore Image", id:"appstore") %>
+  					<%= image_tag("googleplay.png", alt: "Googleplay Image", id:"googleplay") %>
+          </p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

@@ -1,14 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html class="home">
 <head>
-  <title>AudioguideMuseum</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <title> 
+  	Mooseum
+  </title>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700', :media => 'all' %>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-	<%= link_to "Signout", signout_users_path %>
-	<%= yield %>
+<<<<<<< HEAD
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+          <%= link_to root_path, class: 'logo' do %>
+            Mooseum
+          <% end %>
+				</div>
+				<div class="span9">
+						<%= render partial: 'shared/menu' %>
+				</div>
+			</div>
+		</div>
+	</header>
+=======
+>>>>>>> c506dca6a2c5eaafdf870d0570220eb4418c560a
+
+	<div class="container">
+		<div class="row">
+				<%= render partial: 'shared/alerts' %>
+		</div>
+	</div>
+
+	<div class="background-up">
+		<div class="container">
+			<%= yield %>
+		</div>
+	</div>
+	
+	<div class="background-down">
+		<div class="container">
+		  <%= render partial: 'shared/steps' %>
+		</div>
+	</div>
+
+<!-- 	<footer.main>
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+
+				</div>
+			</div>
+		</div>
+	</footer> -->
 
 </body>
 </html>

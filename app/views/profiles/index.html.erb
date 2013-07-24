@@ -1,0 +1,29 @@
+<h1>Profiles</h1>
+
+<table class="table table-hover" border="1"
+  <tr>
+    <th>ID</th>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th>Coins</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= profile.user_id %></td>
+    <td><%= profile.avatar %></td>
+    <td><%= profile.name %></td>
+    <td><%= profile.coins %></td>
+    <td><%= link_to 'Show', profile %></td>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Profile', new_profile_path %>

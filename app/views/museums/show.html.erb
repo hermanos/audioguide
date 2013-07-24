@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>
+  <%= @museum.name %>
+</h1>
+<%= image_tag(@museum.image_url(:thumb_museums)) if @museum.image? %><br>
+
+  <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=<%= @museum.lat %>,<%= @museum.long %>&amp;daddr=&amp;hl=ro&amp;geocode=&amp;sll=45.769925,24.136019&amp;sspn=0.004356,0.009871&amp;mra=mift&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;ll=<%= @museum.lat %>,<%= @museum.long %>&amp;spn=0.004356,0.009871&amp;t=m&amp;output=embed"></iframe>
+  <h2>Exhibits:</h2>
+
+<table class="table table-hover">
+	<% @museum.exhibits.each do |exhibit| %>
+    <tr>
+  		<td><%= exhibit.title %></td>
+      <td id="show"><%= link_to "Show", museum_exhibit_path(@museum,exhibit) %></td>
+    </tr>
+	<% end %>
+  </table>
+
+  <% if current_user %>
+
+    <%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %> |
+    <%= link_to 'Edit', edit_museum_path(@museum) %> |
+    <%= link_to 'Destroy', @museum, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
+  <% end %>
