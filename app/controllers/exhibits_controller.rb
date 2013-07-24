@@ -1,7 +1,7 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
-  before_filter :authenticate_user!, except: :search,:show
-  
+  before_filter :authenticate_user!, except: [:search,:show]
+
   # GET /exhibits
   # GET /exhibits.json
   def index
@@ -23,7 +23,7 @@ class ExhibitsController < ApplicationController
     if user.is?(:user)
       Scan.scanned?(@exhibit, user.profile)
       render 'show_user'
-      return 
+      return
     end
 
     respond_to do |format|
@@ -38,7 +38,7 @@ class ExhibitsController < ApplicationController
   def new
     @museum = Museum.find(params[:museum_id])
     @exhibit = @museum.exhibits.new
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exhibit }
@@ -103,11 +103,11 @@ class ExhibitsController < ApplicationController
   def search
     exhibits = Exhibit.where(qr_code: params[:q])
     respond_to do |format|
-      format.json do 
-        if exhibits.count == 0  
+      format.json do
+        if exhibits.count == 0
           QrCode.create(qrcode: params[:q])
-          render json: {id: 0} 
-        else 
+          render json: {id: 0}
+        else
           root_url = Rails.application.routes.url_helpers.root_url
           exhibit = exhibits.first.attributes
           exhibit["image"] = root_url[0..-2]+exhibits.first.image.url
