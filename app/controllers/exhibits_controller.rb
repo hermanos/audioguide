@@ -28,6 +28,7 @@ class ExhibitsController < ApplicationController
     # end
 
     QrCode.scan(@exhibit.qr_code) if user.nil? 
+    
     if user_signed_in?    
       respond_to do |format|
         format.html # show.html.erb
@@ -37,6 +38,7 @@ class ExhibitsController < ApplicationController
     else 
       render 'show_unauthenticated'
     end
+    
   end
 
   # GET /exhibits/new
