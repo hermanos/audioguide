@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723123928) do
+ActiveRecord::Schema.define(:version => 20130724101551) do
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20130723123928) do
     t.string   "status",     :default => "new"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "counts",     :default => 1
   end
 
   create_table "ratings", :force => true do |t|
