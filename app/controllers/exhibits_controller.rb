@@ -28,11 +28,7 @@ class ExhibitsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json do 
-        exhibit = @exhibit.attributes
-        exhibit[:image] = "http://staging.mooseumapp.com"+@exhibit.image.to_s
-        render json: exhibit 
-      end
+      format.json { render json: exhibit }
       format.png { render qrcode: @exhibit.qr_code }
     end
   end
@@ -112,7 +108,10 @@ class ExhibitsController < ApplicationController
           QrCode.create(qrcode: params[:q])
           render json: {id: 0} 
         else 
-          render json: exhibits.first 
+          root_url = Rails.application.routes.url_helpers.root_url
+          exhibit = exhibits.first.attributes
+          exhibit["image"] = root_url[0..-2]+exhibits.first.image.url
+          render json: exhibit
         end
       end
     end
