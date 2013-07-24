@@ -29,7 +29,18 @@
 	<div class="container">
 		<div class="row">
 				<%= render partial: 'shared/alerts' %>
-  			<%= yield %>
+		</div>
+	</div>
+
+	<div class="background-up">
+		<div class="container">
+					<%= yield %>
+		</div>
+	</div>
+	
+	<div class="background-down">
+		<div class="container">
+		  <%= render partial: 'shared/steps' %>
 		</div>
 	</div>
 
