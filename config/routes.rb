@@ -1,4 +1,8 @@
 AudioguideMuseum::Application.routes.draw do
+  get 'search' => 'exhibits#search'
+
+  resources :qr_codes
+
 
   devise_for :users
 
