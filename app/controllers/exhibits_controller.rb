@@ -1,6 +1,6 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
-  before_filter :authenticate_user!, except: :search
+  before_filter :authenticate_user!, except: :search,:show
   
   # GET /exhibits
   # GET /exhibits.json
