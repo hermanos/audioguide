@@ -1,6 +1,6 @@
 class MuseumsController < ApplicationController
   layout 'simple'
-  before_filter :authenticate_user!, except: :show
+  before_filter :authenticate_user!, except: [:show]
 
   # GET /museums
   # GET /museums.json

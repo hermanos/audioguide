@@ -1,5 +1,6 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
+
   before_filter :authenticate_user!, except: [:search,:show]
 
   # GET /exhibits
@@ -25,12 +26,19 @@ class ExhibitsController < ApplicationController
     #   render 'show_user'
     #   return
     # end
+    
     QrCode.scan(@exhibit.qr_code,'found') if user.nil? 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: exhibit }
-      format.png { render qrcode: @exhibit.qr_code }
+    
+    if user_signed_in?    
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @exhibit }
+        format.png { render qrcode: @exhibit.qr_code }
+      end
+    else 
+      render 'show_unauthenticated'
     end
+    
   end
 
   # GET /exhibits/new
