@@ -36,7 +36,7 @@ class ExhibitsController < ApplicationController
         format.png { render qrcode: @exhibit.qr_code }
       end
     else 
-      render 'show_unauthenticated'
+      render 'show_unauthenticated', layout: 'unauthenticated'
     end
     
   end

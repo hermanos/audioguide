@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="home">
+<head>
+  <title>AudioguideMuseum</title>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700', :media => 'all' %>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+
+	<div class="container">
+		<div class="row">
+				<%= render partial: 'shared/alerts' %>
+		</div>
+	</div>
+
+	<div class="background-up">
+		<div class="container">
+					<%= yield %>
+		</div>
+	</div>
+	
+	<div class="background-down">
+		<div class="container">
+		  <%= render partial: 'shared/steps' %>
+		</div>
+	</div>
+</body>
+</html>
