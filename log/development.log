@@ -8683,3 +8683,303 @@ Served asset /unauthenticated.js - 304 Not Modified (0ms)
 
 Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-25 14:33:03 +0300
 Served asset /background.jpg - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/museums/2/exhibits/2" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Processing by ExhibitsController#show as HTML
+  Parameters: {"museum_id"=>"2", "id"=>"2"}
+  [1m[36mMuseum Load (0.2ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
+  [1m[35mExhibit Load (0.1ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `qr_codes` WHERE `qr_codes`.`qrcode` = 'http://localhost:3000/museums/2/exhibits/2'[0m
+  [1m[35mQrCode Load (0.2ms)[0m  SELECT `qr_codes`.* FROM `qr_codes` WHERE `qr_codes`.`qrcode` = 'http://localhost:3000/museums/2/exhibits/2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  UPDATE `qr_codes` SET `counts` = 118, `updated_at` = '2013-07-25 11:34:58' WHERE `qr_codes`.`id` = 1
+  [1m[36m (44.7ms)[0m  [1mCOMMIT[0m
+  Rendered exhibits/show_unauthenticated.html.erb within layouts/unauthenticated (2.7ms)
+  Rendered shared/_alerts.html.erb (0.9ms)
+  Rendered shared/_steps.html.erb (0.5ms)
+Completed 200 OK in 344ms (Views: 136.2ms | ActiveRecord: 50.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Served asset /application.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Served asset /achievements.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Served asset /exhibits.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Served asset /comments.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Served asset /pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:58 +0300
+Served asset /profiles.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /ratings.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /museums.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /scaffolds.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /style.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /backstretch.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (58ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /qr_codes.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/unauthenticated.js?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /unauthenticated.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-25 14:34:59 +0300
+Served asset /background.jpg - 304 Not Modified (2ms)
+
+
+Started GET "/museums/2/exhibits/2" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Processing by ExhibitsController#show as HTML
+  Parameters: {"museum_id"=>"2", "id"=>"2"}
+  [1m[35mMuseum Load (0.1ms)[0m  SELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1
+  [1m[36mExhibit Load (0.1ms)[0m  [1mSELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `qr_codes` WHERE `qr_codes`.`qrcode` = 'http://localhost:3000/museums/2/exhibits/2'
+  [1m[36mQrCode Load (0.2ms)[0m  [1mSELECT `qr_codes`.* FROM `qr_codes` WHERE `qr_codes`.`qrcode` = 'http://localhost:3000/museums/2/exhibits/2' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mUPDATE `qr_codes` SET `counts` = 119, `updated_at` = '2013-07-25 11:35:50' WHERE `qr_codes`.`id` = 1[0m
+  [1m[35m (32.3ms)[0m  COMMIT
+  Rendered exhibits/show_unauthenticated.html.erb within layouts/unauthenticated (0.4ms)
+  Rendered shared/_alerts.html.erb (0.1ms)
+  Rendered shared/_steps.html.erb (0.0ms)
+Completed 200 OK in 83ms (Views: 43.4ms | ActiveRecord: 33.4ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /achievements.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /exhibits.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (57ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/unauthenticated.js?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /unauthenticated.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /qr_codes.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-25 14:35:50 +0300
+Served asset /background.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/museums/2/exhibits/2" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Processing by ExhibitsController#show as HTML
+  Parameters: {"museum_id"=>"2", "id"=>"2"}
+  [1m[36mMuseum Load (1.3ms)[0m  [1mSELECT `museums`.* FROM `museums` WHERE `museums`.`id` = 2 LIMIT 1[0m
+  [1m[35mExhibit Load (0.2ms)[0m  SELECT `exhibits`.* FROM `exhibits` WHERE `exhibits`.`id` = 2 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `qr_codes` WHERE `qr_codes`.`qrcode` = 'http://localhost:3000/museums/2/exhibits/2'[0m
+  [1m[35mQrCode Load (0.2ms)[0m  SELECT `qr_codes`.* FROM `qr_codes` WHERE `qr_codes`.`qrcode` = 'http://localhost:3000/museums/2/exhibits/2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  UPDATE `qr_codes` SET `counts` = 120, `updated_at` = '2013-07-25 11:36:14' WHERE `qr_codes`.`id` = 1
+  [1m[36m (25.0ms)[0m  [1mCOMMIT[0m
+  Rendered exhibits/show_unauthenticated.html.erb within layouts/unauthenticated (0.4ms)
+  Rendered shared/_alerts.html.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 47.7ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /style.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /backstretch.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/qr_codes.js?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /qr_codes.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/unauthenticated.js?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /unauthenticated.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
+Served asset /background.jpg - 304 Not Modified (0ms)
