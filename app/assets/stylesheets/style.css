@@ -229,8 +229,8 @@ div.signout a {
 
 
 .carousel-indicators{
-  top: 400px;
-  right: 100px;
+  top: 460px;
+  right: 105px;
 }
 
 .carousel-inner {
@@ -261,27 +261,30 @@ div.signout a {
 
 .step1{
   background-image: url("b1.png");
-  height:290px;
+  height:330px;
   color:#490063;
   font-size:30px;
   float:right;
   line-height: 30px;
+  background-repeat: no-repeat;
 }
 .step2{
   background-image: url("b2.png");
-  height:290px;
+  height:330px;
   color:#490063;
   font-size:30px;
   float:right;
   line-height: 30px;
+  background-repeat: no-repeat;
 }
 .step3{
   background-image: url("b3.png");
-  height:290px;
+  height:330px;
   color:#490063;
   font-size:30px;
   float:right;
   line-height: 30px;
+  background-repeat: no-repeat;
 }
 
 
@@ -296,6 +299,6 @@ div.signout a {
   font-size:20px;
   line-height:25px;
   margin-left: -30px;
-  padding-top:20px;
+  padding-top:40px;
 }
 
