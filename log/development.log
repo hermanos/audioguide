@@ -842,3 +842,424 @@ Served asset /bootstrap.min.js - 304 Not Modified (0ms)
 Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 13:34:26 +0300
 Served asset /pages.js - 304 Not Modified (4ms)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 15:56:33 +0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (25.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mProfile Load (12.7ms)[0m  SELECT `profiles`.* FROM `profiles` WHERE `profiles`.`user_id` = 1 LIMIT 1
+  Rendered pages/dashboard_admin.html.erb within layouts/simple (63.5ms)
+Completed 200 OK in 3261ms (Views: 1061.5ms | ActiveRecord: 1322.3ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:38 +0300
+Served asset /achievements.css - 304 Not Modified (99ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:38 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:38 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:38 +0300
+Served asset /comments.css - 304 Not Modified (76ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:38 +0300
+Served asset /exhibits.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:38 +0300
+Served asset /museums.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:39 +0300
+Served asset /pages.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:39 +0300
+Served asset /profiles.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:39 +0300
+Served asset /ratings.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:39 +0300
+Served asset /style.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:39 +0300
+Served asset /jquery.js - 304 Not Modified (125ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:39 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (56ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:40 +0300
+Served asset /backstretch.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:40 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:40 +0300
+Served asset /pages.js - 304 Not Modified (15ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-07-17 15:56:49 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9Z7tHbqP+kF7tEfooTO4A0bL1GTzqFzWRFmCkOzuMbw="}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 203ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 15:56:50 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (2.9ms)
+  Rendered shared/_menu.html.erb (4.9ms)
+  Rendered shared/_alerts.html.erb (2.0ms)
+Completed 200 OK in 162ms (Views: 161.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:50 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:50 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /style.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:51 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:52 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:52 +0300
+Served asset /backstretch.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:52 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:52 +0300
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 15:56:56 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_menu.html.erb (2.9ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 107ms (Views: 106.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:57 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:57 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:57 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:57 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:57 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:57 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:57 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:58 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:58 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 15:56:58 +0300
+Served asset /style.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:58 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:58 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:58 +0300
+Served asset /backstretch.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:58 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 15:56:58 +0300
+Served asset /pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-07-17 15:57:08 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered users/shared/_links.erb (3.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (37.1ms)
+  Rendered shared/_menu.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 207ms (Views: 204.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:08 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:08 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:08 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /style.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 15:57:09 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 15:57:10 +0300
+Served asset /backstretch.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 15:57:10 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 15:57:10 +0300
+Served asset /pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-17 16:00:07 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_menu.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (0.0ms)
+Completed 200 OK in 118ms (Views: 117.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:07 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 16:00:08 +0300
+Served asset /style.css - 304 Not Modified (61ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 16:00:09 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 16:00:09 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 16:00:09 +0300
+Served asset /backstretch.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 16:00:09 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 16:00:09 +0300
+Served asset /pages.js - 304 Not Modified (3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-07-17 16:09:23 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered users/shared/_links.erb (2.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (18.6ms)
+  Rendered shared/_menu.html.erb (2.0ms)
+  Rendered shared/_alerts.html.erb (1.0ms)
+Completed 200 OK in 282ms (Views: 153.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:23 +0300
+Served asset /achievements.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:24 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:24 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:24 +0300
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:24 +0300
+Served asset /exhibits.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:24 +0300
+Served asset /pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:24 +0300
+Served asset /museums.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:24 +0300
+Served asset /profiles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:24 +0300
+Served asset /ratings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-17 16:09:25 +0300
+Served asset /style.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-17 16:09:25 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-17 16:09:25 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-17 16:09:25 +0300
+Served asset /backstretch.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-17 16:09:25 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-17 16:09:25 +0300
+Served asset /pages.js - 304 Not Modified (1ms)

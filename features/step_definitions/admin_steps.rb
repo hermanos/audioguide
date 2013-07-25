@@ -1,5 +1,5 @@
 Given(/^I am a user$/) do
-  @user = User.create(email:'basic_user@audioguide.com', password:'user1234')
+  @admin = User.create(email:'admin@audioguide.com', password:'admin123')
 end
 
 Given(/^I am signed out$/) do
@@ -8,11 +8,10 @@ Given(/^I am signed out$/) do
 end
 
 When(/^I click sign in$/) do
-	visit root_path
-  click_on 'Sign In'
+  pending # express the regexp above with the code you wish you had
 end
 
-When(/^I fill in my user credentials$/) do
+When(/^I fill in my admin credentials$/) do
   pending # express the regexp above with the code you wish you had
 end
 
