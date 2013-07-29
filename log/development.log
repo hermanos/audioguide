@@ -8983,3 +8983,177 @@ Served asset /application.js - 304 Not Modified (2ms)
 
 Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-25 14:36:14 +0300
 Served asset /background.jpg - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-29 15:03:36 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (21.5ms)
+Compiled achievements.css  (48ms)  (pid 4660)
+Compiled bootstrap-responsive.min.css  (1ms)  (pid 4660)
+Compiled bootstrap.min.css  (3ms)  (pid 4660)
+Compiled comments.css  (11ms)  (pid 4660)
+Compiled exhibits.css  (23ms)  (pid 4660)
+Compiled museums.css  (6ms)  (pid 4660)
+Compiled profiles.css  (8ms)  (pid 4660)
+Compiled ratings.css  (5ms)  (pid 4660)
+Compiled scaffolds.css  (44ms)  (pid 4660)
+Compiled style.css  (0ms)  (pid 4660)
+Compiled application.css  (10ms)  (pid 4660)
+Compiled jquery.js  (65ms)  (pid 4660)
+Compiled jquery_ujs.js  (3ms)  (pid 4660)
+Compiled backstretch.js  (16ms)  (pid 4660)
+Compiled bootstrap.min.js  (3ms)  (pid 4660)
+Compiled pages.js  (1ms)  (pid 4660)
+Completed 500 Internal Server Error in 3248ms
+
+ActionView::Template::Error (cannot load such file -- coffee_script
+  (in C:/bootcamp/audioguide/app/assets/javascripts/qr_codes.js.coffee)):
+    4:   <title>AudioguideMuseum</title>
+    5:   <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700', :media => 'all' %>
+    6:   <%= stylesheet_link_tag 'application', :media => 'all' %>
+    7:   <%= javascript_include_tag 'application' %>
+    8:   <%= csrf_meta_tags %>
+    9: </head>
+    10: 
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___454289648_31545516'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (60.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-29 17:16:01 +0300
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (21.5ms)
+Compiled unauthenticated.js  (1ms)  (pid 7336)
+Compiled application.js  (355ms)  (pid 7336)
+  Rendered shared/_alerts.html.erb (1.0ms)
+  Rendered shared/_steps.html.erb (7.8ms)
+Completed 200 OK in 1603ms (Views: 1600.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:04 +0300
+Served asset /application.css - 304 Not Modified (153ms)
+
+
+Started GET "/assets/achievements.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:04 +0300
+Served asset /achievements.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/bootstrap-responsive.min.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:05 +0300
+Served asset /bootstrap-responsive.min.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:05 +0300
+Served asset /bootstrap.min.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:05 +0300
+Served asset /comments.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/museums.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:05 +0300
+Served asset /museums.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/exhibits.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:05 +0300
+Served asset /exhibits.css - 200 OK (73ms)
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:05 +0300
+Served asset /pages.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:05 +0300
+Served asset /profiles.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:06 +0300
+Served asset /scaffolds.css - 200 OK (16ms)
+
+
+Started GET "/assets/ratings.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:06 +0300
+Served asset /ratings.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2013-07-29 17:16:06 +0300
+Served asset /style.css - 200 OK (22ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-29 17:16:06 +0300
+Served asset /jquery.js - 304 Not Modified (117ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-29 17:16:06 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/backstretch.js?body=1" for 127.0.0.1 at 2013-07-29 17:16:06 +0300
+Served asset /backstretch.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2013-07-29 17:16:07 +0300
+Served asset /bootstrap.min.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2013-07-29 17:16:07 +0300
+Served asset /pages.js - 200 OK (12ms)
+
+
+Started GET "/assets/unauthenticated.js?body=1" for 127.0.0.1 at 2013-07-29 17:16:07 +0300
+Served asset /unauthenticated.js - 200 OK (18ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-29 17:16:07 +0300
+Served asset /application.js - 304 Not Modified (121ms)
+
+
+Started GET "/assets/carousel1.gif" for 127.0.0.1 at 2013-07-29 17:16:07 +0300
+Served asset /carousel1.gif - 304 Not Modified (483ms)
+
+
+Started GET "/assets/carousel2.gif" for 127.0.0.1 at 2013-07-29 17:16:08 +0300
+Served asset /carousel2.gif - 304 Not Modified (345ms)
+
+
+Started GET "/assets/carousel3.gif" for 127.0.0.1 at 2013-07-29 17:16:09 +0300
+Served asset /carousel3.gif - 304 Not Modified (144ms)
+
+
+Started GET "/assets/appstore.png" for 127.0.0.1 at 2013-07-29 17:16:09 +0300
+Served asset /appstore.png - 304 Not Modified (264ms)
+
+
+Started GET "/assets/googleplay.png" for 127.0.0.1 at 2013-07-29 17:16:10 +0300
+Served asset /googleplay.png - 304 Not Modified (147ms)
+
+
+Started GET "/assets/phone.png" for 127.0.0.1 at 2013-07-29 17:16:10 +0300
+Served asset /phone.png - 304 Not Modified (131ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2013-07-29 17:16:10 +0300
+Served asset /logo.png - 304 Not Modified (143ms)
+
+
+Started GET "/assets/b1.png" for 127.0.0.1 at 2013-07-29 17:16:11 +0300
+Served asset /b1.png - 304 Not Modified (156ms)
+
+
+Started GET "/assets/b2.png" for 127.0.0.1 at 2013-07-29 17:16:11 +0300
+Served asset /b2.png - 304 Not Modified (503ms)
+
+
+Started GET "/assets/b3.png" for 127.0.0.1 at 2013-07-29 17:16:12 +0300
+Served asset /b3.png - 304 Not Modified (178ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-29 17:16:12 +0300
+Served asset /background.jpg - 304 Not Modified (122ms)
+
+
+Started GET "/assets/logo%20hover.png" for 127.0.0.1 at 2013-07-29 17:16:15 +0300
+Served asset /logo%20hover.png - 304 Not Modified (149ms)

@@ -39,14 +39,14 @@ group :test, :development do
 	gem 'rspec-mocks'
 end
 
-group :production do
-  gem 'unicorn'
-end
+# group :production do
+#   gem 'unicorn'
+# end
 
 gem 'mina'
 gem 'mina_extensions'
 
-gem "capybara"
+# gem 'capybar'
 gem 'nokogiri', '1.3.3'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
