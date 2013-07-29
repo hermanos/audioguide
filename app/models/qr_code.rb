@@ -10,4 +10,8 @@ class QrCode < ActiveRecord::Base
   		qrcode.update_attribute(:counts, qrcode.counts + 1)
   	end
   end
+
+  def is?(status)
+    self.status == status.to_s
+  end
 end
