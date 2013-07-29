@@ -1,8 +1,8 @@
 class ExhibitsController < ApplicationController
   layout 'simple'
-  before_filter :authenticate_user!
-  load_and_authorize_resource
-  
+
+  before_filter :authenticate_user!, except: [:search,:show]
+
   # GET /exhibits
   # GET /exhibits.json
   def index
@@ -19,24 +19,26 @@ class ExhibitsController < ApplicationController
   def show
     user = current_user
     @museum = Museum.find(params[:museum_id])
+    @exhibit = Exhibit.find(params[:id])
+
+    # if user.is?(:user)
+    #   Scan.scanned?(@exhibit, user.profile)
+    #   render 'show_user'
+    #   return
+    # end
     
-    unless @museum.exhibits.where(id: params[:id]).first.nil? 
-      @exhibit = @museum.exhibits.where(id: params[:id]).first 
-      render 'show'
-      return 
+    QrCode.scan(@exhibit.qr_code,'found') if user.nil? 
+    
+    if user_signed_in?    
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @exhibit }
+        format.png { render qrcode: @exhibit.qr_code }
+      end
+    else 
+      render 'show_unauthenticated', layout: 'unauthenticated'
     end
-
-    if user.user?
-      Scan.scanned?(@exhibit.id, user.profile.id)
-      render 'show_user'
-      return 
-    end
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @exhibit }
-      format.png { render qrcode: @exhibit.qr_code }
-    end
+    
   end
 
   # GET /exhibits/new
@@ -44,7 +46,7 @@ class ExhibitsController < ApplicationController
   def new
     @museum = Museum.find(params[:museum_id])
     @exhibit = @museum.exhibits.new
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exhibit }
@@ -103,6 +105,24 @@ class ExhibitsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @museum, notice: "Exhibit successfully deleted" }
       format.json { head :no_content }
+    end
+  end
+
+  def search
+    exhibits = Exhibit.where(qr_code: params[:q])
+    respond_to do |format|
+      format.json do
+        if exhibits.count == 0
+          QrCode.scan(params[:q],'new')
+          render json: {id: 0}
+        else
+          root_url = Rails.application.routes.url_helpers.root_url
+          exhibit = exhibits.first.attributes
+          exhibit["image"] = root_url[0..-2].to_s+exhibits.first.image.url.to_s
+          QrCode.scan(exhibit['qr_code'],'found')
+          render json: exhibit
+        end
+      end
     end
   end
 end

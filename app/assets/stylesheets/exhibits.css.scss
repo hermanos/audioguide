@@ -1,3 +1,50 @@
 // Place all the styles related to the Exhibits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#download
+{
+  padding-top: 20px;
+  height: 210px;
+  width: 97.7%;
+  margin-left: -20px;
+  background-color: yellow;
+  color: #FF0000;
+  text-align: center;
+  font-size: 14px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+} 
+
+a#download
+{
+ 	text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: blue;
+  width: 200px;
+  color: yellow;
+}
+
+a#download:hover
+{
+ font-size: 1.3em;
+ font-weight: bold;
+}
+
+a#hide-button
+{
+  margin-right: 10px;
+  margin-top: 10px;
+  float: right;
+  text-decoration: none;
+  color: red;
+  display: inline-block;
+}
+
+a#hide-button:hover
+{
+  font-size: 1.05em;
+  font-weight: bold; 
+}

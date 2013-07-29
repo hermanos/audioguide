@@ -1,7 +1,7 @@
 <nav class="main-menu">
   <ul>
     <% if user_signed_in? %>
-      <% unless current_user.admin? or current_user.manager? %>
+      <% unless current_user.is?(:admin) or current_user.is?(:manager) %>
       <li>
         <%= link_to "Account", edit_user_registration_path %>
       </li><li>

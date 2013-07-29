@@ -34,4 +34,8 @@ AudioguideMuseum::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.generators do |g|
+    g.factory_girl dir: 'app/spec/factories'
+  end
 end

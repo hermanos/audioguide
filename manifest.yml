@@ -1,0 +1,17 @@
+---
+applications:
+  .:
+    name: mooseum
+    framework:
+      name: rails3
+      info:
+        mem: 256M
+        description: Rails Application
+        exec: 
+    infra: eu-aws
+    url: ${name}.${target-base}
+    mem: 1G
+    instances: 1
+    services:
+      mooseum-mysql-64786:
+        type: mysql

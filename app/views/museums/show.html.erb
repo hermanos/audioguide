@@ -18,7 +18,7 @@
 	<% end %>
   </table>
 
-  <% if current_user.admin? or current_user.manage_museum?(@museum) %>
+  <% if current_user %>
 
     <%= link_to "New Exhibits", new_museum_exhibit_path(@museum) %> |
     <%= link_to 'Edit', edit_museum_path(@museum) %> |
