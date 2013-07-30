@@ -10,16 +10,18 @@
 
 <body>
 
-	<div class="container">
-		<div class="row">
-				<%= render partial: 'shared/alerts' %>
-		</div>
-	</div>
+  <div id="notification">
+    <p>
+      <%= image_tag('logo-tiny.png') %>
+      Want your personal universal audioguide right on your mobile phone?
+      <a href="#" id="download" targe="_blank">Download Mooseum!</a>
+      <a href='#' id="hide-button">Hide</a>
+    </p>
+    <a href='#' id="show-button">Show</a>
+  </div>
 
-	<div class="background-up">
-		<div class="container">
-					<%= yield %>
-		</div>
+	<div class="container">
+		<%= yield %>
 	</div>
 
 </body>
