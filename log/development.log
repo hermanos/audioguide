@@ -27490,3 +27490,4 @@ Served asset /goog.png - 304 Not Modified (0ms)
 
 Started GET "/assets/background.jpg" for 127.0.0.1 at 2013-07-30 16:15:16 +0300
 Served asset /background.jpg - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
