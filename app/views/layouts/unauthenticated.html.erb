@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html class="home">
+<html class="exhibit">
 <head>
-  <title>AudioguideMuseum</title>
-  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700', :media => 'all' %>
+  <title>Mooseum</title>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:200,400,700', :media => 'all' %>
   <%= stylesheet_link_tag 'application', :media => 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -10,17 +10,19 @@
 
 <body>
 
+  <div id="notification">
+    <p>
+      <%= image_tag('logo-tiny.png') %>
+      Want your personal universal audioguide right on your mobile phone?
+      <a href="#" id="download" targe="_blank">Download Mooseum!</a>
+      <a href='#' id="hide-button">Hide</a>
+    </p>
+    <a href='#' id="show-button">Show</a>
+  </div>
 
 	<div class="container">
-		<div class="row">
-				<%= render partial: 'shared/alerts' %>
-		</div>
+		<%= yield %>
 	</div>
 
-	<div class="background-up">
-		<div class="container">
-					<%= yield %>
-		</div>
-	</div>
 </body>
 </html>
