@@ -36,6 +36,11 @@
   </div>
   <br>
     <div class="field">
+    <%= f.label :museum_id %>
+    <%= f.select :museum_id, options_for_select(Museum.all.map {|museum| [museum.name, museum.id]}, Museum.first.id) %>
+  </div>
+  <br>
+    <div class="field">
     <%= f.label :language %>
     <%= f.select :language, 
     options_for_select([['Romana', 'RO'], ['Engleza', 'EN'], ['Germana', 'DE'], ['Franceza', 'FR']], 'RO') %>
@@ -70,6 +75,12 @@
   </p>
   </div>
   <br>
+  <iframe width="400" height="400" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src=<%= @qrcode %>>
+  </iframe>
+  <br>
+  <div class="field">
+    <%= f.hidden_field :qr_code, value: @qrcode %>
+  </div>
   <div class="actions">
     <%= f.submit "Add Exhibit" %>
   </div>

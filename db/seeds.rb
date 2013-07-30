@@ -18,9 +18,9 @@
    user.profile.achievements << achievement1
    user.profile.achievements << achievement2
 
-
-  muzeu1 = Museum.create!(name: 'Muzeul de Stiinte Naturale', lat: 45.75515, long: 24.116297, description: "Cel mai tare muzeu", manager_id: manager.profile.id, published: 0 )
-  muzeu2 = Museum.create!(name: 'Muzeul Brukenthal', lat: 45.79652, long: 24.150545, description: "Al doilea cel mai tare", manager_id: admin.profile.id, published: 0 )
+ muzeu0 = Museum.create!(name: 'Outside', lat: 0, long: 0, description: "Exponatele care sunt in exteriorul muzeelor", manager_id: admin.profile.id, published: 1)
+  muzeu1 = Museum.create!(name: 'Muzeul de Stiinte Naturale', lat: 45.75515, long: 24.116297, description: "Cel mai tare muzeu", manager_id: manager.profile.id, published: 0)
+  muzeu2 = Museum.create!(name: 'Muzeul Brukenthal', lat: 45.79652, long: 24.150545, description: "Al doilea cel mai tare", manager_id: admin.profile.id, published: 0)
 
   exhibit1 = Exhibit.create!(title: 'Sculptura transilvaneana in piatra din secolele XIII-XIX', description: 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/1', museum_id: 1)
   exhibit2 = Exhibit.create!(title: 'Monalisa', description: 'Pictura. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/2', museum_id: 2, private: 0)

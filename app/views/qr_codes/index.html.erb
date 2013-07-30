@@ -10,7 +10,7 @@
   <% if qr_code.is?(:new) %>
     <tr>
       <td><%= qr_code.qrcode %></td>
-      <td><%= link_to 'Create Exhibit', new_museum_exhibit_path(1) %></td>
+      <td><%= link_to 'Create Exhibit', new_museum_exhibit_path(Museum.first.id, qrcode: qr_code.qrcode) %></td>
     </tr>
   <% end %>
 <% end %>

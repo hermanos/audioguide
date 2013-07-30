@@ -53,6 +53,7 @@ class Ability
         cannot :manage, Comment
         cannot :manage, Rating
         cannot :manage, Profile
+        cannot :manage, QrCode
     else
         can :read, Achievement
         can :manage, User, id: user
@@ -66,6 +67,7 @@ class Ability
         cannot :manage, Comment
         cannot :manage, Rating
         cannot :manage, Profile
+        cannot :manage, QrCode
     end
 
   end

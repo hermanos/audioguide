@@ -46,6 +46,7 @@ class ExhibitsController < ApplicationController
   def new
     @museum = Museum.find(params[:museum_id])
     @exhibit = @museum.exhibits.new
+    @qrcode = params[:qrcode]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -65,6 +66,7 @@ class ExhibitsController < ApplicationController
     @exhibit = Exhibit.new(params[:exhibit])
     @museum = Museum.find(params[:museum_id])
     @exhibit.museum = @museum
+
 
     respond_to do |format|
       if @exhibit.save
