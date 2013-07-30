@@ -26,13 +26,13 @@
   </div>
   <br>
   <div class="field">
-    <%= f.label :audio %>
-    <%= f.text_field :audio %>
-  </div>
-  <br>
-  <div class="field">
     <%= f.label :video %>
     <%= f.text_field :video %>
+  </div>
+  <br>
+    <div class="field">
+    <%= f.label :museum_id %>
+    <%= f.select :museum_id, options_for_select(Museum.all.map {|museum| [museum.name, museum.id]}, Museum.first.id) %>
   </div>
   <br>
     <div class="field">
@@ -58,18 +58,27 @@
   <br>
   <div class="field">
     <%= f.label :private %>
-    <%= f.number_field :private %>
+    <%= f.select :private, options_for_select([['Yes', 1], ['No', 0]], 0) %>
   </div>
   <div class="field">
   <p>
     <%= f.file_field :image %>
   </p>
   <p>
-    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.label :remote_image_url, "Or image URL :" %> 
     <%= f.text_field :remote_image_url %>
   </p>
   </div>
   <br>
+  <% unless @qrcode.nil? %>
+    <iframe width="100%" height="400" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" 
+      src=<%= @qrcode %>>
+    </iframe>
+    <br>
+    <div class="field">
+      <%= f.hidden_field :qr_code, value: @qrcode %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit "Add Exhibit" %>
   </div>

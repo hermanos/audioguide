@@ -9,22 +9,31 @@
 
 <% @museums.each do |museum| %>
   <tr>
-    <td>
+  <% if current_user.manage_museum?(museum) %>
+      <td>
     	<%= museum.name %>
-    </td>
-    <td id="show">
-    	<%= link_to 'Show', museum %>
-    </td>
-    <% if museum.published == 0 %>
-		  <td>
-		  	<%= link_to "Activate", activate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.is?(:admin) %>
-		  </td>
-		<% elsif museum.published == 1 %>
-			<td>
-		  	<%= link_to "Deactivate", deactivate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.is?(:admin) %>
-		  </td>
-    <% end %>
-  </tr>
+      </td>
+      <td id="show">
+      	<%= link_to 'Show', museum %>
+      </td>
+  <% elsif current_user.is?(:admin) %>
+      <td>
+        <%= museum.name %>
+      </td>
+      <td id="show">
+        <%= link_to 'Show', museum %>
+      </td>
+  <% end %>
+  <% if !museum.published? %>
+	  <td>
+	  	<%= link_to "Activate", activate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.is?(:admin) %>
+	  </td>
+  <% elsif museum.published? %>
+		<td>
+	  	<%= link_to "Deactivate", deactivate_museum_path(museum), data: { confirm: 'Are you sure?' } if current_user.is?(:admin) %>
+	  </td>
+  <% end %>
+  </tr>    
 <% end %>
 
 </table>

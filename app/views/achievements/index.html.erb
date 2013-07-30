@@ -5,22 +5,30 @@
     <th>Image</th>
     <th>Title</th>
     <th>Description</th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @achievements.each do |achievement| %>
   <tr>
     <td><%= image_tag(achievement.image_url(:thumb_achievements)) if achievement.image? %></td>
-    <td width="300"><%= achievement.title %></td>
-    <td width="400"><%= achievement.description %></td>
-  </tr>
+    <td width="300">
+      <%= achievement.title %>
+    </td>
+    <td width="400">
+      <%= achievement.description %>
+    </td>
+
   <% if current_user.is?(:admin) %>
-    <tr>
-        <td colspan="3">
-          <%= link_to 'Edit', edit_achievement_path(achievement) %> |
-          <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-    </tr>
-  <% end %> 
+    <td>
+      <%= link_to 'Edit', edit_achievement_path(achievement) %> 
+    </td>
+    <td>
+      <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  <% end %>
+
+  </tr> 
 <% end %>
 </table>
 
