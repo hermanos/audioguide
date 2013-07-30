@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.4)
     cancan (1.6.10)
     capybara (2.1.0)
@@ -74,6 +75,8 @@ GEM
       railties (>= 3.0.0)
     gherkin (2.12.0)
       multi_json (~> 1.3)
+    gherkin (2.12.0-x86-mingw32)
+      multi_json (~> 1.3)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -96,7 +99,9 @@ GEM
     multi_json (1.7.7)
     multi_test (0.0.2)
     mysql2 (0.3.11)
+    mysql2 (0.3.11-x86-mingw32)
     nokogiri (1.3.3)
+    nokogiri (1.3.3-x86-mingw32)
     open4 (1.3.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
@@ -179,6 +184,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)

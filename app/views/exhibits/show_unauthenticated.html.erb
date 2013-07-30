@@ -1,47 +1,43 @@
-<div id="download">
-	<h1>
-		In order to have the Audio Guide feature, download the application :
-	</h1>
-	<br>
-	<a href='#' id='download'>
-	 	Download 
-	</a>
+<div id="download-bar">
+  <p id="download-text">
+    <%= image_tag("down_logo.png", id:"download-logo") %>
+    Get the Mooseum app and start your journey in time!
+  	<a href='#' class="btn btn-large">
+      <%= image_tag("down_arrow.png", id:"download-arrow") %>
+  	 	DOWNLOAD NOW!
+  	</a>
+  </p>
   <br>
 	<a href='#' id="hide-button">
 		Hide
 	</a>
 </div>
 
-<h1><%= @museum.name %></h1>
+<div>
+  <h2><%= @exhibit.title %> - <%= @museum.name %></h2>
+  <%= image_tag((@exhibit.image_url(:thumb_exhibits)), id:"exhibit-img") if @exhibit.image? %>
+  <p id="showdescription">
+    <%= @exhibit.description %>
+  </p>
+<div>
 
-<h3>
-  <%= @exhibit.title %>
-</h3>
 
-<%= image_tag(@exhibit.image_url(:thumb_exhibits)) if @exhibit.image? %>
-<p id="showdescription">
-  <b>Description:</b><br>
-  <%= @exhibit.description %>
+
+<p id="social-icons">
+  <%= image_tag("fbk.png", id:"facebook-logo") %>
+  <%= image_tag("tw.png", id:"twitter-logo") %>
+  <%= image_tag("goog.png", id:"google-logo") %>
 </p>
 
-<p>
-  <b>Audio:</b><br>
-  <%= @exhibit.audio %>
-</p>
+<div>
+  <p>
+    <a href='#' class="btn btn-large btn-primary">
+      
+      Get the <%= image_tag("down_logo.png", id:"download-arrow") %> Audio-Guide app now!
+    </a>
+  </p>
+</div>
 
-<p>
-  <b>Video:</b><br>
-  <%= @exhibit.video %>
-</p>
-
-<p>
-  <b>Floor:</b><br>
-  <%= @exhibit.floor %>
-</p>
-<p>
-  <b>Publish:</b><br>
-  <%= @exhibit.private == 0 ? "Is not published." : "Is published."%>
-</p>
 <!-- <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=45.769963,24.135438&amp;daddr=&amp;hl=ro&amp;geocode=&amp;sll=45.769925,24.136019&amp;sspn=0.004356,0.009871&amp;mra=mift&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;ll=45.769925,24.136019&amp;spn=0.004356,0.009871&amp;t=m&amp;output=embed"></iframe>
 <br>
 <small>

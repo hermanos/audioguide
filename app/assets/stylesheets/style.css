@@ -55,13 +55,13 @@ html.simple footer hr {
   display: none;
 }
 
-html.home-user footer p {
+html.home footer p {
   margin-top: 20px;
   color: #8C3F3F;
   text-shadow: 0px 0px 1px #000;
 }
 
-a.logo {
+html.home a.logo {
   background: url("logo.png") no-repeat scroll left top transparent;
   color: black;
   display: block;
@@ -73,7 +73,7 @@ a.logo {
   margin:30px 180px;
 }
 
-a.logo:hover {
+html.home a.logo:hover {
   background-image: url("logo hover.png");
   text-decoration: none;
   color:#a94c4c;
@@ -167,11 +167,7 @@ img#phone {
 img#appstore, img#googleplay{
   height: 50px;
   width: 150px;
-  padding:0 20px;
-}
-
-p#download{
-  padding:0 100px;
+  padding:0 190px;
 }
 
 img#facebook, img#twitter{
@@ -226,7 +222,6 @@ div.signout a {
   width: 250px;
   margin:50px -20px;
 }
-
 
 .carousel-indicators{
   top: 460px;
@@ -287,8 +282,6 @@ div.signout a {
   background-repeat: no-repeat;
 }
 
-
-
 .step1 h1, .step2 h1, .step3 h1{
   font-weight: normal;
   padding-top:20px;
@@ -302,3 +295,32 @@ div.signout a {
   padding-top:40px;
 }
 
+div#download-bar{
+  border-bottom: 3px black solid;
+  padding: 10px 50px;
+}
+
+div#download-bar p#download-text {
+  font-size: 15px;
+  font-weight: 100;
+  height: 60px;
+}
+
+div#download-bar p#download-text a.btn {
+  color: #3165FF;
+  background: #470F91;
+  float: right;
+  padding: 20px;
+}
+
+img#exhibit-img {
+  float:right;
+}
+
+p#social-icons {
+  text-align: center;
+}
+
+img#facebook-logo, img#twitter-logo, img#google-logo{
+  height: 30px;
+}
