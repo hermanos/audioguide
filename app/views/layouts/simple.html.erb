@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html class="simple">
 <head>
-
-  <title> 
-  	Mooseum 
-  </title>
-
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>Mooseum</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -17,9 +13,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="span3">
-          			<%= link_to root_path do %>
-            			Mooseum
-          			<% end %>
+    			<%= link_to 'Mooseum', root_path %>
 				</div>
 				<div class="span9 signout">
 					<% if current_user %>
