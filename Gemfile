@@ -46,7 +46,7 @@ end
 gem 'mina'
 gem 'mina_extensions'
 
-gem "capybara"
+gem 'capybara'
 gem 'nokogiri', '1.3.3'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
