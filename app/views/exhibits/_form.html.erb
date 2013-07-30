@@ -75,12 +75,15 @@
   </p>
   </div>
   <br>
-  <iframe width="400" height="400" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src=<%= @qrcode %>>
-  </iframe>
-  <br>
-  <div class="field">
-    <%= f.hidden_field :qr_code, value: @qrcode %>
-  </div>
+  <% unless @qrcode.nil? %>
+    <iframe width="100%" height="400" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" 
+      src=<%= @qrcode %>>
+    </iframe>
+    <br>
+    <div class="field">
+      <%= f.hidden_field :qr_code, value: @qrcode %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit "Add Exhibit" %>
   </div>

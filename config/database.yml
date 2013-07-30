@@ -7,7 +7,7 @@ development:
   adapter: mysql2
   database: audioguide_dev
   username: root
-  password: corco1234
+  password: baburiba
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -16,6 +16,6 @@ test: &test
   adapter: mysql2
   database: audioguide_test
   username: root
-  password: corco1234
+  password: baburiba
 cucumber:
   <<: *test
