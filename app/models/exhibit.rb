@@ -31,7 +31,7 @@ class Exhibit < ActiveRecord::Base
     	update_attribute(:qr_code, crypt_code)
     else
       q = QrCode.where(qrcode: self.qr_code).first
-      q.update_attribute(:status, "found")
+      q.update_attribute(:status, "found") unless q.nil?
     end
   end
 
