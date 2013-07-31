@@ -24,7 +24,9 @@
 
   exhibit1 = Exhibit.create!(title: 'Sculptura transilvaneana in piatra din secolele XIII-XIX', description: 'Colectia de piese sculpturale transilvanene medievale si moderne timpurii din piatra a fost constituita treptat, incepand cu prima jumatate a secolului al XIX-lea. ', video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/1', museum_id: 1)
   exhibit2 = Exhibit.create!(title: 'Monalisa', description: 'Pictura. ',audio: nil, video: nil, floor: 0, lat: 40, long: 40, qr_code: 'http://10.0.0.64:3000/museums/2/exhibits/2', museum_id: 2, private: 0)
-
+  exhibit3 = Exhibit.create!(title: "Nefertiti", description: "Nefertiti (ca. 1370 BC – ca. 1330 BC) was the Great Royal Wife (chief consort) of the Egyptian Pharaoh Akhenaten. Nefertiti and her husband were known for a religious revolution, in which they worshiped one god only, Aten, or the sun disc.
+Nefertiti had many titles including Hereditary Princess (iryt-p`t); Great of Praises (wrt-hzwt); Lady of Grace (nbt-im3t), Sweet of Love (bnrt-mrwt); Lady of The Two Lands (nbt-t3wy); Main King’s Wife, his beloved (hmt-niswt-‘3t meryt.f); Great King’s Wife, his beloved (hmt-niswt-wrt meryt.f), Lady of all Women (hnwt-hmwt-nbwt); and Mistress of Upper and Lower Egypt (hnwt-Shm’w-mhw).
+She was made famous by her bust, now in Berlin's Neues Museum, shown to the right. The bust is one of the most copied works of ancient Egypt. It was attributed to the sculptor Thutmose, and it was found in his workshop. The bust is notable for exemplifying the understanding Ancient Egyptians had regarding realistic facial proportions. Some scholars believe that Nefertiti ruled briefly as Neferneferuaten after her husband's death and before the accession of Tutankhamun, although this identification is a matter of ongoing debate", video: nil, floor: 1, lat: 40, lat: 50, qr_code: "http://staging.mooseumapp.com", museum_id:2, private: 0)
   
   scan1 = Scan.create(profile_id: user.profile.id, exhibit_id: exhibit1.id)
   scan2 = Scan.create(profile_id: user.profile.id, exhibit_id: exhibit2.id)
