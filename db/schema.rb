@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130724101551) do
+ActiveRecord::Schema.define(:version => 20130731100546) do
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
@@ -37,20 +37,27 @@ ActiveRecord::Schema.define(:version => 20130724101551) do
   end
 
   create_table "exhibits", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "audio"
     t.string   "video"
-    t.integer  "floor",       :default => 0,    :null => false
-    t.float    "lat",         :default => 0.0,  :null => false
-    t.float    "long",        :default => 0.0,  :null => false
+    t.integer  "floor",          :default => 0,    :null => false
+    t.float    "lat",            :default => 0.0,  :null => false
+    t.float    "long",           :default => 0.0,  :null => false
     t.string   "qr_code"
     t.integer  "museum_id"
-    t.integer  "private",     :default => 1,    :null => false
-    t.string   "language",    :default => "RO"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.integer  "private",        :default => 1,    :null => false
+    t.string   "language",       :default => "RO"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.string   "image"
+    t.string   "description_IT"
+    t.string   "description_SP"
+    t.string   "description_EN"
+    t.string   "description_FR"
+    t.string   "description_DE"
+    t.string   "title_IT"
+    t.string   "title_SP"
+    t.string   "title_EN"
+    t.string   "title_DE"
+    t.string   "title_FR"
   end
 
   create_table "museums", :force => true do |t|

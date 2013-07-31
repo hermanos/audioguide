@@ -1,22 +1,17 @@
 <p id="notice"><%= notice %></p>
 <h1><%= @museum.name %></h1>
 
-<h2>
-  <%= @exhibit.title %>
-</h2>
-
 <%= image_tag(@exhibit.image_url(:thumb_exhibits)) if @exhibit.image? %>
 
-<p id="showdescription">
-  <b>Description:</b><br>
-  <%= @exhibit.description %>
-</p>
-<% unless @exhibit.video.nil? %>
-  <p>
-    <b>Video:</b><br>
-    <%= @exhibit.video %>
-  </p>
-<% end %>
+  <%=  render partial: 'shared/en' %>
+  
+  <!--
+  <%= render partial: 'shared/fr' %>
+  <%= render partial: 'shared/de' %>
+  <%= render partial: 'shared/it' %>
+  <%= render partial: 'shared/sp' %> 
+  -->  
+
 <p>
   <b>Floor:</b><br>
   <%= @exhibit.floor %>

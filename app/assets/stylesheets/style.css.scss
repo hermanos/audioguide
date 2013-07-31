@@ -405,6 +405,20 @@ p#social-icons a {
   }
 }
 
+div#language{
+  img{
+    height: 20px;
+    width: 30px;
+    float: left;
+    padding-right: 2px;
+
+    &:hover {
+      height: 23px;
+      width: 35px;
+    }
+  }
+}
+
 @media all and (max-width: 770px) {
   body{
     overflow-x: hidden;
