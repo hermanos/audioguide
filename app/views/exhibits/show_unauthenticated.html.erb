@@ -4,6 +4,7 @@
       <%= @exhibit.title %>
     </h2>
 
+<<<<<<< HEAD
     <h3>
       <%= @museum.name %>
     </h3>
@@ -36,3 +37,40 @@
     </p>
   </div>
 </div>
+=======
+<h1>
+  <%= @museum.name %>
+</h1>
+
+<h2>
+  <%= @exhibit.title %>
+</h2>
+
+<%= image_tag(@exhibit.image_url(:thumb_exhibits)) if @exhibit.image? %>
+<p id="showdescription">
+  <b>Description:</b><br>
+  <%= @exhibit.description %>
+</p>
+<% unless @exhibit.video.nil? %>
+  <p>
+    <b>Video:</b><br>
+    <%= @exhibit.video %>
+  </p>
+<% end %>
+<p>
+  <b>Floor:</b><br>
+  <%= @exhibit.floor %>
+</p>
+<p>
+  <b>Private :</b><br>
+  <%= @exhibit.private? ? "Is not published." : "Is published."%>
+</p>
+
+<!-- <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=45.769963,24.135438&amp;daddr=&amp;hl=ro&amp;geocode=&amp;sll=45.769925,24.136019&amp;sspn=0.004356,0.009871&amp;mra=mift&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;ll=45.769925,24.136019&amp;spn=0.004356,0.009871&amp;t=m&amp;output=embed"></iframe>
+<br>
+<small>
+  <a href="https://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=45.769963,24.135438&amp;daddr=&amp;hl=ro&amp;geocode=&amp;sll=45.769925,24.136019&amp;sspn=0.004356,0.009871&amp;mra=mift&amp;mrsp=0&amp;sz=17&amp;ie=UTF8&amp;ll=45.769925,24.136019&amp;spn=0.004356,0.009871&amp;t=m" style="color:#0000FF;text-align:left">
+    Vizualizare harta marita
+  </a>
+</small> -->
+>>>>>>> fab90924d21636abcd55d3d2c5177b034da36330

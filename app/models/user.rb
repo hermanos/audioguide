@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   def create_profile
     role = Profile.all.blank? ? "admin" : "user"
 
-    p = Profile.create(role: role, name: DEFAULT_PROFILE_NAME)
+    p = Profile.create(role: role, name: self.email)
     update_attribute(:profile, p)
   end
 

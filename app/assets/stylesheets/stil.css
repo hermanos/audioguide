@@ -189,7 +189,6 @@ div.signbox {
   background-color: rgba(255,255,255,0.8);
 }
 
-
 div.signbox form {
   display: block;
   width: 200px;
@@ -263,6 +262,7 @@ div.signout a {
   line-height: 30px;
   background-repeat: no-repeat;
 }
+
 .step2{
   background-image: url("b2.png");
   height:330px;
@@ -272,6 +272,7 @@ div.signout a {
   line-height: 30px;
   background-repeat: no-repeat;
 }
+
 .step3{
   background-image: url("b3.png");
   height:330px;

@@ -25,9 +25,14 @@ class Exhibit < ActiveRecord::Base
   private
 
   def create_qr_code
-  	exhibit_url = Rails.application.routes.url_helpers.museum_exhibit_url(museum, self)
-  	crypt_code = exhibit_url
-  	update_attribute(:qr_code, crypt_code)
+    if self.qr_code == nil
+    	exhibit_url = Rails.application.routes.url_helpers.museum_exhibit_url(museum, self)
+    	crypt_code = exhibit_url
+    	update_attribute(:qr_code, crypt_code)
+    else
+      q = QrCode.where(qrcode: self.qr_code).first
+      q.update_attribute(:status, "found") unless q.nil?
+    end
   end
 
 end

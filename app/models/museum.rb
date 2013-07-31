@@ -10,4 +10,9 @@ class Museum < ActiveRecord::Base
   validates :name, length: { minimum: 1 }
   validates :description, presence: true
   validates :description, length: { minimum: 1 }
+
+  def published?
+  	self.published == 1
+  end	
+  
 end
