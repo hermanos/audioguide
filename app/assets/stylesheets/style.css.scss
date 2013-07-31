@@ -404,3 +404,65 @@ p#social-icons a {
     margin: 0 10px;
   }
 }
+
+@media all and (max-width: 770px) {
+  body{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 92%;
+  }
+
+  html.exhibit body {
+    #notification {
+      height: 20%;
+
+      p {
+        line-height: 22px;
+
+        img {
+          margin-left: 5px;
+        }
+
+        a#download {
+          position: inherit;
+          display: block;
+          margin: 5px auto 0px auto;
+          width: 50%;
+        }
+
+        a#hide-button {
+          margin-right: 20px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  p#social-icons a {
+    img {
+      margin: 35px 10px;
+    }
+  }
+
+  div.text-center{
+    a{
+      margin-top: 30px;
+    }
+  }
+}
+
+@media all and (max-width: 405px) {
+  body{
+    max-width: 87%;
+  }
+}
+
+@media all and (max-width: 370px) {
+ /* Aici trebuie modificat buttonul de jos de download pentru ca arata ca fanul ! - David */
+}
+
+@media all and (max-width: 255px) {
+  body{
+    max-width: 84%;
+  }
+}

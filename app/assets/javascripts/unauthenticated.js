@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+var notHeight = $('#notification').height();
 	$('a#hide-button').click(function(e) {
 		e.preventDefault();
 		e.stopPropagation();
@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $('a#show-button').animate({ opacity: 0 }, 400, function(){
       $('#notification p').show();
-  		$('#notification').animate({ height: "32px" }, 500);
+  		$('#notification').animate({ height: notHeight }, 500);
     });
 	});
 
