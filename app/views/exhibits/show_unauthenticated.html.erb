@@ -2,14 +2,14 @@
   <div class="span12">
 
   <%= image_tag((@exhibit.image_url(:thumb_exhibits)), id:"exhibit-img") if @exhibit.image? %>
-  <% params[:lang] = 'RO' if params[:lang].nil? %>
+  <% params[:lang] = 'EN' if params[:lang].nil? %>
     <h2>
       <%= @exhibit.send("title_" + params[:lang].to_s) %>
     </h2>
 
     <p id="showdescription">
       <b>Description:</b><br>
-      <%= @exhibit.description_EN %>
+      <%= @exhibit.send("description_" + params[:lang].to_s) %>
     </p>
 
 
