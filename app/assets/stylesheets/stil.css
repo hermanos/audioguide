@@ -216,7 +216,7 @@ div.signout a {
   height: 60px;
 }
 .carousel-tot{
-  background-image: url("phone.png");
+ /* background-image: url("phone.png");*/
   height: 490px;
   width: 250px;
   margin:50px -20px;
