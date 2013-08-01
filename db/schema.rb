@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731100546) do
+ActiveRecord::Schema.define(:version => 20130801102520) do
 
   create_table "achievements", :force => true do |t|
     t.string   "title"
@@ -47,18 +47,18 @@ ActiveRecord::Schema.define(:version => 20130731100546) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
     t.string   "image"
-    t.string   "description_IT"
-    t.string   "description_RO"
-    t.string   "description_ES"
-    t.string   "description_EN"
-    t.string   "description_FR"
-    t.string   "description_DE"
     t.string   "title_IT"
     t.string   "title_ES"
     t.string   "title_EN"
     t.string   "title_DE"
     t.string   "title_FR"
     t.string   "title_RO"
+    t.text     "description_IT"
+    t.text     "description_RO"
+    t.text     "description_ES"
+    t.text     "description_EN"
+    t.text     "description_FR"
+    t.text     "description_DE"
   end
 
   create_table "museums", :force => true do |t|
