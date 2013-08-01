@@ -1,7 +1,7 @@
 class Exhibit < ActiveRecord::Base
   attr_accessible :floor, :lat, :long, :museum_id, :qr_code, :video, :private, :image, :remote_image_url,
-                  :description_IT, :description_EN,:description_RO, :description_DE, :description_FR, :description_SP, :title_IT, 
-                  :title_EN, :title_DE, :title_FR, :title_SP, :title_RO    
+                  :description_IT, :description_EN,:description_RO, :description_DE, :description_FR, :description_ES, :title_IT, 
+                  :title_EN, :title_DE, :title_FR, :title_ES, :title_RO    
 
 
   belongs_to :museum

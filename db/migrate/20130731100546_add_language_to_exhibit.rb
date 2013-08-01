@@ -6,12 +6,12 @@ class AddLanguageToExhibit < ActiveRecord::Migration
     remove_column :exhibits, :language
     add_column :exhibits, :description_IT, :string
     add_column :exhibits, :description_RO, :string
-    add_column :exhibits, :description_SP, :string
+    add_column :exhibits, :description_ES, :string
     add_column :exhibits, :description_EN, :string
     add_column :exhibits, :description_FR, :string
     add_column :exhibits, :description_DE, :string
     add_column :exhibits, :title_IT, :string
-    add_column :exhibits, :title_SP, :string
+    add_column :exhibits, :title_ES, :string
     add_column :exhibits, :title_EN, :string
     add_column :exhibits, :title_DE, :string
     add_column :exhibits, :title_FR, :string
