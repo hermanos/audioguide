@@ -3,13 +3,15 @@
 <table style="table-border: 10px;">
   <tr>
     <th>Qrcode</th>
-    <th></th>
+    <th>Last Scanned</th>
+    <th>Action</th>
   </tr>
-
-<% @qr_codes.each do |qr_code| %>
+<% qr_codes = @qr_codes.map.sort {|x,y| x.updated_at <=> y.updated_at} %>
+<% qr_codes.map do |qr_code| %>
   <% if qr_code.is?(:new) %>
     <tr>
       <td><%= qr_code.qrcode %></td>
+      <td><%= qr_code.updated_at %></td>
       <td><%= link_to 'Create Exhibit', new_museum_exhibit_path(Museum.first.id, qrcode: qr_code.qrcode) %></td>
     </tr>
   <% end %>
