@@ -1,16 +1,17 @@
 <p id="notice"><%= notice %></p>
-<h1><%= @museum.name %></h1>
 
-<%= image_tag(@exhibit.image_url(:thumb_exhibits)) if @exhibit.image? %>
+    <% params[:lang] = 'EN' if params[:lang].nil? %>
+    <h2>
+      <%= @exhibit.send("title_" + params[:lang].to_s) %>
+    </h2>
 
-  <%=  render partial: 'shared/en' %>
-  
-  <!--
-  <%= render partial: 'shared/fr' %>
-  <%= render partial: 'shared/de' %>
-  <%= render partial: 'shared/it' %>
-  <%= render partial: 'shared/sp' %> 
-  -->  
+    <%= image_tag((@exhibit.image_url(:thumb_exhibits)), id:"exhibit-img") if @exhibit.image? %>
+    
+    <p id="showdescription">
+      <b>Description:</b><br>
+      <%= @exhibit.send("description_" + params[:lang].to_s) %>
+    </p>
+
 
 <p>
   <b>Floor:</b><br>

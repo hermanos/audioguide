@@ -1,17 +1,17 @@
 <div class="row">
   <div class="span12">
-
-  <%= image_tag((@exhibit.image_url(:thumb_exhibits)), id:"exhibit-img") if @exhibit.image? %>
+  
   <% params[:lang] = 'EN' if params[:lang].nil? %>
     <h2>
       <%= @exhibit.send("title_" + params[:lang].to_s) %>
     </h2>
 
+    <%= image_tag((@exhibit.image_url(:thumb_exhibits)), id:"exhibit-img") if @exhibit.image? %>
+
     <p id="showdescription">
       <b>Description:</b><br>
       <%= @exhibit.send("description_" + params[:lang].to_s) %>
     </p>
-
 
   </div>
 </div>
