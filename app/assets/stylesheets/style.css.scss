@@ -62,11 +62,11 @@ html.exhibit body {
 
 
     p {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 32px;
       margin-top: 0;
 
-      img {
+      img#icon-mooseum {
         float: left;
         margin-left: 20px;
         margin-top: 2px;
@@ -74,13 +74,17 @@ html.exhibit body {
 
       a#download {
         background-color: white;
-        padding: 2px 20px;
+        padding: 2px 15px;
         border-radius: 5px;
         color: #6b9f52;
         margin-left: 20px;
 
         &:hover {
           background-color: #f0f0f0;
+        }
+
+        img#android-icon {
+          padding-bottom: 5px;
         }
       }
 
@@ -114,12 +118,29 @@ html.exhibit body {
 
   }
 
+  img#exhibit-img {
+    float: right;
+    margin-top: 26px;
+    margin-left: 20px;
+  }
+
   img#download-arrow {
     padding: 0px 10px 0px 0px;
-    border-right: 1px solid green;
+    border-right: 1px solid white;
     height: 50px;
   }
 
+  div.footer {
+    margin-top: 20px;
+    p#social-icons {
+      text-align: center;
+       a {
+        img {
+          margin: 0px 10px;
+        }
+      }
+    }
+  }
 }
 
 header {
@@ -390,29 +411,14 @@ div.signout a {
   padding-top:40px;
 }
 
-img#exhibit-img {
-  float: right;
-  margin-top: 26px;
-  margin-left: 20px;
-}
 
-p#social-icons {
-  text-align: center;
-}
-
-p#social-icons a {
-  img {
-    margin: 0 10px;
-  }
-}
-
-@media all and (max-width: 770px) {
+@media all and (max-width: 850px) {
   body{
     overflow-x: hidden;
     overflow-y: auto;
-    max-width: 92%;
+    max-width: 98%;
+    margin: auto auto;
   }
-
   html.exhibit body {
     #notification {
       height: 20%;
@@ -438,28 +444,73 @@ p#social-icons a {
       }
     }
   }
-
-  p#social-icons a {
-    img {
-      margin: 35px 10px;
-    }
-  }
-
-  div.text-center{
-    a{
-      margin-top: 30px;
-    }
-  }
 }
 
-@media all and (max-width: 405px) {
+@media all and (max-width: 770px) {
+  body{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 92%;
+  }
+
+  html.exhibit body {
+    div.footer {
+      margin-top: 0px;
+      div.text-center{
+        a {
+        margin-top: 20px;
+        }
+      }
+      p#social-icons a{ 
+        img {
+          margin: 30px 10px;
+        }
+      }
+    } 
+  }
+
+}
+
+@media all and (max-width: 400px) {
   body{
     max-width: 87%;
   }
+  html.exhibit body {
+    div.footer {
+      p#social-icons a{ 
+        img {
+          margin: 30px 5px;
+        }
+      }
+    }
+  } 
 }
 
-@media all and (max-width: 370px) {
- /* Aici trebuie modificat buttonul de jos de download pentru ca arata ca fanul ! - David */
+@media all and (max-width: 360px) {
+  html.exhibit body {
+    #notification {
+      p {
+        img#icon-mooseum {
+          display: none;
+        }
+      }
+    }
+    img#exhibit-img {
+      clear: both;
+      width: 100%;
+      margin-top: 10px;
+    }
+    img#download-arrow {
+      display: none;
+    }
+    div.footer {
+      p#social-icons a{ 
+        img {
+          margin: 30px 1px;
+        }
+      }
+    }
+  } 
 }
 
 @media all and (max-width: 255px) {

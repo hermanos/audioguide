@@ -13,9 +13,10 @@
   
   <div id="notification">
     <p>
-      <%= link_to(image_tag("logo-tiny.png"), root_path) %>
+      <%= link_to(image_tag("logo-tiny.png", id: "icon-mooseum"), root_path) %>
       Want your personal universal audioguide right on your mobile phone?
-      <a href="#" id="download" targe="_blank">Download Mooseum!</a>
+      <a href="#" id="download" targe="_blank"> 
+        <%= image_tag("android.png", id: "android-icon") %> Download Mooseum!</a>
       <a href='#' id="hide-button">Hide</a>
     </p>
     <a href='#' id="show-button">Show</a>
