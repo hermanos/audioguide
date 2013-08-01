@@ -19,7 +19,7 @@
 <table class="table table-hover">
 	<% @museum.exhibits.each do |exhibit| %>
     <tr>
-  		<td><%= exhibit.title %></td>
+  		<td><%= exhibit.title_EN %></td>
       <td id="show"><%= link_to "Show", museum_exhibit_path(@museum,exhibit) %></td>
     </tr>
 	<% end %>

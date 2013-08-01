@@ -1,22 +1,18 @@
 <p id="notice"><%= notice %></p>
-<h1><%= @museum.name %></h1>
 
-<h2>
-  <%= @exhibit.title %>
-</h2>
+    <% params[:lang] = 'EN' if params[:lang].nil? %>
+    <h2>
+      <%= @exhibit.send("title_" + params[:lang].to_s) %>
+    </h2>
 
-<%= image_tag(@exhibit.image_url(:thumb_exhibits)) if @exhibit.image? %>
+    <%= image_tag((@exhibit.image_url(:thumb_exhibits)), id:"exhibit-img-admin") if @exhibit.image? %>
+    
+    <p id="showdescription">
+      <b>Description:</b><br>
+      <%= @exhibit.send("description_" + params[:lang].to_s) %>
+    </p>
 
-<p id="showdescription">
-  <b>Description:</b><br>
-  <%= @exhibit.description %>
-</p>
-<% unless @exhibit.video.nil? %>
-  <p>
-    <b>Video:</b><br>
-    <%= @exhibit.video %>
-  </p>
-<% end %>
+
 <p>
   <b>Floor:</b><br>
   <%= @exhibit.floor %>

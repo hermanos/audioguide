@@ -16,29 +16,71 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :title_EN, "Title (EN) : " %>
+    <%= f.text_field :title_EN %>
+  </div>
+  <div class="field">
+    <%= f.label :title_RO, "Title (RO) : " %>
+    <%= f.text_field :title_RO %>
+  </div>
+  <div class="field">
+    <%= f.label :title_FR, "Title (FR) : " %>
+    <%= f.text_field :title_FR %>
+  </div>
+  <div class="field">
+    <%= f.label :title_DE, "Title (DE) : " %>
+    <%= f.text_field :title_DE %>
+  </div>
+  <div class="field">
+    <%= f.label :title_IT, "Title (IT) : " %>
+    <%= f.text_field :title_IT %>
+  </div>
+  <div class="field">
+    <%= f.label :title_ES, "Title (ES) : " %>
+    <%= f.text_field :title_ES %>
   </div>
   <br>
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.label :description_EN, "Description (EN) : " %>
+    <%= f.text_area :description_EN %>
   </div>
-  <br>
   <div class="field">
-    <%= f.label :video %>
-    <%= f.text_field :video %>
+    <%= f.label :description_RO, "Description (RO) : " %>
+    <%= f.text_area :description_RO %>
+  </div>
+  <div class="field">
+    <%= f.label :description_FR, "Description (FR) : " %>
+    <%= f.text_area :description_FR %>
+  </div>
+  <div class="field">
+    <%= f.label :description_DE, "Description (DE) : " %>
+    <%= f.text_area :description_DE %>
+  </div>
+  <div class="field">
+    <%= f.label :description_IT, "Description (IT) : " %>
+    <%= f.text_area :description_IT %>
+  </div>
+  <div class="field">
+    <%= f.label :description_ES, "Description (ES) : " %>
+    <%= f.text_area :description_ES %>
   </div>
   <br>
     <div class="field">
+    <!-- FIX IT ! -->
     <%= f.label :museum_id %>
-    <%= f.select :museum_id, options_for_select(Museum.all.map {|museum| [museum.name, museum.id]}, Museum.first.id) %>
-  </div>
-  <br>
-    <div class="field">
-    <%= f.label :language %>
-    <%= f.select :language, 
-    options_for_select([['Romana', 'RO'], ['Engleza', 'EN'], ['Germana', 'DE'], ['Franceza', 'FR']], 'RO') %>
+    <%= f.select :museum_id, options_for_select(
+                              Museum.all.map {|museum| 
+                                [museum.name, museum.id]
+                              }, 
+                              Museum.first.id) if current_user.is?(:admin) %>
+
+    <%= f.select :museum_id, options_for_select(
+                              Museum.all.map { |museum| 
+                                if current_user.manage_museum?(museum) then 
+                                  [museum.name, museum.id] 
+                                  end
+                              }, 
+                              Museum.first.id) if current_user.is?(:manager) %>
   </div>
   <br>
   <div class="field">

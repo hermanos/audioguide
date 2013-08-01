@@ -1,16 +1,13 @@
 class Exhibit < ActiveRecord::Base
-  attr_accessible :audio, :description, :floor, :lat, :long, :museum_id, :qr_code,
-    :title, :video, :private, :image, :remote_image_url, :language
+  attr_accessible :floor, :lat, :long, :museum_id, :qr_code, :video, :private, :image, :remote_image_url,
+                  :description_IT, :description_EN,:description_RO, :description_DE, :description_FR, :description_ES, :title_IT, 
+                  :title_EN, :title_DE, :title_FR, :title_ES, :title_RO    
+
 
   belongs_to :museum
   has_many :scans
 
   mount_uploader :image, ImageUploader
-
-  validates :title, presence: true
-  validates :title, length: { minimum: 1 }
-  validates :description, presence: true
-  validates :description, length: { minimum: 1 }
 
   validates :floor, numericality: true
   validates :lat, numericality: true

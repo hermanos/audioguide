@@ -1,4 +1,4 @@
-class ExhibitsController < ApplicationController
+  class ExhibitsController < ApplicationController
   layout 'simple'
 
   before_filter :authenticate_user!, except: [:search,:show]
@@ -58,6 +58,7 @@ class ExhibitsController < ApplicationController
   def edit
     @exhibit = Exhibit.find(params[:id])
     @museum = Museum.find(params[:museum_id])
+    @qrcode = @exhibit.qr_code
   end
 
   # POST /exhibits
