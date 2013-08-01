@@ -118,7 +118,20 @@ html.exhibit body {
     }
 
   }
+  div#language{
+    img{
+      height: 20px;
+      width: 30px;
+      float: left;
+      padding-right: 2px;
+      display: inline-block;
 
+      &:hover {
+        height: 23px;
+        width: 35px;
+      }
+    }
+  }
   img#exhibit-img {
     float: right;
     margin-top: 26px;
@@ -186,7 +199,7 @@ html.home a.logo {
   height: 168px;
   text-indent: -9999px;
   width: 300px;
-  margin:30px 180px;
+  margin:30px 200px;
 }
 
 html.home a.logo:hover {
@@ -283,7 +296,7 @@ img#phone {
 img#appstore, img#googleplay{
   height: 50px;
   width: 150px;
-  padding:0 200px;
+  padding:0 240px;
 }
 
 img#facebook, img#twitter{
@@ -330,7 +343,7 @@ div.signout a {
 .description2{
   font-size: 20px;
   font-weight: 100;
-  height: 80px;
+  height: 60px;
   padding-left: 50px;
 }
 .carousel-tot{
@@ -373,7 +386,7 @@ div.signout a {
 
 .step1{
   background-image: url("b1.png");
-  height:330px;
+  height: 330px;
   color:#490063;
   font-size:30px;
   float:right;
@@ -412,54 +425,7 @@ div.signout a {
   padding-top:40px;
 }
 
-div#language{
-  img{
-    height: 20px;
-    width: 30px;
-    float: left;
-    padding-right: 2px;
-    display: inline-block;
-
-    &:hover {
-      height: 23px;
-      width: 35px;
-    }
-  }
-}
-
-
 @media all and (max-width: 850px) {
-  img#exhibit-img-admin {
-    margin-top: 26px;
-    margin-left: 20px;
-  }
-
-  p#social-icons {
-    text-align: center;
-  }
-
-  p#social-icons a {
-    img {
-      margin: 0 10px;
-    }
-  }
-
-  div#language{
-    img{
-      height: 20px;
-      width: 30px;
-      float: left;
-      padding-right: 2px;
-
-      &:hover {
-        height: 23px;
-        width: 35px;
-      }
-    }
-  }
-}
-
-@media all and (max-width: 770px) {
   body{
     overflow-x: hidden;
     overflow-y: auto;
@@ -542,6 +508,22 @@ div#language{
         img#icon-mooseum {
           display: none;
         }
+        a#hide-button {
+            margin-right: 0px;
+        }
+      }
+    }
+    div#language{
+      img{
+        height: 20px;
+        width: 30px;
+        padding-right: 1px;
+        display: inline-block;
+
+        &:hover {
+          height: 25px;
+          width: 35px;
+        }
       }
     }
     img#exhibit-img {
@@ -562,8 +544,64 @@ div#language{
   } 
 }
 
-@media all and (max-width: 255px) {
+@media all and (max-width: 317px) {
   body{
     max-width: 84%;
+  }
+
+  html.exhibit body {
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    div#language{
+      img{
+        height: 18px;
+        width: 22px;
+
+        &:hover {
+          height: 22px;
+          width: 26px;
+        }
+      }
+    }
+    div.footer {
+        p#social-icons a{ 
+          img {
+            margin: 25px 0px;
+            height: 50px;
+          }
+        }
+      }
+    }
+}
+
+@media all and (max-width: 260px) {
+  body{
+    max-width: 80%;
+  }
+
+  html.exhibit body {
+  div#language{
+    img{
+      height: 15px;
+      width: 20px;
+
+      &:hover {
+        height: 18px;
+        width: 23px;
+      }
+    }
+  }
+  div.footer {
+      p#social-icons a{ 
+        img {
+          margin: 20px 0px;
+          height: 40px;
+        }
+      }
+    }
   }
 }
