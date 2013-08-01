@@ -261,7 +261,7 @@ img#phone {
 img#appstore, img#googleplay{
   height: 50px;
   width: 150px;
-  padding:0 190px;
+  padding:0 200px;
 }
 
 img#facebook, img#twitter{
@@ -301,14 +301,15 @@ div.signout a {
   font-size: 50px;
   font-weight: 300;
   line-height: 50px;
-  width:700px;
-  height:170px;
+  width: 700px;
+  height: 180px;
 }
 
 .description2{
   font-size: 20px;
   font-weight: 100;
-  height: 60px;
+  height: 80px;
+  padding-left: 50px;
 }
 .carousel-tot{
   background-image: url("phone.png");

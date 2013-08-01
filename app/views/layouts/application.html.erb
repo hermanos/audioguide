@@ -17,11 +17,18 @@
 	</div>
 
 	<div class="background-up">
-  	<div class="container">
+  		<div class="container">
 			<%= yield %>
 		</div>
 	</div>
 
+	<% if controller.controller_name == 'pages' %>
+		<div class="background-down">
+	 		<div class="container">
+				<%= render partial: 'shared/steps' %>
+			</div>
+		</div>
+	<% end %>
 
 </body>
 </html>
