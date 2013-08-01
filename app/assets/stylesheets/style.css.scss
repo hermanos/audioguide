@@ -336,7 +336,7 @@ div.signout a {
   font-size: 50px;
   font-weight: 300;
   line-height: 50px;
-  width: 700px;
+  width: 100%;
   height: 180px;
 }
 
@@ -350,7 +350,7 @@ div.signout a {
   background-image: url("phone.png");
   height: 490px;
   width: 250px;
-  margin: 50px;
+  margin: 50px 70px 50px 30px;
 }
 
 .carousel-indicators{
@@ -425,6 +425,30 @@ div.signout a {
   padding-top:40px;
 }
 
+@media all and (max-width: 1100px) {
+  html.home body{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 98%;
+    margin: auto auto;
+  }
+}
+
+@media all and (max-width: 980px) {
+  html.home body{
+    .description1{
+      padding-left: 50px;
+    }
+    .step1 p, .step2 p, .step3 p{
+        margin-left: 30px;
+        width: 300px;
+    }
+    .step1 h1, .step2 h1, .step3 h1{
+      padding-left: 40px;
+    }
+  }
+}
+
 @media all and (max-width: 850px) {
   body{
     overflow-x: hidden;
@@ -451,10 +475,8 @@ div.signout a {
         }
 
         a#hide-button {
-          margin-right: 20px;
           margin-top: 10px;
           display: inline-block;
-          float: right;
         }
       }
     }
@@ -584,24 +606,24 @@ div.signout a {
   }
 
   html.exhibit body {
-  div#language{
-    img{
-      height: 15px;
-      width: 20px;
+    div#language{
+      img{
+        height: 15px;
+        width: 20px;
 
-      &:hover {
-        height: 18px;
-        width: 23px;
-      }
-    }
-  }
-  div.footer {
-      p#social-icons a{ 
-        img {
-          margin: 20px 0px;
-          height: 40px;
+        &:hover {
+          height: 18px;
+          width: 23px;
         }
       }
     }
-  }
+    div.footer {
+        p#social-icons a{ 
+          img {
+            margin: 20px 0px;
+            height: 40px;
+          }
+        }
+      }
+    }
 }
